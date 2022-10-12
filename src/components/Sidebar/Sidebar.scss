@@ -1,0 +1,48 @@
+.flex-containers {
+    display: flex;
+    flex-wrap: nowrap;
+    
+  }
+.container{
+   
+    width: 15%;
+    height: auto;
+
+    
+  
+    .jobCategories{
+        color: #004057;
+        text-transform: capitalize;
+        font-size: 18px;
+        padding: 1px 10px;
+
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin-left: 3%;
+
+        .button {
+          margin:3% ;
+            padding: 10px 7px;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+           
+            
+            border: none;
+            border-radius: 15px;
+           
+          }
+          
+          .button:hover {background-color: #FFB246}
+          
+          .button:active {
+            background-color: #FFB246;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+
+    }
+}
