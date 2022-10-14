@@ -1,8 +1,9 @@
 import React from "react";
 import './Navbar.scss'
 import { useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
-import FindAJob from "../FIndAJob/FindAJob";
+
+import FindAJob from "../../pages/FIndAJob/FindAJob";
+import PostAJob from "../../pages/PostAJob/PostAJob";
 
 const tabsData = [
   {
@@ -11,9 +12,9 @@ const tabsData = [
      <FindAJob/>
   },
   {
-    label: "That Text",
+    label: "Post a Job",
     content:
-      "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+      <PostAJob/>
   },
   {
     label: "Find a job",
@@ -35,16 +36,7 @@ const tabsData = [
     content:
       "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
   },
-  {
-    label: "Find a job",
-    content:
-      "Ut irure mollit nulla eiusmod excepteur laboris elit sit anim magna tempor excepteur labore nulla.",
-  },
-  {
-    label: "That Text",
-    content:
-      "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
-  },
+
 ];
 export default function Navbar() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -53,13 +45,13 @@ export default function Navbar() {
   return (
     <>
       <div className='navContainer'>
-      <div>
-      <div className="flex space-x-10 border-b flex-wrap">
+    
+      <div className="flex space-x-8 border-b flex-wrap buttonContainer">
         {/* Loop through tab data and render button for each. */}
       
         {tabsData.map((tab, idx) => {
           return (
-            
+           
             <button
               key={idx}
               className={`py-2 px-8 border-b-4 transition-colors duration-300 ${
@@ -72,6 +64,7 @@ export default function Navbar() {
               {tab.label}
               
             </button>
+         
           );
         })}
       </div>
@@ -81,7 +74,7 @@ export default function Navbar() {
       </div>
     </div>
         
-        </div>
+
         
     </>
   );

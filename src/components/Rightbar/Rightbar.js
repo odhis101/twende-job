@@ -14,7 +14,7 @@ export default function Rightbar() {
 </button>
             </div>
               <div className="loginButtons">
-              <button class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-9 hover:border-blue-500 rounded-full">
+              <button class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
               Register
 </button>
             </div>

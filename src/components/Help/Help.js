@@ -1,6 +1,7 @@
 import React from "react";
 import "./Help.scss";
 import { BsFacebook } from 'react-icons/bs';
+
 import { SocialIcon } from 'react-social-icons';
  
 
@@ -25,6 +26,7 @@ export default function Help() {
           
 
         </div>
+     
         </div>
 
         
