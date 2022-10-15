@@ -4,6 +4,7 @@
 
     background-color: rgb(250, 248, 248);
     .banner{
+        margin-top: 2%;
         margin-left: auto;
         margin-right: auto;
         width: 60%;
@@ -15,6 +16,9 @@
             
         }
         .bannerText{
+            text-align: center;
+            margin-right: auto; // this is new 
+            margin-left: auto; 
             
             
             width: auto;
@@ -24,4 +28,33 @@
     }
 
     
+}
+
+@media only screen and (max-width: 1662px) {
+    .banner{
+        width: 80% !important; 
+     
+    }
+}
+@media only screen and (max-width: 1248px) {
+    .banner{
+        width: 90% !important; 
+     
+    }
+}
+@media only screen and (max-width: 1122px) {
+    .banner{
+        width: 75% !important; 
+        .img{
+            margin-right: auto;
+            margin-left: auto;
+            .bannerText{
+            
+            margin-right: auto;
+            margin-left: auto;
+    
+            }
+        }
+     
+    }
 }
