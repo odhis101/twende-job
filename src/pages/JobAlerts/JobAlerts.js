@@ -5,28 +5,29 @@ import "./JobAlerts.scss"
 export default function JobAlerts() {
   return (
     <div>
-         <div className = 'Attributes'>
+         <div className = 'Attributes '>
         <p> SUBSCRIBE FOR SMS JOB ALERTS </p>
         </div>
         <div className="flex">
+            
         <div className="centerContainer">
             <form >
             <p> 1. SELECT PACKAGE</p>
             <div className= 'flex justify-between flex-wrap'>
                 <div className="Package">
-                    <p className='text-5xl text-center'>KSH.10 TU! </p>
-                    <p className='text-3xl text-center'>DAILY SMS </p>
+                    <p className='text-3xl text-center'>KSH.10 TU! </p>
+                    <p className='text-2xl text-center'>DAILY SMS </p>
                     <p className='text-xl text-center'>Subscribe for one day</p>
                 </div>
                 <div className="Package">
-                <p className='text-5xl text-center'>KSH.49 TU!! </p>
-                    <p className='text-3xl text-center'>DAILY SMS </p>
+                <p className='text-3xl text-center'>KSH.49 TU!! </p>
+                    <p className='text-2xl text-center'>DAILY SMS </p>
                     <p className='text-xl text-center'>Subscribe for 7 days</p>
                 </div>
                 
                 <div className="Package">
-                <p className='text-5xl text-center'>KSH.199 TU! </p>
-                    <p className='text-3xl text-center'>DAILY SMS </p>
+                <p className='text-3xl text-center'>KSH.199 TU! </p>
+                    <p className='text-2xl text-center'>DAILY SMS </p>
                     <p className='text-xl text-center'>Subscribe for a month</p>
                 </div>
                 
@@ -56,11 +57,11 @@ export default function JobAlerts() {
 </button>
 </form>
             </div>
-            < Rightbar/>
+
+            
+            < Rightbar/> 
+
             </div>
-        
-
-
     </div>
   )
 }

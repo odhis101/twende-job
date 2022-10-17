@@ -15,9 +15,6 @@ export default function Rightbar() {
     return (
         
         <div className="Rightcontainer">
-
-
-            
             <JobsOfTheDay/>
             <Help/>
             <div className="flex justify-evenly">

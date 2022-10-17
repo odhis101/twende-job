@@ -61,8 +61,9 @@ export default function Navbar() {
   
   return (
     <>
-      <div className='navContainer'>
     
+      <div className='navContainer'>
+      <div className="Checking flex">
       <div className="flex space-x-8  border-b flex-wrap buttonContainer">
         {/* Loop through tab data and render button for each. */}
       
@@ -86,6 +87,9 @@ export default function Navbar() {
          
           );
         })}
+      
+         
+      </div>
         <div className="Rightbar">
             <div className="loginButtons">
             <button 
@@ -103,10 +107,8 @@ export default function Navbar() {
 </button>
             </div>
             
-            
             </div>
-         
-      </div>
+            </div>
       
       {/* Show active tab content. */}
       <div className="py-4 content">
