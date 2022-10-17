@@ -13,9 +13,13 @@ const Home = () => {
          <div class="flex-containers">     
          <Sidebar />
          <Navbar />
-         <Rightbar/>
+         
+        
+         
+        
        
          </div>
+         
 
       </div>
       

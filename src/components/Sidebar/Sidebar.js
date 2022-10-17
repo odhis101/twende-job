@@ -4,6 +4,9 @@ import Logo from '../../assets/img/Logo.png'
 import Navbar from '../Navbar/Navbar'
 
 export default function Sidebar() {
+    const hello = () => {
+    console.log('hello')
+    }
     return (
        
         <div className="container">
@@ -12,7 +15,7 @@ export default function Sidebar() {
             <div className= 'JobList'>
             <ul>
             <li>
-                <p class="button">All (2,356)</p>
+                <p class="button" onClick = { hello }>All (2,356)</p>
             </li>
             <li>
                 <p class="button">Drivers (20)</p>

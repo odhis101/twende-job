@@ -1,12 +1,15 @@
 import React from "react";
 import "./Jobvacancies.scss";
-function hello(){
-    console.log("hello")
-}
-export default function Jobvacancies({ type,title, location, salary, description, date }) {
+
+export default function Jobvacancies({ type,title, location, salary, description, date,id}) {
+    function hello(){
+        console.log(id)
+    }
     return (
+
      
        <>
+       
          <div className="JobCentercontainer rounded-md shadow-inherit cursor-pointer" onClick={hello}>
             <div className="JobCentercontainer__header">
             <p  className="text-[#717171] px-2">{type}</p>
