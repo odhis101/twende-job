@@ -10,7 +10,7 @@ export default function Register() {
         </div>
         <form action="">
         <div className="centerContainer">
-            <div className="JobPostTitle">
+        <div className="JobDescription">
             <p className="mx-2.5"> PHONE NUMBER</p>
             <input class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"></input>
             </div>

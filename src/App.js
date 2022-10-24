@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Home from "./pages/Home/Home";
-
+import {getPosts } from "./actions/posts";
+import { useDispatch } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,7 +14,15 @@ import {
 import './App.css';
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
-function App() {
+
+
+
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
   
   return (
     <> 
@@ -27,7 +36,7 @@ function App() {
           <Route path="login" >
             <Route index element={<Login />} />
             </Route>
-
+  
       </Route>
            
       </Routes>

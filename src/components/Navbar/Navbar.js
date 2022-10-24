@@ -104,7 +104,7 @@ export default function Navbar() {
               onClick={() => setActiveTabIndex(7)}
               class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
               Register
-</button>
+              </button>
             </div>
             
             </div>

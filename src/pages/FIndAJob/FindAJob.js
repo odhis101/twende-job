@@ -1,11 +1,14 @@
 import './FindAJob.scss'
 import Looking from '../../assets/img/looking.png'
 import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
+import { useSelector } from 'react-redux';
 import Help from '../../components/Help/Help'
 import Searchbar from '../../components/SearchBar/Searchbar';
 import JobofTheDay from '../../components/JobofTheDay/JobOfTheDay';
 import Rightbar from '../../components/Rightbar/Rightbar';
 export default function FindAJob() {
+    const posts = useSelector((state) => state.posts);
+    console.log('here it is',posts);
     const jobs = [<Jobvacancies id = {1} type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>, <Jobvacancies  type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>];
     return (
        <div className='flex'>
