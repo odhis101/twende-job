@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.scss'
-import { useState } from "react";
+import { useState,useEffect} from "react";
 
 import FindAJob from "../../pages/FIndAJob/FindAJob";
 import PostAJob from "../../pages/PostAJob/PostAJob";
@@ -8,8 +8,11 @@ import Register from "../../pages/Register/Register";
 import ClassifiedJobs from "../../pages/ClassifiedJobs/ClassifiedJobs";
 import Login from "../../pages/Login/Login";
 import JobAlerts from "../../pages/JobAlerts/JobAlerts";
+import user1 from '../../assets/img/user1.jpg'
+import { useSelector,useDispatch } from "react-redux";
+import { logout,reset } from "../../features/auth/authSlice";
 
-
+import { AiOutlineUser } from "react-icons/ai";
 const tabsData = [
   {
     label: "Find a job",
@@ -57,7 +60,17 @@ const tabsData = [
 ];
 export default function Navbar() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  
+  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const { user} = useSelector((state) => state.auth);
+  const onLogout =() => {
+    dispatch(logout());
+    dispatch(reset());
+
+  }
+
+
+
   
   return (
     <>
@@ -90,24 +103,34 @@ export default function Navbar() {
       
          
       </div>
-        <div className="Rightbar">
-            <div className="loginButtons">
-            <button 
-            onClick={() => setActiveTabIndex(6)}
-            class="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
-            Login
+      <div className="Rightbarlogin" id = 'Rightbarlogin'>
+        {user ? (<button className='btn' onClick={onLogout}>
+        < AiOutlineUser />
+        </button>) : (
+           <>
+           <div className="loginButtons">
+           <button 
+           onClick={() => setActiveTabIndex(6)}
+           class="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
+           Login
 </button>
-            </div>
-              <div className="loginButtons">
-              
-              <button 
-              onClick={() => setActiveTabIndex(7)}
-              class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
-              Register
-              </button>
-            </div>
+           </div>
+             <div className="loginButtons">
+             
+             <button 
+             onClick={() => setActiveTabIndex(7)}
+             class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
+             Register
             
-            </div>
+             </button>
+           </div>
+           </>
+           
+        ) }
+        
+   
+      </div>
+     
             </div>
       
       {/* Show active tab content. */}
