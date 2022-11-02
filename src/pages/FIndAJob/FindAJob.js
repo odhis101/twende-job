@@ -1,16 +1,38 @@
 import './FindAJob.scss'
 import Looking from '../../assets/img/looking.png'
 import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch  } from 'react-redux';
 import Help from '../../components/Help/Help'
 import Searchbar from '../../components/SearchBar/Searchbar';
 import JobofTheDay from '../../components/JobofTheDay/JobOfTheDay';
 import Rightbar from '../../components/Rightbar/Rightbar';
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { getGoals, reset } from '../../features/jobs/jobSclice'
+
+
 export default function FindAJob() {
-    const posts = useSelector((state) => state.posts);
-    console.log('here it is',posts);
-    const jobs = [<Jobvacancies id = {1} type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>, <Jobvacancies  type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>];
-    return (
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { user } = useSelector((state) => state.auth)
+    const { goals, isLoading, isError, message } = useSelector(
+        (state) => state.jobs
+      )
+      useEffect(() => {
+        if (isError) {
+          console.log(message)
+        }
+    
+        if (!user) {
+          navigate('/login')
+        }
+    
+        dispatch(getGoals())
+    
+       
+      }, [user, navigate, isError, message, dispatch])
+    console.log(goals)
+        return (
        <div className='flex'>
       
        <div className="centerContainer">
@@ -29,21 +51,16 @@ export default function FindAJob() {
 
 <p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES</p>
 
+{goals.length > 0 ? (
+          //goals is greater than 0
+          goals.map((goal) => (
+          <Jobvacancies key={goal._id} id = {1} type = {goal.jobTitle} date ={goal.DeadlineDate} title={goal.jobTitle} description ={goal.jobDescription}/>
+          
+          ))
+          ) : (
+          <h3>You have not set any goals</h3>
+        )}
 
-<Jobvacancies id = {1} type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
-<Jobvacancies type = {'Office Job'} date ={'30/09/2022'} title={'Aramel Transport and logistics'} description ={' Applications are invited from qualified persons for the above vacant position.'}/>
 
 </div>
 <Rightbar/>

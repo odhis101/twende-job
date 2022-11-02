@@ -4,20 +4,23 @@ import Rightbar from "../../components/Rightbar/Rightbar";
 import { useDispatch, useSelector } from 'react-redux';
 import { createPost } from '../../actions/posts';
 
+import { createGoal} from '../../features/jobs/jobSclice'
 
 export default function PostAJob() {
   const dispatch = useDispatch();
-  const [postData, setPostData] = useState({ creator :'', title: '', message: '', tags: '', selectedFile: '' });
+  const { user} = useSelector((state) => state.auth);
+  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,user:user ,Category:'CA'});
+  const [text, setText] = useState('')
+  console.log(postData)
 
 
+  
   const handleSubmit=(e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
-   
+    dispatch(createGoal(postData));
+  
   }
-  const clear=() => {
-    console.log('hello worlds')
-  }
+
     return (
          <>
        
@@ -32,47 +35,83 @@ export default function PostAJob() {
             <div className="flex">
             <div className="PostCategory">
             <label for="categories" class="Selectcategory p-2.5">Select Category </label>
-            <select id="categories" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
+            <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
               w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black ">
             <option selected>Category</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
+            <option 
+            value = "CA"
+            onChange ={(e) => setPostData({...postData,category: e.target.value})}>
+              United States</option>
+            <option  value = "CA"
+            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Canada</option>
+            <option  value = "CA"
+            onChange ={(e) => setPostData({...postData,category: e.target.value})}>France</option>
+            <option  value = "CA"
+            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Germany</option>
           </select>
             </div>
             
             <div className="employers-name " >
             <p className="mx-2.5"> Employers Name</p>
-            <input class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Username"></input>
+            <input 
+            name='Employers_Name'
+            id='Employers_Name'
+            value = {postData.Employers_Name} 
+            onChange ={(e) => setPostData({...postData,Employers_Name: e.target.value})}
+            class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Username"></input>
             </div>
             </div>
             <div className="JobDescription">
             <p className="mx-2.5"> Job Post Title</p>
             <input  
-            value = {postData.creator} 
-            onChange ={(e) => setPostData({...postData,creator: e.target.value})}
+             type='text'
+             name='jobTitle'
+             id='jobTitle'
+             value = {postData.jobTitle} 
+             onChange ={(e) => setPostData({...postData,jobTitle: e.target.value})}
            
-            class="shadow appearance-none  border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Username"></input>
+            class="shadow appearance-none  border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"   placeholder="Maximum 100 characters "></input>
             </div>
             <div className="JobDescription">
             <p className="mx-2.5"> Job Description</p>
-            <input class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"></input>
+            <input 
+            name='jobDescription'
+            id='jobDescription'
+            value = {postData.jobDescription} 
+            onChange ={(e) => setPostData({...postData,jobDescription: e.target.value})}
+            class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Max 500 characters "></input>
             </div>
             <div className="flex justify-between">
             <div className="EmployersContact">
             <p className="mx-2.5"> Employers Contact</p>
-            <input class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"></input>
+            <input 
+            name='Employers_contact'
+            id='Employers_contact'
+            value = {postData.Employers_contact} 
+            onChange ={(e) => setPostData({...postData,Employers_contact: e.target.value})}
+            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Phone Number"
+            
+            ></input>
             </div>
             <div className="EmployersContact">
-            <p className="mx-2.5"> Employers Contact</p>
-            <input class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"></input>
+            <p className="mx-2.5"> EMPLOYER’S  EMAIL</p>
+            <input 
+             name='EMPLOYER_EMAIL'
+             id='EMPLOYER_EMAIL'
+             value = {postData.EMPLOYER_EMAIL} 
+             onChange ={(e) => setPostData({...postData,EMPLOYER_EMAIL: e.target.value})}
+            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Employer Email Address for applications"></input>
             </div>
             </div>
             <div className="flex justify-between">
             <div className="EmployersContact">
-            <p className="mx-2.5"> Employers Contact</p>
-            <input class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"></input>
+            <p className="mx-2.5"> APPLICATIONS DEADLINE DATE</p>
+            <input 
+             name='DeadlineDate'
+             id='DeadlineDate'
+             value = {postData.DeadlineDate} 
+             onChange ={(e) => setPostData({...postData,DeadlineDate: e.target.value})}
+            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="date" placeholder=""></input>
             </div>
 
             

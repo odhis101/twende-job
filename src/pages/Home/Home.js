@@ -10,8 +10,9 @@ import { useSelector,useDispatch } from "react-redux";
 const Home = () => {
   const { user} = useSelector((state) => state.auth);
   
-  if(user){console.log(user)}
+  if(user){console.log('users is here user',user)}
   else{console.log('No user')}
+
 
     return (
       <div>
