@@ -10,7 +10,7 @@ import {
   Routes,
 
 } from "react-router-dom";
-
+import Navbar from "./components/Navbar/Navbar";
 import './App.css';
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
@@ -30,6 +30,7 @@ const App = () => {
 
       <Routes>
       <Route path="/" >
+    
       <Route path=":home" element={<Home />} />
           <Route index element={<Home />} />
           <Route path='register' element={<Register />} />
