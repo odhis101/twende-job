@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./PostAJob.scss";
 import Rightbar from "../../components/Rightbar/Rightbar";
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,16 +9,18 @@ import { createGoal} from '../../features/jobs/jobSclice'
 export default function PostAJob() {
   const dispatch = useDispatch();
   const { user} = useSelector((state) => state.auth);
-  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,user:user ,Category:'CA'});
+  console.log(user)
+  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:''});
   const [text, setText] = useState('')
-  console.log(postData)
 
+  useEffect(() => {
+    console.log(`postData => `, postData);
+  }, [postData])
 
-  
   const handleSubmit=(e) => {
     e.preventDefault();
     dispatch(createGoal(postData));
-  
+    console.log(user)
   }
 
     return (
@@ -36,18 +38,16 @@ export default function PostAJob() {
             <div className="PostCategory">
             <label for="categories" class="Selectcategory p-2.5">Select Category </label>
             <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
-              w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black ">
+              w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
             <option selected>Category</option>
             <option 
-            value = "CA"
-            onChange ={(e) => setPostData({...postData,category: e.target.value})}>
+            value = "USA">
               United States</option>
-            <option  value = "CA"
-            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Canada</option>
+            <option  value = "CA">Canada</option>
             <option  value = "CA"
             onChange ={(e) => setPostData({...postData,category: e.target.value})}>France</option>
             <option  value = "CA"
-            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Germany</option>
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Germany</option>
           </select>
             </div>
             

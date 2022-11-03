@@ -19,19 +19,18 @@ export default function FindAJob() {
         (state) => state.jobs
       )
       useEffect(() => {
+
         if (isError) {
-          console.log(message)
+          console.log('there was an error while loading', message)
         }
     
-        if (!user) {
-          navigate('/login')
-        }
     
         dispatch(getGoals())
     
        
       }, [user, navigate, isError, message, dispatch])
     console.log(goals)
+    console.log("here is goasls",goals)
         return (
        <div className='flex'>
       
@@ -50,8 +49,12 @@ export default function FindAJob() {
 </div>
 
 <p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES</p>
+{/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
 
-{goals.length > 0 ? (
+{
+
+goals === undefined ? <p>loading</p> : 
+goals.length > 0 ? (
           //goals is greater than 0
           goals.map((goal) => (
           <Jobvacancies key={goal._id} id = {1} type = {goal.jobTitle} date ={goal.DeadlineDate} title={goal.jobTitle} description ={goal.jobDescription}/>

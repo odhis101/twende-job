@@ -32,9 +32,11 @@ export const getGoals = createAsyncThunk(
     'jobs/getAll',
     async (_, thunkAPI) => {
       try {
-        const token = thunkAPI.getState().auth.user.token
-        return await jobService.getGoals(token)
+       
+        console.log('lol you are smart  ')
+        return await jobService.getGoals()
       } catch (error) {
+        console.log('lol you are crazy ')
         const message =
           (error.response &&
             error.response.data &&

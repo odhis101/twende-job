@@ -14,14 +14,10 @@ const createGoal = async (goalData, token) => {
   
     return response.data
   }
-  const getGoals = async (token) => {
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
+  const getGoals = async () => {
   
-    const response = await axios.get("http://localhost:5000/jobs/getjobs", config)
+  
+    const response = await axios.get("http://localhost:5000/jobs/getjobs")
   
     return response.data
   }

@@ -11,7 +11,6 @@ import JobAlerts from "../../pages/JobAlerts/JobAlerts";
 import user1 from '../../assets/img/user1.jpg'
 import { useSelector,useDispatch } from "react-redux";
 import { logout,reset } from "../../features/auth/authSlice";
-
 import { AiOutlineUser } from "react-icons/ai";
 const tabsData = [
   {
