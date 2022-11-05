@@ -14,7 +14,7 @@ import { logout,reset } from "../../features/auth/authSlice";
 import { AiOutlineUser } from "react-icons/ai";
 const tabsData = [
   {
-    label: "Find a job",
+    label: "Find a jobs",
     content:
      <FindAJob/>
   },
