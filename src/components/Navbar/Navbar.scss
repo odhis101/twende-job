@@ -1,7 +1,9 @@
 .navContainer{
 
     
-    width: 100%;
+    width: auto;
+   
+    
  
 
 }
@@ -9,10 +11,18 @@
 
     justify-content: center;
 }
-
+.Checking{
+    border: 1px solid red ;
+ 
+}
 
 .Rightbarlogin{
     border: 1px solid red;
     display: flex;
     width: 20%;
+}
+@media only screen and (max-width: 600px) {
+  .Checking {
+  display: none !important;
+  }
 }

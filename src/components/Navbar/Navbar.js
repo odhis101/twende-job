@@ -12,6 +12,7 @@ import user1 from '../../assets/img/user1.jpg'
 import { useSelector,useDispatch } from "react-redux";
 import { logout,reset } from "../../features/auth/authSlice";
 import { AiOutlineUser } from "react-icons/ai";
+import Trial from "../Trial/Trial"
 const tabsData = [
   {
     label: "Find a jobs",
@@ -31,8 +32,7 @@ const tabsData = [
   {
     label: "Companies",
     content:
-    "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
-
+<Trial/>
           
   },
   {
@@ -84,7 +84,7 @@ export default function Navbar() {
            
             <button
               key={idx}
-              className={`py-2 px-8 border-b-4 transition-colors duration-300 ${
+              className={`py-2 px-4 m-0 border-b-4 transition-colors duration-300 ${
                 idx === activeTabIndex
                 
                   ? "border-[#FFB246]"

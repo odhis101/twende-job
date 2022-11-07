@@ -1,9 +1,9 @@
 import React from "react";
-import './Sidebar.scss'
+import './Trial.scss'
 import Logo from '../../assets/img/Logo.png'
 
 
-export default function Sidebar() {
+export default function Trial() {
     const hello = () => {
     console.log('hello')
     }
