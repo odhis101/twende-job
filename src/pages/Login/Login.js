@@ -75,6 +75,7 @@ export default function Login() {
 </div>
 </form>
 
+<BottomNav/>
 
 
 

@@ -20,7 +20,11 @@ import Person3Icon from '@mui/icons-material/Person3';
 import WorkIcon from '@mui/icons-material/Work';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import AddAlertIcon from '@mui/icons-material/AddAlert';
+import { useSelector, useDispatch } from 'react-redux'
+
 export default function BottomNav() {
+  const { user} = useSelector((state) => state.auth);
+  console.log('user', user)
     const [value, setValue] = React.useState(0);
     const [state, setState] = React.useState({
         top: false,
@@ -36,6 +40,8 @@ export default function BottomNav() {
     
         setState({ ...state, [anchor]: open });
       };
+      var number  ='';
+      user ? number = 'user': number = 'account'
       const list = (anchor) => (
         <Box
           sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -43,8 +49,22 @@ export default function BottomNav() {
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
+           <List>
+              <ListItem key={"Inboxs"} disablePadding>
+                <ListItemButton
+                 component={Link}
+                 to = '/login'>
+                  <ListItemIcon>
+                  <Person3Icon /> 
+                  </ListItemIcon>
+                  <ListItemText primary={number} />
+                </ListItemButton>
+              </ListItem>
+            
+          </List>
+          <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {['Subscriptions', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -55,6 +75,7 @@ export default function BottomNav() {
               </ListItem>
             ))}
           </List>
+         
           <Divider />
           <List>
             {['All mail', 'Trash', 'Spam'].map((text, index) => (

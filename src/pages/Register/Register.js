@@ -85,6 +85,7 @@ export default function Register() {
 
 </div>
 </form>
+<BottomNav/>
          </>
   )
 }
