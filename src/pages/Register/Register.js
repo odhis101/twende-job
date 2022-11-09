@@ -5,6 +5,7 @@ import { register, reset } from '../../features/auth/authSlice'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 //import Spinner from '../components/Spinner'
+import BottomNav from '../../components/BottomNav/BottomNav';
 
 export default function Register() {
   const dispatch = useDispatch()

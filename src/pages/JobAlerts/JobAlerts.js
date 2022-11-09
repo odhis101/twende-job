@@ -1,6 +1,7 @@
 import React from 'react'
 import Rightbar from '../../components/Rightbar/Rightbar'
 import "./JobAlerts.scss"
+import BottomNav from '../../components/BottomNav/BottomNav';
 
 export default function JobAlerts() {
   return (
@@ -59,9 +60,10 @@ export default function JobAlerts() {
             </div>
 
             
-            < Rightbar/> 
+
 
             </div>
+            <BottomNav/>
     </div>
   )
 }

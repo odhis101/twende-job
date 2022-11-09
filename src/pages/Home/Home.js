@@ -20,8 +20,6 @@ const Home = props => {
       <div>
        
          <div class="flex-containers">   
-           
-         <Sidebar class ='sidebar' />
          <Navbar />
          
         

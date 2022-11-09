@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createPost } from '../../actions/posts';
 
 import { createGoal} from '../../features/jobs/jobSclice'
+import BottomNav from '../../components/BottomNav/BottomNav';
 
 export default function PostAJob() {
   const dispatch = useDispatch();
@@ -25,18 +26,19 @@ export default function PostAJob() {
 
     return (
          <>
+     
        
-         <div className = 'Attributes'>
+     <div className = 'Attributes '>
         <p> HOME | POST A JOB </p>
         </div>
-
-       <div className="flex">
+      
         <div className="centerContainer">
+        
 
         <form  onSubmit ={handleSubmit}>
             <div className="flex">
             <div className="PostCategory">
-            <label for="categories" class="Selectcategory p-2.5">Select Category </label>
+            <label for="categories" class="Selectcategory p-2.5"><x> Job</x> Category </label>
             <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
               w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
             <option selected>Category</option>
@@ -131,10 +133,9 @@ export default function PostAJob() {
 
             </form>        
 </div>
-<Rightbar />
-</div>
 
 
+<BottomNav/>
 
          </>
 

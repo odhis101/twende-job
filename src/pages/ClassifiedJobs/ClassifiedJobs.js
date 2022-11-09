@@ -2,6 +2,7 @@ import React from 'react'
 import Searchbar from '../../components/SearchBar/Searchbar'
 import Rightbar from '../../components/Rightbar/Rightbar'
 import ClassifiedModule from '../../components/ClassifiedModule/ClassifiedModule'
+import BottomNav from '../../components/BottomNav/BottomNav';
 
 export default function ClassifiedJobs() {
   return (
@@ -23,9 +24,9 @@ export default function ClassifiedJobs() {
 
 
       </div>
-      <Rightbar />
+  
       </div>
-      
+      <BottomNav/>
         
     </div>
   )
