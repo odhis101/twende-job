@@ -20,10 +20,15 @@ export default function PostAJob() {
 
   const handleSubmit=(e) => {
     e.preventDefault();
-    if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
+    if( user === null){
+      alert('Please login to post a job')
+    }
+    else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
       alert('Please fill all fields')
     } else {
       dispatch(createGoal(postData))
+      alert('Job Posted Successfully')
+
     }
 
   

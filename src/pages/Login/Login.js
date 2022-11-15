@@ -45,10 +45,13 @@ export default function Login() {
       phoneNumber,
       password,
     }
+    if(!phoneNumber || !password){
+      alert('Please fill in all fields')
+    }else{
 
     dispatch(login(userData))
   }
-
+  }
   return (
     <>
      <div className = 'Attributes'>
