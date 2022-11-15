@@ -77,7 +77,7 @@ export const getGoals = createAsyncThunk(
           .addCase(createGoal.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.goals.push(action.payload)
+          
           })
           .addCase(createGoal.rejected, (state, action) => {
             state.isLoading = false

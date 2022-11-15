@@ -20,9 +20,15 @@ export default function PostAJob() {
 
   const handleSubmit=(e) => {
     e.preventDefault();
-    dispatch(createGoal(postData));
-    console.log(user)
-  }
+    if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
+      alert('Please fill all fields')
+    } else {
+      dispatch(createGoal(postData))
+    }
+
+  
+    }
+  
 
     return (
          <>
