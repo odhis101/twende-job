@@ -15,6 +15,7 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from '../../components/TopNav/TopNav';
 export default function FindAJob() {
 
     const dispatch = useDispatch()
@@ -36,9 +37,11 @@ export default function FindAJob() {
     console.log(goals)
     console.log("here is goasls",goals)
         return (
+        
 
       
        <div className="centerContainer">
+          <TopNav />
       <Searchbar/>
 <div className='banner rounded-2xl flex flex-wrap text-center'>
     <div className='img'>

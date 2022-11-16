@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    build: ../TWENDEJOB
+    container_name: TWENDEJOB_C
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    
+

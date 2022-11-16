@@ -19,8 +19,13 @@ export default function JobAlerts() {
         e.preventDefault();
             if (postData.number === '' || postData.amount === '') {
                 alert('Please fill all fields')
-            } else {
-                //dispatch(MpesaService(postData))
+            } 
+            else if (user === null) {
+                alert('Please login to continue')
+            }
+            else {
+                dispatch(MpesaService(postData))
+                console.log(postData)
             }
        
         

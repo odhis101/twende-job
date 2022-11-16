@@ -47,9 +47,21 @@ export default function Login() {
     }
     if(!phoneNumber || !password){
       alert('Please fill in all fields')
-    }else{
+    }
+    // this code doesn't work as intended work on it
+ 
+    else{
+      try{
+        console.log('login success')
+        dispatch(login(userData))
+       
+      }
+      catch(err){
+        console.log(err)
+      }
 
-    dispatch(login(userData))
+    
+   
   }
   }
   return (
