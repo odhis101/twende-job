@@ -11,8 +11,13 @@ import BottomNav from '../../components/BottomNav/BottomNav';
 export default function JobAlerts() {
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
+    //console.log('chekcing cool ,',user.phoneNumber)
+    if(user=== null){
+        alert('Please login to continue')
+        window.location.href = '/login'
+    }
     const dispatch = useDispatch();
-    const [postData, setPostData] =  useState({ number :'', amount: ''});
+    const [postData, setPostData] =  useState({ number :'', amount: '', id:user.phoneNumber});
     //console.log(typeof(postData.number))
 
     const handleSubmit=(e) => {

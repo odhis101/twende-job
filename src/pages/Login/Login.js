@@ -78,7 +78,7 @@ export default function Login() {
         </div>
         <div className="JobDescription">
         <p className=""> Password </p>
-        <input onChange={onChange} value={password} name='password'  id='password' class="JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Username"></input>
+        <input onChange={onChange} value={password} name='password'  type="password" id='password' class="JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username"></input>
         </div>
         <button type="submit" class="bg-[#FFB246] rounded-md  hover:bg-orange-400 w-full my-5 rounded text-black  py-3  hover:border-blue-500 rounded">
           Login

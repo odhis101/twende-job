@@ -14,6 +14,7 @@ import Rightbar from "./components/Rightbar/Rightbar";
 import FindAJob from "./pages/FIndAJob/FindAJob";
 import ClassifiedJobs from "./pages/ClassifiedJobs/ClassifiedJobs";
 import Login from "./pages/Login/Login";
+import Subscriptions from "./pages/Subscriptions/Subscriptions";
 import { Tabs, Tab, AppBar } from "@material-ui/core";
 import JobAlerts from "./pages/JobAlerts/JobAlerts";
 
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/ClassifiedJobs" element={<ClassifiedJobs />} />
           <Route path="/JobAlerts" element={<JobAlerts />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/Subscriptions" element={<Subscriptions />} />
           <Route path="/register" element={<Register />} />
         </Routes>
         </div>

@@ -42,7 +42,7 @@ export default function Navbar() {
         <CustomLink   to="/">Find a job</CustomLink>
         <CustomLink   to="/postAjob">Post a Job</CustomLink>
         <CustomLink   to="/ClassifiedJobs">Classifieds Jobs</CustomLink>
-        <CustomLink   to="/register">Companies</CustomLink>
+        <CustomLink   to="/Subscriptions">Subscriptions</CustomLink>
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
         <CustomLink   to="/register">Help?</CustomLink>
               </div>
@@ -51,13 +51,13 @@ export default function Navbar() {
         < AiOutlineUser />
         </button>) : (
            <>
-           <div className="loginButtons">
+           <div className="loginButtons py-3">
            <Link to="/login" className="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
              Login
              </Link>
            </div>
-             <div className="loginButtons">
-      <Link to="/register" className="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-3 px-6 hover:border-blue-500 rounded-full">
+             <div className="loginButtons  py-3">
+      <Link to="/register" className="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
              Register
              </Link>
            </div>

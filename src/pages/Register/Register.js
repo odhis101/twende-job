@@ -25,7 +25,7 @@ export default function Register() {
     }
 
     if (isSuccess || user) {
-      navigate('/users')
+      navigate('/')
       console.log('yess')
     }
 
@@ -63,17 +63,17 @@ export default function Register() {
         <div className="centerContainer">
         <div className="JobDescription">
             <p className="mx-2.5"> PHONE NUMBER</p>
-            <input  onChange={onChange} value={phoneNumber} name ='phoneNumber' id = 'phoneNumber' class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  placeholder="Username"></input>
+            <input  onChange={onChange} value={phoneNumber} name ='phoneNumber' id = 'phoneNumber' class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  placeholder="254703757369"></input>
             </div>
            
             <div className="flex justify-between">
             <div className="EmployersContact">
             <p className="mx-2.5"> PASSWORD</p>
-            <input type='password' onChange={onChange} value={password} name='password'  id='password' class="JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  placeholder="Username"></input>
+            <input type='password' onChange={onChange} value={password} name='password'  id='password' class="JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  ></input>
             </div>
             <div className="EmployersContact">
             <p className="mx-2.5">CONFIRM  PASSWORD</p>
-            <input onChange={onChange} type='password' id='password2' value={password2}  name='password2' class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  placeholder="Username"></input>
+            <input onChange={onChange} type='password' id='password2' value={password2}  name='password2' class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  ></input>
             </div>
             </div>
             <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
