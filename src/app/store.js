@@ -7,9 +7,10 @@ import subscriberReducer from '../features/subscriptions/subscriptionSlice'
 export const store = configureStore({
 
   reducer: {
-    auth: authReducer,
+    
     jobs: goalReducer,
     mpesa: MpesaReducer,
-    subscribers: subscriberReducer,
+    subscriber: subscriberReducer,
+    auth: authReducer,
   },
 })

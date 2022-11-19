@@ -3,15 +3,16 @@ import "./PostAJob.scss";
 import Rightbar from "../../components/Rightbar/Rightbar";
 import { useDispatch, useSelector } from 'react-redux';
 import { createPost } from '../../actions/posts';
-
+import { useNavigate } from 'react-router-dom'
 import { createGoal} from '../../features/jobs/jobSclice'
 import BottomNav from '../../components/BottomNav/BottomNav';
 
 export default function PostAJob() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
   console.log(user)
-  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:''});
+  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'',user:user.phoneNumber});
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function PostAJob() {
     } else {
       dispatch(createGoal(postData))
       alert('Job Posted Successfully')
+      navigate('/')
 
     }
 
@@ -54,13 +56,36 @@ export default function PostAJob() {
               w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
             <option selected>Category</option>
             <option 
-            value = "USA">
-              United States</option>
-            <option  value = "CA">Canada</option>
-            <option  value = "CA"
-            onChange ={(e) => setPostData({...postData,category: e.target.value})}>France</option>
-            <option  value = "CA"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Germany</option>
+            value = "Construction">
+              Construction</option>
+            <option  value = "Cooks">Cooks</option>
+            
+            <option  value = "Drivers"
+            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Drivers</option>
+            
+            <option  value = "Woodwork"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Woodwork</option>
+
+            <option  value = "Electricals "
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Electricals </option>
+            <option  value = "Cleaning"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Cleaning</option>
+            <option  value = "Nannies "
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Nannies </option>
+            <option  value = "Professional services"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Professional services</option>
+            
+            <option  value = "Outside catering "
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Outside catering </option>
+             <option  value = "Pets Services"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Pets Services</option>
+             <option  value = "Farming"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Farming</option>
+             <option  value = "Internships"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Internships</option>
+             <option  value = "Cooks "
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Cooks </option>
+
           </select>
             </div>
             

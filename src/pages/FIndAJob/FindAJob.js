@@ -25,7 +25,7 @@ export default function FindAJob() {
     const { goals, isLoading, isError, message } = useSelector(
         (state) => state.jobs
       )
-      console.log('here we areeee !!',goals)
+
       useEffect(() => {
 
         if (isError) {
@@ -35,8 +35,7 @@ export default function FindAJob() {
     
        
       }, [user, navigate, isError, message, dispatch])
-    console.log(goals)
-    console.log("here is goasls",goals)
+ 
     
         return (
         

@@ -10,27 +10,34 @@ import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './Subscriptions.scss';
-import { getSubscriptions } from '../../features/subscriptions/subscriptionSlice'
+import { getSubscribers } from '../../features/subscriptions/subscriptionSlice'
+import { useNavigate } from 'react-router-dom'
 export default function Subscriptions() {
+  const navigate = useNavigate()
     const { user} = useSelector((state) => state.auth);
+    if(user=== null){
+      alert('Please login to continue')
+      window.location.href = '/login'
+  }
     const dispatch = useDispatch()
+
+    const { goals, isLoading, isError, message } = useSelector(
+      (state) => state.subscriber
+    )
+    useEffect(() => {
+
+      if (isError) {
+        console.log('there was an error while loading', message)
+      }    
+      dispatch(getSubscribers({phoneNumber:user.phoneNumber}))
+  
+     
+    }, [user, navigate, isError, message, dispatch])
+    
+   
+  
  
   
-    const { Subscriptions, isLoading, isError, message } = useSelector(
-        (state) => state.subscribers
-      )
-      
-      useEffect(() => {
-
-        if (isError) {
-          console.log('there was an error while loading', message)
-        }    
-        dispatch(getSubscriptions())
-    
-       
-      }, [user, isError, message, dispatch])
-      console.log(Subscriptions);
-
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: '#FFB246',
@@ -51,15 +58,7 @@ export default function Subscriptions() {
         },
       }));
       
-      function createData(name, calories, fat, carbs, protein,ref) {
-        return { name, calories, fat, carbs, protein,ref };
-      }
-      
-      const rows = [
-        createData('18/11/2022', 200, 7, "17/11/2022", "24/11/2022","HSA-RF2B"),
-        createData('18/11/2022', 50, 2, "12/11/2022", "17/11/2022","HSA-RF2B"),
-      
-      ];
+    
 
     return (
         <>
@@ -77,18 +76,11 @@ export default function Subscriptions() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.ref}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+          {goals === undefined ? <div>loading</div> : map(goals.subscribers, (goal) => (
+            console.log(goal)
+          ))
+}
+         
         </TableBody>
       </Table>
     </TableContainer>
