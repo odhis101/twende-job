@@ -64,7 +64,16 @@ export default function BottomNav() {
           </List>
           <Divider />
           <List>
-            {['Subscriptions', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItemButton
+                 component={Link}
+                 to = '/Subscriptions'>
+                  <ListItemIcon>
+                  <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Subscriptions"} />
+                </ListItemButton>
+
+            {['Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>

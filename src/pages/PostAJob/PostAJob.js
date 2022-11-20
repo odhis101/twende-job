@@ -11,8 +11,8 @@ export default function PostAJob() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
-  console.log(user)
-  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'',user:user.phoneNumber});
+
+  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:''});
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -23,6 +23,7 @@ export default function PostAJob() {
     e.preventDefault();
     if( user === null){
       alert('Please login to post a job')
+      navigate('/')
     }
     else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
       alert('Please fill all fields')
@@ -96,7 +97,7 @@ export default function PostAJob() {
             id='Employers_Name'
             value = {postData.Employers_Name} 
             onChange ={(e) => setPostData({...postData,Employers_Name: e.target.value})}
-            class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Username"></input>
+            class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Name"></input>
             </div>
             </div>
             <div className="JobDescription">
