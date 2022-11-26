@@ -49,7 +49,7 @@ export default function FindAJob() {
        
       }, [user, navigate, isError, message, dispatch])
      
-    
+    console.log(goals)
         return (
         
 
@@ -107,7 +107,7 @@ goals === undefined ? <div class = " spinner " role="status ">
 goals.length > 0 ? (
           //goals is greater than 0
           search(goals).map((goal) => (
-          <Jobvacancies key={goal._id} id = {1} type = {goal.jobTitle} date ={goal.DeadlineDate} title={goal.jobTitle} description ={goal.jobDescription}/>
+          <Jobvacancies key={goal._id} id = {1} type = {goal.jobTitle} date ={goal.DeadlineDate} title={goal.Employers_Name} description ={goal.jobDescription}/>
          
           
           ))
