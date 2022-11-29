@@ -23,7 +23,7 @@ export default function PostAJob() {
     e.preventDefault();
     if( user === null){
       alert('Please login to post a job')
-      navigate('/')
+      navigate('/login')
     }
     else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
       alert('Please fill all fields')
