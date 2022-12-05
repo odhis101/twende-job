@@ -17,7 +17,10 @@ import Login from "./pages/Login/Login";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
 import { Tabs, Tab, AppBar } from "@material-ui/core";
 import JobAlerts from "./pages/JobAlerts/JobAlerts";
-
+import Cooks from "./pages/Categories/Cooks/Cooks"
+import Construction from "./pages/Categories/Construction/Construction";
+import Woodwork from "./pages/Categories/Woodwork/Woodwork";
+import Drivers from "./pages/Categories/Drivers/Drivers";
 
 
 const App = () => {
@@ -40,6 +43,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/Subscriptions" element={<Subscriptions />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/cooks" element={<Cooks />} />
+          <Route path="/driver" element={<Drivers />} />
+          <Route path="/woodWork" element={<Woodwork />} />
+          <Route path="/Construction" element={<Construction />} />
         </Routes>
         </div>
         <Rightbar/>

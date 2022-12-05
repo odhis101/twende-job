@@ -1,7 +1,9 @@
 import React from "react";
 import './Sidebar.scss'
+
 import Logo from '../../assets/img/Logo.png'
 
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 export default function Sidebar() {
     const hello = () => {
@@ -18,65 +20,65 @@ export default function Sidebar() {
                 <p class="button" onClick = { hello }>All (2,356)</p>
             </li>
             <li>
-                <p class="button">Drivers (20)</p>
+            <Link to="/Drivers" > <p class="button">Drivers (12)</p></Link>
             </li>
             <li>
-                <p class="button">Cooks (12)</p>
+            <Link to="/cooks" ><p class="button">Cooks (12)</p></Link>
             </li>
             <li>
-                <p class="button">Woodwork (5)</p>
+            <Link to="/Woodwork" > <p class="button">Woodwork (5)</p></Link>
             </li>
             <li>
-                <p class="button">Construction(3)</p>
+            <Link to="/Construction" >  <p class="button">Construction(3)</p></Link>
             </li>
             <li>
-                <p class="button">Electricals (12)</p>
+            <Link to="/register" >  <p class="button">Electricals (12)</p></Link>
             </li>
             <li>
-                <p class="button">Cleaning (30)</p>
+            <Link to="/register" >  <p class="button">Cleaning (30)</p></Link>
             </li>
             <li>
-                <p class="button">Nannies (18)</p>
+            <Link to="/register" >  <p class="button">Nannies (18)</p></Link>
             </li>
             <li>
-                <p class="button">Professional services (34)</p>
+            <Link to="/register" >   <p class="button">Professional services (34)</p></Link>
             </li>
             <li>
-                <p class="button">Outside catering (4)</p>
+            <Link to="/register" >  <p class="button">Outside catering (4)</p></Link>
             </li>
             <li>
-                <p class="button">Pets Services (20)</p>
+            <Link to="/register" >   <p class="button">Pets Services (20)</p></Link>
             </li>
             <li>
-                <p class="button">Farming (20)</p>
+            <Link to="/register" >   <p class="button">Farming (20)</p></Link>
             </li>
             <li>
-                <p class="button">Hotels (20)</p>
+            <Link to="/register" >   <p class="button">Hotels (20)</p></Link>
             </li>
             <li>
-                <p class="button">Internships (8)</p>
+            <Link to="/register" >   <p class="button">Internships (8)</p></Link>
             </li>
             <li>
-                <p class="button">Cooks (12)</p>
+            <Link to="/register" >   <p class="button">Cooks (12)</p></Link>
             </li>
             <li>
-                <p class="button">Woodwork (5)</p>
+            <Link to="/register" >   <p class="button">Woodwork (5)</p></Link>
             </li>
             <li>
-                <p class="button">Office jobs (24)</p>
+            <Link to="/register" >  <p class="button">Office jobs (24)</p></Link>
             </li>
             <li>
-                <p class="button">Part-time jobs (9)</p>
+            <Link to="/register" >  <p class="button">Part-time jobs (9)</p></Link>
             </li>
       
         <li>
-                <p class="button">Retail & Shops (12)</p>
+        <Link to="/register" >  <p class="button">Retail & Shops (12)</p></Link>
             </li>
             <li>
-                <p class="button">Sales & Marketing (23)</p>
+            <Link to="/register" > <p class="button">Sales & Marketing (23)</p></Link>
             </li>
             <li>
-                <p class="button">Teaching(23)</p>
+            <Link to="/register" > <p class="button">Teaching(23)</p></Link>
             </li>
             </ul>
             </div>
