@@ -21,8 +21,21 @@ import Cooks from "./pages/Categories/Cooks/Cooks"
 import Construction from "./pages/Categories/Construction/Construction";
 import Woodwork from "./pages/Categories/Woodwork/Woodwork";
 import Drivers from "./pages/Categories/Drivers/Drivers";
-
-
+import Teaching from "./pages/Categories/Teaching/Teaching";
+import Nannies from "./pages/Categories/Nannies/Nannies";
+// import all from categories
+import Teaching from  "./pages/Categories/Teaching/Teaching";
+import Catering from "./pages/Categories/Catering/Catering";
+import Electricals from "./pages/Categories/Electricals/Electricals"
+import Farming from "./pages/Categories/Farming/Farming"
+import Hotels from "./pages/Categories/Hotels/Hotels"
+import Internsips from "./pages/Categories/Internships/Internships"
+import Nannies from  "./pages/Categories/Nannies/Nannies"
+import PartTime from  "./pages/Categories/Part-time/part-time" 
+import PetService from "./pages/Categories/Pet_Service/Pet_Service" 
+import Profesional_Service from "./pages/Categories/Profesional_Service/Profesional_Service" 
+import Retail_shops from  "./pages/Categories/Retail-shops/Retail-shops" 
+import Sales from "./pages/Categories/Sales/Sales"
 const App = () => {
   return (
     <> 
