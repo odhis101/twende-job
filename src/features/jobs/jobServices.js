@@ -21,6 +21,12 @@ const createGoal = async (goalData, token) => {
   
     return response.data
   }
+  const getOneGoal = async (goalId) => {
+    console.log("this is from services", goalId)
+    const response = await axios.get(`http://localhost:5000/jobs/getjobs/${goalId}`)
+    console.log(response)
+    return response.data
+  }
   
   // Delete user goal
   const deleteGoal = async (goalId, token) => {
@@ -39,6 +45,7 @@ const createGoal = async (goalData, token) => {
     createGoal,
     getGoals,
     deleteGoal,
+    getOneGoal,
   }
   
   export default goalService

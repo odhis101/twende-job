@@ -24,18 +24,19 @@ import Drivers from "./pages/Categories/Drivers/Drivers";
 import Teaching from "./pages/Categories/Teaching/Teaching";
 import Nannies from "./pages/Categories/Nannies/Nannies";
 // import all from categories
-import Teaching from  "./pages/Categories/Teaching/Teaching";
+import Cleaning from "./pages/Categories/Cleaning/Cleaning";
 import Catering from "./pages/Categories/Catering/Catering";
 import Electricals from "./pages/Categories/Electricals/Electricals"
 import Farming from "./pages/Categories/Farming/Farming"
 import Hotels from "./pages/Categories/Hotels/Hotels"
 import Internsips from "./pages/Categories/Internships/Internships"
-import Nannies from  "./pages/Categories/Nannies/Nannies"
-import PartTime from  "./pages/Categories/Part-time/part-time" 
+
+import PartTime from  "./pages/Categories/Part-time/Part-time" 
 import PetService from "./pages/Categories/Pet_Service/Pet_Service" 
 import Profesional_Service from "./pages/Categories/Profesional_Service/Profesional_Service" 
 import Retail_shops from  "./pages/Categories/Retail-shops/Retail-shops" 
 import Sales from "./pages/Categories/Sales/Sales"
+import Details from "./pages/Details/Details.js";
 const App = () => {
   return (
     <> 
@@ -60,6 +61,21 @@ const App = () => {
           <Route path="/driver" element={<Drivers />} />
           <Route path="/woodWork" element={<Woodwork />} />
           <Route path="/Construction" element={<Construction />} />
+          <Route path="/Teaching" element={<Teaching />} />
+          <Route path="/Nannies" element={<Nannies />} />
+          <Route path="/Catering" element={<Catering />} />
+          <Route path="/Electricals" element={<Electricals />} />
+          <Route path="/Farming" element={<Farming />} />
+          <Route path="/Hotels" element={<Hotels />} />
+          <Route path="/Internsips" element={<Internsips />} />
+          <Route path="/PartTime" element={<PartTime />} />
+          <Route path="/PetService" element={<PetService />} />
+          <Route path="/Profesional_Service" element={<Profesional_Service />} />
+          <Route path="/Retail_shops" element={<Retail_shops />} />
+          <Route path="/Sales" element={<Sales />} />
+          <Route path="/Cleaning" element={<Cleaning />} />
+          <Route path="/Details/:id" element={<Details />} />
+          
         </Routes>
         </div>
         <Rightbar/>

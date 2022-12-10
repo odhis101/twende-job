@@ -22,7 +22,7 @@ export default function Drivers() {
         return items.filter((item) => {
             return searchParam.some((newItem) => {
                 return (
-                  item.jobTitle
+                  item.Category
                         .toString()
                         .toLowerCase()
                         .indexOf(q.toLowerCase()) > -1

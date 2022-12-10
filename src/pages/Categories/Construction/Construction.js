@@ -22,7 +22,7 @@ export default function Construction() {
         return items.filter((item) => {
             return searchParam.some((newItem) => {
                 return (
-                  item.jobTitle
+                  item.Category
                         .toString()
                         .toLowerCase()
                         .indexOf(q.toLowerCase()) > -1
@@ -62,7 +62,7 @@ export default function Construction() {
         </div>
 </div>
 
-<p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES</p>
+<p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES | Construction</p>
 {/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
 
 {

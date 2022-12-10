@@ -47,6 +47,23 @@ export const getGoals = createAsyncThunk(
       }
     }
   )
+  export const getOneGoal = createAsyncThunk(
+    'jobs/getOne',
+    async (goalId, thunkAPI) => {
+      try {
+        return await jobService.getOneGoal(goalId)
+      } catch (error) {
+        console.log('lol you are crazy ')
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString()
+        return thunkAPI.rejectWithValue(message)
+      }
+    }
+  )
   export const deleteGoal = createAsyncThunk(
     'jobs/delete',
     async (id, thunkAPI) => {
@@ -97,6 +114,26 @@ export const getGoals = createAsyncThunk(
             state.isError = true
             state.message = action.payload
           })
+
+
+
+          .addCase(getOneGoal.pending, (state) => {
+            state.isLoading = true
+          })
+          .addCase(getOneGoal.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.isSuccess = true
+            state.jobs = action.payload
+          })
+          .addCase(getOneGoal.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+          })
+
+
+
+
           .addCase(deleteGoal.pending, (state) => {
             state.isLoading = true
           })

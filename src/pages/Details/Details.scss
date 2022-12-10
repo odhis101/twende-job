@@ -1,0 +1,21 @@
+.centerContainer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(250, 248, 248);
+}
+.JobCentercontainer{
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    
+ 
+    width: 95%; // 720p screens change this to 100%
+    height: auto;
+    border: 1px solid #CECECE ;
+    .JobCentercontainer__header{
+        display: flex;
+        justify-content: space-between;
+    }    
+ 
+}

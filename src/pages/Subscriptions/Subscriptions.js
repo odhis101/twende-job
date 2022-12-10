@@ -88,10 +88,10 @@ goals.subscribers.length > 0 ? (
           key={1}
           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >
-        <TableCell align="right">{goal.createdAt}</TableCell>
+        <TableCell align="right">{goal.createdAt.slice(0, 10)}</TableCell>
         <TableCell align="right">{goal.amount}</TableCell>
         <TableCell align="right">{goal.lengthOfSubscription}</TableCell>
-        <TableCell align="right">{goal.createdAt}</TableCell>
+        <TableCell align="right">{goal.createdAt.slice(0, 10)}</TableCell>
         <TableCell align="right">{goal.expiry}</TableCell>
         <TableCell align="right">4</TableCell>
      
