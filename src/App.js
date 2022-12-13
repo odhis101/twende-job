@@ -15,7 +15,7 @@ import FindAJob from "./pages/FIndAJob/FindAJob";
 import ClassifiedJobs from "./pages/ClassifiedJobs/ClassifiedJobs";
 import Login from "./pages/Login/Login";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
-import { Tabs, Tab, AppBar } from "@material-ui/core";
+
 import JobAlerts from "./pages/JobAlerts/JobAlerts";
 import Cooks from "./pages/Categories/Cooks/Cooks"
 import Construction from "./pages/Categories/Construction/Construction";

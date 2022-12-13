@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Rightbar from '../../components/Rightbar/Rightbar'
 import './Home.scss'
 import { useSelector,useDispatch } from "react-redux";
-import { Tabs, Tab, AppBar } from "@material-ui/core";
+
 
 
 

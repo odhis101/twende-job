@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
+
 export default function FindAJob() {
 
     const dispatch = useDispatch()
@@ -79,6 +80,9 @@ export default function FindAJob() {
             <span class="sr-only">Search</span>
         </button>
     </form>
+
+    
+    
 <div className='banner rounded-2xl flex flex-wrap text-center'>
     <div className='img'>
     <img src = {Looking} alt="banner" />
