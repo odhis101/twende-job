@@ -20,65 +20,63 @@ export default function Sidebar() {
             <Link to="/"  ><p class="button">All (2,356)</p></Link>
             </li>
             <li>
-            <Link to="/Driver" > <p class="button">Drivers (12)</p></Link>
+            <Link to="/category/Driver" > <p class="button">Drivers (12)</p></Link>
             </li>
             <li>
-            <Link to="/cooks" ><p class="button">Cooks (12)</p></Link>
+            <Link to="/category/Cooks" ><p class="button">Cooks (12)</p></Link>
             </li>
             <li>
-            <Link to="/Woodwork" > <p class="button">Woodwork (5)</p></Link>
+            <Link to="/category/Woodwork" > <p class="button">Woodwork (5)</p></Link>
             </li>
             <li>
-            <Link to="/Construction" > <p class="button">Construction(3)</p></Link>
+            <Link to="/category/Construction" > <p class="button">Construction(3)</p></Link>
             </li>
             <li>
-            <Link to="/Electricals"><p class="button">Electricals (12)</p></Link>
+            <Link to="/category/Electricals"><p class="button">Electricals (12)</p></Link>
             </li>
             <li>
-            <Link to="/Cleaning"><p class="button">Cleaning (30)</p></Link>
+            <Link to="/category/Cleaning"><p class="button">Cleaning (30)</p></Link>
             </li>
             <li>
-            <Link to="/Nannies">  <p class="button">Nannies (18)</p></Link>
+            <Link to="/category/Nannies">  <p class="button">Nannies (18)</p></Link>
             </li>
             <li>
-            <Link to="/Profesional_Service"><p class="button">Professional services (34)</p></Link>
+            <Link to="/category/Profesional_Service"><p class="button">Professional services (34)</p></Link>
             </li>
             <li>
-            <Link to="/Catering" >  <p class="button">Outside catering (4)</p></Link>
+            <Link to="/category/Catering" >  <p class="button">Outside catering (4)</p></Link>
             </li>
             <li>
-            <Link to="/PetService" >   <p class="button">Pets Services (20)</p></Link>
+            <Link to="/category/PetService" >   <p class="button">Pets Services (20)</p></Link>
             </li>
             <li>
-            <Link to="/Farming" >   <p class="button">Farming (20)</p></Link>
+            <Link to="/category/Farming" >   <p class="button">Farming (20)</p></Link>
             </li>
             <li>
-            <Link to="/Hotels" >   <p class="button">Hotels (20)</p></Link>
+            <Link to="/category/Hotels" >   <p class="button">Hotels (20)</p></Link>
             </li>
             <li>
-            <Link to="/Internships" >   <p class="button">Internships (8)</p></Link>
+            <Link to="/category/Internships" >   <p class="button">Internships (8)</p></Link>
+            </li>
+         
+            <li>
+            <Link to="/category/Woodwork" >   <p class="button">Woodwork (5)</p></Link>
             </li>
             <li>
-            <Link to="/Cooks" >   <p class="button">Cooks (12)</p></Link>
+            <Link to="/category/Office_jobs" >  <p class="button">Office jobs (24)</p></Link>
             </li>
             <li>
-            <Link to="/Woodwork" >   <p class="button">Woodwork (5)</p></Link>
-            </li>
-            <li>
-            <Link to="/Office_jobs" >  <p class="button">Office jobs (24)</p></Link>
-            </li>
-            <li>
-            <Link to="/Part-time" >  <p class="button">Part-time jobs (9)</p></Link>
+            <Link to="/category/Part-time" >  <p class="button">Part-time jobs (9)</p></Link>
             </li>
       
         <li>
-        <Link to="/register" >  <p class="button">Retail & Shops (12)</p></Link>
+        <Link to="/category/retail" >  <p class="button">Retail & Shops (12)</p></Link>
             </li>
             <li>
-            <Link to="/register" > <p class="button">Sales & Marketing (23)</p></Link>
+            <Link to="/category/sales" > <p class="button">Sales & Marketing (23)</p></Link>
             </li>
             <li>
-            <Link to="/register" > <p class="button">Teaching(23)</p></Link>
+            <Link to="/category/teaching" > <p class="button">Teaching(23)</p></Link>
             </li>
             </ul>
             </div>
