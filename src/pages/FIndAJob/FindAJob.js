@@ -1,21 +1,16 @@
 import './FindAJob.scss'
 import Looking from '../../assets/img/looking.png'
 import Img2 from '../../assets/img/img2.jpg'
-import Img3 from '../../assets/img/img4.jpg'
+import Img3 from '../../assets/img/img4.png'
 import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
 import { useSelector, useDispatch  } from 'react-redux';
-import Help from '../../components/Help/Help'
-import Searchbar from '../../components/SearchBar/Searchbar';
-import JobofTheDay from '../../components/JobofTheDay/JobOfTheDay';
-import Rightbar from '../../components/Rightbar/Rightbar';
+
 import { useNavigate } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import { getGoals, reset } from '../../features/jobs/jobSclice'
 import { BottomNavigation } from '@mui/material';
 import { BottomNavigationAction } from '@mui/material';
-import RestoreIcon from '@mui/icons-material/Restore';
-import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom';
+
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -103,6 +98,9 @@ export default function FindAJob() {
                 
                 <div className='banner rounded-2xl flex flex-wrap text-center'>
                     <img  className = "object-fill " src={Img2}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img3}/>
                 </div>
               
             </Carousel>
