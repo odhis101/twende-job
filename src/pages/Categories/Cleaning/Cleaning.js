@@ -30,7 +30,7 @@ export default function Drivers() {
             });
         });
     }
-      const q = 'Clean' 
+      const q = '' 
       useEffect(() => {
 
         if (isError) {
