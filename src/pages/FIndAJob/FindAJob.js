@@ -1,5 +1,7 @@
 import './FindAJob.scss'
 import Looking from '../../assets/img/looking.png'
+import Img2 from '../../assets/img/img2.jpg'
+import Img3 from '../../assets/img/img4.jpg'
 import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
 import { useSelector, useDispatch  } from 'react-redux';
 import Help from '../../components/Help/Help'
@@ -16,7 +18,8 @@ import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 export default function FindAJob() {
 
     const dispatch = useDispatch()
@@ -81,9 +84,9 @@ export default function FindAJob() {
         </button>
     </form>
 
-    
-    
-<div className='banner rounded-2xl flex flex-wrap text-center'>
+    <Carousel autoPlay infiniteLoop  showThumbs ={false} 	>
+                <div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
     <div className='img'>
     <img src = {Looking} alt="banner" />
     </div>
@@ -95,6 +98,16 @@ export default function FindAJob() {
        
         </div>
 </div>
+              
+                </div>
+                
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img2}/>
+                </div>
+              
+            </Carousel>
+    
+
 
 <p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES</p>
 {/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
