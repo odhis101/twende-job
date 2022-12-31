@@ -70,13 +70,13 @@ export default function Sidebar() {
             </li>
       
         <li>
-        <Link to="/category/retail" >  <p class="button">Retail & Shops (12)</p></Link>
+        <Link to="/category/retail" >  <p class="button">Retail & Shops </p></Link>
             </li>
             <li>
-            <Link to="/category/sales" > <p class="button">Sales & Marketing (23)</p></Link>
+            <Link to="/category/sales" > <p class="button">Sales & Marketing </p></Link>
             </li>
             <li>
-            <Link to="/category/teaching" > <p class="button">Teaching(23)</p></Link>
+            <Link to="/category/teaching" > <p class="button">Teaching</p></Link>
             </li>
             </ul>
             </div>
