@@ -17,7 +17,7 @@ export default function Sidebar() {
             <div className= 'JobList'>
             <ul>
             <li>
-            <Link to="/"  ><p class="button">All (2,356)</p></Link>
+            <Link to="/"  ><p class="button">All </p></Link>
             </li>
             <li>
             <Link to="/category/Driver" > <p class="button">Drivers (12)</p></Link>
