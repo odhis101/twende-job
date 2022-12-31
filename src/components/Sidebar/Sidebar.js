@@ -20,7 +20,7 @@ export default function Sidebar() {
             <Link to="/"  ><p class="button">All </p></Link>
             </li>
             <li>
-            <Link to="/category/Driver" > <p class="button">Drivers (12)</p></Link>
+            <Link to="/category/Driver" > <p class="button">Drivers </p></Link>
             </li>
             <li>
             <Link to="/category/Cooks" ><p class="button">Cooks (12)</p></Link>
