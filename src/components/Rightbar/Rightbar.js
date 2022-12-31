@@ -22,9 +22,10 @@ export default function Rightbar() {
        <p> 4067878 </p>
             </div>
             <div className="flex justify-center">
-            <button class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
+            <Link to = "JobAlerts" class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
               Register
-</button>
+
+</Link>
 </div>
 
         </div>  
