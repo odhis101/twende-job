@@ -47,7 +47,7 @@ export default function Sidebar() {
             <Link to="/category/Catering" >  <p class="button">Outside catering </p></Link>
             </li>
             <li>
-            <Link to="/category/PetService" >   <p class="button">Pets Services (20)</p></Link>
+            <Link to="/category/PetService" >   <p class="button">Pets Services </p></Link>
             </li>
             <li>
             <Link to="/category/Farming" >   <p class="button">Farming (20)</p></Link>
