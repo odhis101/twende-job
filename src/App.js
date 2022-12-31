@@ -15,7 +15,7 @@ import FindAJob from "./pages/FIndAJob/FindAJob";
 import ClassifiedJobs from "./pages/ClassifiedJobs/ClassifiedJobs";
 import Login from "./pages/Login/Login";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
-
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import JobAlerts from "./pages/JobAlerts/JobAlerts";
 import Cooks from "./pages/Categories/Cooks/Cooks"
 import Construction from "./pages/Categories/Construction/Construction";
@@ -75,6 +75,9 @@ const App = () => {
           <Route path="/Sales" element={<Sales />} />
           <Route path="/category/:id" element={< Drivers />} />
           <Route path="/Details/:id" element={<Details />} />
+          <Route path="*" element={<ErrorPage/>} />
+          <Route path="" element={<ErrorPage/>} />
+          <Route element={<ErrorPage/>} />
           
           
         </Routes>
