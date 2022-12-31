@@ -60,7 +60,7 @@ export default function Sidebar() {
             </li>
          
             <li>
-            <Link to="/category/Woodwork" >   <p class="button">Woodwork (5)</p></Link>
+            <Link to="/category/Woodwork" >   <p class="button">Woodwork </p></Link>
             </li>
             <li>
             <Link to="/category/Office_jobs" >  <p class="button">Office jobs </p></Link>
