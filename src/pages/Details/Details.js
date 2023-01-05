@@ -59,7 +59,7 @@ export default function Details (){
   else if(goals != null){
     //console.log("we are here")
     //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
-    let expiryDate =goals.subscribers[goals.subscribers.length-1].SubscriptionDate
+    const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
     console.log("this is the expiry date", expiryDate)
     if (currentDate > expiryDate) {
       alert("Your subscription has expired")
