@@ -5,23 +5,9 @@
     height: auto;
     background-color: rgb(250, 248, 248);
 }
-.JobCentercontainer{
-    margin-top: 50%;
-    margin-right: auto;
-    margin-left: auto;
- 
-    
- 
-    width: 95%; // 720p screens change this to 100%
-    height: auto;
-   
-    .JobCentercontainer__header{
-        margin-top: 50%;
-        display: flex;
-        justify-content: space-between;
-    }    
- 
-}
-.Tilt{
-    width: 50%;
+
+@media only screen and (max-width: 1122px) {
+    .centerContainer{
+   background-color: red !important;
+    }
 }

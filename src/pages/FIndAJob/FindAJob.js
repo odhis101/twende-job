@@ -6,7 +6,7 @@ import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
 import { useSelector, useDispatch  } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom'
-import { useEffect,useState } from 'react'
+import { useEffect,useState,useLayoutEffect, useRef,} from 'react'
 import { getGoals, reset } from '../../features/jobs/jobSclice'
 import { BottomNavigation } from '@mui/material';
 import { BottomNavigationAction } from '@mui/material';
@@ -20,6 +20,7 @@ export default function FindAJob() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [value, setValue] = useState('')
+    const ref = useRef(null);
     const { user } = useSelector((state) => state.auth)
     const { goals, isLoading, isError, message } = useSelector(
         (state) => state.jobs
@@ -37,6 +38,10 @@ export default function FindAJob() {
             });
         });
     }
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+ 
+ 
       const [q, setQ] = useState(""); // handles our query 
       useEffect(() => {
 
@@ -49,6 +54,7 @@ export default function FindAJob() {
       }, [user, navigate, isError, message, dispatch])
      
     console.log(goals)
+
         return (
         
 
@@ -93,7 +99,6 @@ export default function FindAJob() {
        
         </div>
 </div>
-              
                 </div>
                 
                 <div className='banner rounded-2xl flex flex-wrap text-center'>
