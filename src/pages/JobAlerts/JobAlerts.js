@@ -30,7 +30,9 @@ export default function JobAlerts() {
             }
             else {
                 dispatch(MpesaService(postData))
+                alert("Confirming submission check subscription tab i a few seconds ")
                 console.log(postData)
+                window.location.href = '/'
             }
        
         

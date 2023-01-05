@@ -101,11 +101,29 @@ export default function FindAJob() {
 </div>
                 </div>
                 
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
-                    <img  className = "object-fill " src={Img2}/>
-                </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
-                    <img  className = "object-fill " src={Img3}/>
+                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
+                <div className='img'>
+    <img src = {Looking} alt="banner" />
+    </div>
+    <div className='bannerText '>
+        <p className='text-2xl'> KSH.10 TU!</p>
+        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
+        <p className='text-4xl'> SMS JOBS TO 23511</p>
+        <p className='text-3xl'> And get daily jobs vacancies updates</p>
+       
+        </div>
+                                   </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
+                <div className='img'>
+    <img src = {Looking} alt="banner" />
+    </div>
+    <div className='bannerText '>
+        <p className='text-2xl'> KSH.10 TU!</p>
+        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
+        <p className='text-4xl'> SMS JOBS TO 23511</p>
+        <p className='text-3xl'> And get daily jobs vacancies updates</p>
+       
+        </div>
                 </div>
               
             </Carousel>
