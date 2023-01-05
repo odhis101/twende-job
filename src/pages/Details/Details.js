@@ -51,18 +51,20 @@ export default function Details (){
   console.log(goals)
 // getting the current date and comparing it with the expiry date
   const currentDate = new Date().toISOString().slice(0, 10)
+  console.log("this is the current date", currentDate)
+
   if (goals == null) {
     console.log('waiting for data')
   }
-  else if(goals.length > 0){
-
-    console.log(goals.subscribers[goals.subscribers.length-1])
-    let expiryDate =goals.subscribers[goals.subscribers.length-1]
+  else if(goals != null){
+    //console.log("we are here")
+    //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
+    let expiryDate =goals.subscribers[goals.subscribers.length-1].SubscriptionDate
+    console.log("this is the expiry date", expiryDate)
     if (currentDate > expiryDate) {
       alert("Your subscription has expired")
       window.location.href = '/'
       // create a dispatch to update the db that the subscription has expired
-  
     }
   }
   else if (goals.subscribers.length === 0  ) {
