@@ -59,19 +59,24 @@ export default function Details (){
   else if(goals != null){
     //console.log("we are here")
     //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
-    const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
-    console.log("this is the expiry date", expiryDate)
-    if (currentDate > expiryDate) {
-      alert("Your subscription has expired")
+    if (goals.subscribers.length === 0  ) {
+      alert("You have not subscribed to any plan")
       window.location.href = '/'
-      // create a dispatch to update the db that the subscription has expired
-    }
-  }
-  else if (goals.subscribers.length === 0  ) {
-    alert("You have not subscribed to any plan")
-    window.location.href = '/'
+  
+       }
+      else{
+        const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
+        console.log("this is the expiry date", expiryDate)
+        if (currentDate > expiryDate) {
+          alert("Your subscription has expired")
+          window.location.href = '/'
+          // create a dispatch to update the db that the subscription has expired
+        }
 
-     }
+      }
+  
+  }
+  
   console.log(jobs)
     return(
       <>
