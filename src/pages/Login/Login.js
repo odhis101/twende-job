@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../../features/auth/authSlice'
 import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from '../../components/TopNav/TopNav'
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -66,6 +67,7 @@ export default function Login() {
   }
   return (
     <>
+    <TopNav/>
      <div className = 'Attributes'>
         <p> Login </p>
         </div>

@@ -7,7 +7,7 @@ import { createPost } from '../../actions/posts';
 import { MpesaService} from '../../features/mpesa/mpesaSlices'
 
 import BottomNav from '../../components/BottomNav/BottomNav';
-
+import TopNav from '../../components/TopNav/TopNav';
 export default function JobAlerts() {
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
@@ -41,6 +41,7 @@ export default function JobAlerts() {
 
   return (
     <div>
+        <TopNav />
          <div className = 'Attributes '>
         <p> SUBSCRIBE FOR SMS JOB ALERTS </p>
         </div>

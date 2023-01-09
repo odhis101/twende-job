@@ -6,6 +6,7 @@ import { createPost } from '../../actions/posts';
 import { useNavigate } from 'react-router-dom'
 import { createGoal} from '../../features/jobs/jobSclice'
 import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from "../../components/TopNav/TopNav";
 
 export default function PostAJob() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ export default function PostAJob() {
 
     return (
          <>
+         <TopNav/>
      
        
      <div className = 'Attributes '>
