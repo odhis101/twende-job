@@ -5,14 +5,9 @@ import { useEffect } from 'react';
 import { getOneGoal, reset } from '../../features/jobs/jobSclice'
 import { useHistory, useParams } from 'react-router-dom'
 import Card from 'card-vibes'
-<<<<<<< HEAD
-import TopNav from '../../components/TopNav/TopNav';
-import BottomNav from '../../components/BottomNav/BottomNav';
-=======
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
 
->>>>>>> refs/remotes/origin/main
 export default function Details (){
 
     
