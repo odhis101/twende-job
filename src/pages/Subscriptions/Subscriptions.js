@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import './Subscriptions.scss';
 import { getSubscribers } from '../../features/subscriptions/subscriptionSlice'
 import { useNavigate } from 'react-router-dom'
+import BottomNav from '../../components/BottomNav/BottomNav';
 export default function Subscriptions() {
   const navigate = useNavigate()
     const { user} = useSelector((state) => state.auth);
@@ -106,7 +107,7 @@ goals.subscribers.length > 0 ? (
       </Table>
     </TableContainer>
     </div>
-
+<BottomNav />
         </>
     )
 

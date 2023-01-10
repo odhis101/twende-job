@@ -6,7 +6,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../../features/auth/authSlice'
+import TopNav from '../../components/TopNav/TopNav'
 import BottomNav from '../../components/BottomNav/BottomNav';
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -66,11 +68,14 @@ export default function Login() {
   }
   return (
     <>
-     <div className = 'Attributes'>
+     
+        
+    <form  onSubmit={onSubmit}>
+    <div className = 'Attributes'>
         <p> Login </p>
         </div>
-    <form  onSubmit={onSubmit}>
     <div className="centerContainer">
+    
        
         <div className="JobDescription">
         <p  className="">PhoneNumber</p>
@@ -82,7 +87,16 @@ export default function Login() {
         </div>
         <button type="submit" class="bg-[#FFB246] rounded-md  hover:bg-orange-400 w-full my-5 rounded text-black  py-3  hover:border-blue-500 rounded">
           Login
-</button>
+        </button>
+        <div className='flex space-between'>   
+        <p> Not a memeber ?</p>
+        <Link to="/register"  >
+        <div className = "underline">Register Here</div>
+        </Link>
+        </div>
+
+
+
         
         
 

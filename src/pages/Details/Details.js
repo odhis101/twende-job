@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import { getOneGoal, reset } from '../../features/jobs/jobSclice'
 import { useHistory, useParams } from 'react-router-dom'
 import Card from 'card-vibes'
-
+import TopNav from '../../components/TopNav/TopNav';
+import BottomNav from '../../components/BottomNav/BottomNav';
 export default function Details (){
     
     const { user} = useSelector((state) => state.auth);
@@ -100,7 +101,7 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
 
 }
 
-
+<BottomNav />
         </>
 
     )
