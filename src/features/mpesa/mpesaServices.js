@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = process.env.REACT_APP_API_URL
+const API_URL = process.env.REACT_APP_API_DARAJA
  // this is our url that calls the stk-push api
 const mpesaServices = async (goalData,token) => {
 

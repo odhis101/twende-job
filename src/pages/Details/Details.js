@@ -5,9 +5,16 @@ import { useEffect } from 'react';
 import { getOneGoal, reset } from '../../features/jobs/jobSclice'
 import { useHistory, useParams } from 'react-router-dom'
 import Card from 'card-vibes'
+<<<<<<< HEAD
 import TopNav from '../../components/TopNav/TopNav';
 import BottomNav from '../../components/BottomNav/BottomNav';
+=======
+import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from '../../components/TopNav/TopNav';
+
+>>>>>>> refs/remotes/origin/main
 export default function Details (){
+
     
     const { user} = useSelector((state) => state.auth);
     const navigate = useNavigate()
@@ -57,22 +64,28 @@ export default function Details (){
   else if(goals != null){
     //console.log("we are here")
     //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
-    let expiryDate =goals.subscribers[goals.subscribers.length-1].SubscriptionDate
-    console.log("this is the expiry date", expiryDate)
-    if (currentDate > expiryDate) {
-      alert("Your subscription has expired")
+    if (goals.subscribers.length === 0  ) {
+      alert("You have not subscribed to any plan")
       window.location.href = '/'
-      // create a dispatch to update the db that the subscription has expired
-    }
-  }
-  else if (goals.subscribers.length === 0  ) {
-    alert("You have not subscribed to any plan")
-    window.location.href = '/'
+  
+       }
+      else{
+        const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
+        console.log("this is the expiry date", expiryDate)
+        if (currentDate > expiryDate) {
+          alert("Your subscription has expired")
+          window.location.href = '/'
+          // create a dispatch to update the db that the subscription has expired
+        }
 
-     }
+      }
+  
+  }
+  
   console.log(jobs)
     return(
       <>
+  <TopNav />
   {
 
 goals === undefined || jobs === undefined ? <div className = " spinner " role="status ">
@@ -81,7 +94,7 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
     <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
 </svg>
 <span class="sr-only spinner">Loading...</span>
-</div> : currentDate >goals.subscribers[goals.subscribers.length-1]   ? <> please renew your subscription </> :
+</div> : currentDate > goals.subscribers[goals.subscribers.length-1].expiry   ? <> please renew your subscription </> :
      <div className="centerContainer">
       <Card style={{ width: '600px', padding: '20px', margin: 'auto' }}>
      <div className="JobCentercontainer rounded-md shadow-inherit cursor-pointer">

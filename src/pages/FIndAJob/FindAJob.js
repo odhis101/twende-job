@@ -6,7 +6,7 @@ import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
 import { useSelector, useDispatch  } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom'
-import { useEffect,useState } from 'react'
+import { useEffect,useState,useLayoutEffect, useRef,} from 'react'
 import { getGoals, reset } from '../../features/jobs/jobSclice'
 import { BottomNavigation } from '@mui/material';
 import { BottomNavigationAction } from '@mui/material';
@@ -20,6 +20,7 @@ export default function FindAJob() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [value, setValue] = useState('')
+    const ref = useRef(null);
     const { user } = useSelector((state) => state.auth)
     const { goals, isLoading, isError, message } = useSelector(
         (state) => state.jobs
@@ -37,6 +38,10 @@ export default function FindAJob() {
             });
         });
     }
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+ 
+ 
       const [q, setQ] = useState(""); // handles our query 
       useEffect(() => {
 
@@ -49,6 +54,7 @@ export default function FindAJob() {
       }, [user, navigate, isError, message, dispatch])
      
     console.log(goals)
+
         return (
         
 
@@ -93,14 +99,31 @@ export default function FindAJob() {
        
         </div>
 </div>
-              
                 </div>
                 
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
-                    <img  className = "object-fill " src={Img2}/>
-                </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
-                    <img  className = "object-fill " src={Img3}/>
+                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
+                <div className='img'>
+    <img src = {Looking} alt="banner" />
+    </div>
+    <div className='bannerText '>
+        <p className='text-2xl'> KSH.10 TU!</p>
+        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
+        <p className='text-4xl'> SMS JOBS TO 23511</p>
+        <p className='text-3xl'> And get daily jobs vacancies updates</p>
+       
+        </div>
+                                   </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
+                <div className='img'>
+    <img src = {Looking} alt="banner" />
+    </div>
+    <div className='bannerText '>
+        <p className='text-2xl'> KSH.10 TU!</p>
+        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
+        <p className='text-4xl'> SMS JOBS TO 23511</p>
+        <p className='text-3xl'> And get daily jobs vacancies updates</p>
+       
+        </div>
                 </div>
               
             </Carousel>

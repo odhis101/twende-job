@@ -8,7 +8,11 @@ import { toast } from 'react-toastify'
 import { login, reset } from '../../features/auth/authSlice'
 import TopNav from '../../components/TopNav/TopNav'
 import BottomNav from '../../components/BottomNav/BottomNav';
+<<<<<<< HEAD
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+=======
+import TopNav from '../../components/TopNav/TopNav'
+>>>>>>> refs/remotes/origin/main
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -68,10 +72,15 @@ export default function Login() {
   }
   return (
     <>
+<<<<<<< HEAD
      
         
     <form  onSubmit={onSubmit}>
     <div className = 'Attributes'>
+=======
+    <TopNav/>
+     <div className = 'Attributes'>
+>>>>>>> refs/remotes/origin/main
         <p> Login </p>
         </div>
     <div className="centerContainer">

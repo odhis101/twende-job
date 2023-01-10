@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 //import Spinner from '../components/Spinner'
 import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from '../../components/TopNav/TopNav'
 
 export default function Register() {
   const dispatch = useDispatch()
@@ -56,6 +57,7 @@ export default function Register() {
 
   return (
     <>
+    <TopNav/>
         <div className = 'Attributes'>
         <p> Register </p>
         </div>

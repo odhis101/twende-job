@@ -7,7 +7,7 @@ import { createPost } from '../../actions/posts';
 import { MpesaService} from '../../features/mpesa/mpesaSlices'
 
 import BottomNav from '../../components/BottomNav/BottomNav';
-
+import TopNav from '../../components/TopNav/TopNav';
 export default function JobAlerts() {
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
@@ -30,7 +30,9 @@ export default function JobAlerts() {
             }
             else {
                 dispatch(MpesaService(postData))
+                //alert("Confirming submission check subscription tab i a few seconds ")
                 console.log(postData)
+                //window.location.href = '/'
             }
        
         
@@ -39,6 +41,7 @@ export default function JobAlerts() {
 
   return (
     <div>
+        <TopNav />
          <div className = 'Attributes '>
         <p> SUBSCRIBE FOR SMS JOB ALERTS </p>
         </div>

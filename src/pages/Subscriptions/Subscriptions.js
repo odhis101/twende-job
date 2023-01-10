@@ -13,6 +13,7 @@ import './Subscriptions.scss';
 import { getSubscribers } from '../../features/subscriptions/subscriptionSlice'
 import { useNavigate } from 'react-router-dom'
 import BottomNav from '../../components/BottomNav/BottomNav';
+import TopNav from '../../components/TopNav/TopNav';
 export default function Subscriptions() {
   const navigate = useNavigate()
     const { user} = useSelector((state) => state.auth);
@@ -59,6 +60,7 @@ export default function Subscriptions() {
 
     return (
         <>
+        <TopNav />
         <div className = 'containerTable'>
         <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
