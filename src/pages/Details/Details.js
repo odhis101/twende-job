@@ -77,7 +77,7 @@ export default function Details (){
   
   }
   
-  console.log(jobs)
+
     return(
       <>
   <TopNav />

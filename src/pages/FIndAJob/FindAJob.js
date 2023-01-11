@@ -53,7 +53,7 @@ export default function FindAJob() {
        
       }, [user, navigate, isError, message, dispatch])
      
-    console.log(goals)
+   
 
         return (
         
@@ -148,7 +148,7 @@ goals.length > 0 ? (
           <Jobvacancies key={goal._id} id = {goal._id} Category= {goal.Category} DeadlineDate ={goal.DeadlineDate} jobTitle ={goal.jobTitle}/>
           ))
           ) : (
-          <h3>You have not set any goals</h3>
+          <h3>We have no available jobs </h3>
         )}
 <BottomNav />
 </div>

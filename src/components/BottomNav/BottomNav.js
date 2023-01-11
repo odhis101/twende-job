@@ -24,7 +24,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 export default function BottomNav() {
   const { user} = useSelector((state) => state.auth);
-  console.log('user', user)
     const [value, setValue] = React.useState(0);
     const [state, setState] = React.useState({
         top: false,
