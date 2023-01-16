@@ -149,6 +149,7 @@ goals.length > 0 ? (
               <Jobvacancies key={goal._id} id = {goal._id} Category= {goal.Category} DeadlineDate ={goal.DeadlineDate} jobTitle ={goal.jobTitle}/>
               )
            )
+           
           //goals is greater than 0
          )
          : (
