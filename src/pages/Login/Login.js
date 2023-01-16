@@ -9,8 +9,11 @@ import { login, reset } from '../../features/auth/authSlice'
 import TopNav from '../../components/TopNav/TopNav'
 import BottomNav from '../../components/BottomNav/BottomNav';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
+  const notify = () => toast("Wow so easy!");
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user, isLoading, isError, isSuccess, message } = useSelector(
@@ -24,7 +27,7 @@ export default function Login() {
   
   useEffect(() => {
     if (isError) {
-      toast.error(message)
+      toast.error('check password or phone number')
     }
 
     if (isSuccess || user) {
@@ -60,6 +63,9 @@ export default function Login() {
       }
       catch(err){
         console.log(err)
+        // toast message here 
+        notify()
+
       }
 
     
@@ -89,11 +95,15 @@ export default function Login() {
           Login
         </button>
         <div className='flex space-between'>   
-        <p> Not a memeber ?</p>
+        <p> Not a memeber?</p>
         <Link to="/register"  >
-        <div className = "underline">Register Here</div>
+        <div className = "underline  mx-1.5 ">Register Here</div>
         </Link>
         </div>
+        <div>
+        
+        <ToastContainer />
+      </div>
 
 
 

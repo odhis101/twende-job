@@ -16,7 +16,7 @@ export default function Jobvacancies({ Category,jobTitle,DeadlineDate,id}) {
             <p className="px-2 font-semibold"> {jobTitle} </p>
             <div className="JobCentercontainer__header">
            <p></p>
-            <p className="px-2 text-[#717171] underline-offset-1	">  <Link to= {`/details/${id}`}  > <p class="button">View Details</p></Link></p>
+            <p className="px-2 text-[#717171] underline-offset-1	">  <Link to= {`/details/${id}`}  > <p class="button underline-offset-1 ">View Details</p></Link></p>
                 </div>
            
 

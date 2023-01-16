@@ -7,6 +7,7 @@ import { useSelector,useDispatch } from "react-redux";
 export default function TopNav() {
  
     const { user } = useSelector((state) => state.auth)
+    console.log(user)
 
     return(
         
@@ -16,15 +17,15 @@ export default function TopNav() {
             {user ? ( 
               <div className = 'mobileLogin py-4 '>
               
-              <p class = "border-b-2 transition-colors duration-300 border-[#FFB246]  ">+254703757369</p>   
+              <p class = "border-b-2 transition-colors duration-300 border-[#FFB246]  ">{user.phoneNumber}</p>   
               </div>
 
               ) : ( 
                 <div className="loginM">
-           <Link to="/login" className="bg-black  hover:bg-gray-700 text-white font-bold py-1 px-3 hover:border-blue-500 rounded-full">
+           <Link to="/login" className="bg-black  text-white font-bold py-1 px-3 hover:border-blue-500  loginBtn">
              Login
              </Link>
-      <Link to="/register" className="bg-[#FFB246] hover:bg-orange-400 text-black font-bold  py-1 px-3 hover:border-blue-500 rounded-full">
+             <Link to="/register" className="bg-[#FFB246]  text-black font-bold  py-1 px-3 hover:border-blue-500  loginBtn">
              Register
              </Link>
            </div>

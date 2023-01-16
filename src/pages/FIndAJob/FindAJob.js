@@ -143,12 +143,19 @@ goals === undefined ? <div className = " spinner " role="status ">
 <span class="sr-only spinner">Loading...</span>
 </div> : 
 goals.length > 0 ? (
+          search(goals).length > 0 ? (
+            // Search results are greaeater than 0
+            search(goals).map((goal) => (
+              <Jobvacancies key={goal._id} id = {goal._id} Category= {goal.Category} DeadlineDate ={goal.DeadlineDate} jobTitle ={goal.jobTitle}/>
+              )
+           )
           //goals is greater than 0
-          search(goals).map((goal) => (
-          <Jobvacancies key={goal._id} id = {goal._id} Category= {goal.Category} DeadlineDate ={goal.DeadlineDate} jobTitle ={goal.jobTitle}/>
-          ))
+         )
+         : (
+          <h3 className='text-center'>There are no jobs matching your search </h3>
+        )
           ) : (
-          <h3>We have no available jobs </h3>
+          <h3 className='text-center'>We have no available jobs </h3>
         )}
 <BottomNav />
 </div>

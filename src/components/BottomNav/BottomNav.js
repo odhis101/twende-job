@@ -21,9 +21,15 @@ import WorkIcon from '@mui/icons-material/Work';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import AddAlertIcon from '@mui/icons-material/AddAlert';
 import { useSelector, useDispatch } from 'react-redux'
-
+import { logout,reset } from "../../features/auth/authSlice";
 export default function BottomNav() {
   const { user} = useSelector((state) => state.auth);
+  const dispatch = useDispatch()
+  const onLogout =() => {
+    dispatch(logout());
+    dispatch(reset());
+
+  }
     const [value, setValue] = React.useState(0);
     const [state, setState] = React.useState({
         top: false,
@@ -40,7 +46,7 @@ export default function BottomNav() {
         setState({ ...state, [anchor]: open });
       };
       var number  ='';
-      user ? number = 'user': number = 'account'
+      user ? number = 'user': number = 'Login'
       const list = (anchor) => (
         <Box
           sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -58,7 +64,9 @@ export default function BottomNav() {
                   </ListItemIcon>
                   <ListItemText primary={number} />
                 </ListItemButton>
+                
               </ListItem>
+              
             
           </List>
           <Divider />
@@ -76,6 +84,8 @@ export default function BottomNav() {
           </List>
          
           <Divider />
+    
+          
       
         </Box>
       );

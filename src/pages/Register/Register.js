@@ -7,8 +7,11 @@ import { useNavigate } from 'react-router-dom'
 //import Spinner from '../components/Spinner'
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav'
-
+import { Link } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Register() {
+  const notify = () => toast("Wow so easy!");
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user, isLoading, isError, isSuccess, message } = useSelector(
@@ -22,12 +25,14 @@ export default function Register() {
   const { phoneNumber, password, password2 } = formData
   useEffect(() => {
     if (isError) {
+      notify()
       toast.error(message)
     }
 
     if (isSuccess || user) {
+      
       navigate('/')
-      console.log('yess')
+
     }
 
     dispatch(reset())
@@ -74,19 +79,26 @@ export default function Register() {
             <input type='password' onChange={onChange} value={password} name='password'  id='password' class="JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder='Password'  ></input>
             </div>
             <div className="EmployersContact">
-            <p className="mx-2.5">CONFIRM  PASSWORD</p>
+            <p className="mx-1.5">CONFIRM  PASSWORD</p>
             <input onChange={onChange} type='password' id='password2' value={password2}  name='password2' class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder='Password'  ></input>
             </div>
             </div>
+          
             <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
              Register
 </button>
             
-            
+<div className='flex space-between'>   
+        <p> Already a member?</p>
+        <Link to="/login"  >
+        <div className = "underline mx-1.5 "> Login Here</div>
+        </Link>
+        </div>       
 
 
 </div>
 </form>
+
 <BottomNav/>
          </>
   )

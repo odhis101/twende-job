@@ -8,6 +8,7 @@ import Card from 'card-vibes'
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
 
+import "./Details.scss"
 export default function Details (){
 
     
@@ -91,8 +92,9 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
 <span class="sr-only spinner">Loading...</span>
 </div> : currentDate > goals.subscribers[goals.subscribers.length-1].expiry   ? <> please renew your subscription </> :
      <div className="centerContainer">
-      <Card style={{ width: '600px', padding: '20px', margin: 'auto' }}>
-     <div className="JobCentercontainer rounded-md shadow-inherit cursor-pointer">
+  <div className="borderContainer">
+            <div className = "dataContainer">
+            <div className="JobCentercontainer rounded-md shadow-inherit cursor-pointer">
              <div className="JobCentercontainer__header">
              <p  className="text-[#717171] px-2">{jobs.Category}</p>
              <p className="text-[#717171] px-2"> Posted on: 2010-12-24   </p>
@@ -102,7 +104,12 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
                  <p className="px-2 "> Email: {jobs.EMPLOYER_EMAIL} </p>
                  <p className="px-2 "> Deadline: {jobs.DeadlineDate.slice(0,10)}</p>
          </div>
-         </Card>
+              </div>
+         
+         </div>
+
+
+
 
          </div>
            
