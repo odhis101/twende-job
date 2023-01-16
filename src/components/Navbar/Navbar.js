@@ -47,10 +47,29 @@ export default function Navbar() {
         <CustomLink   to="/register">Help?</CustomLink>
               </div>
               <div className="Rightbarlogin" id = 'Rightbarlogin'>
-        {user ? (<button className='btn' onClick={onLogout}>
-        < AiOutlineUser />
-        </button>) : (
+        {user ? (
+       <>
+        <div className = 'lookingMan'>
+        <button className='btn' onClick={onLogout}>
+        < AiOutlineUser  
+        className="icon"
+       
+        size="45px"
+        color="#FFB246"
+       />
+        </button>
+        </div>
+        
+          <p className="text-[#FFB246]  px-3 	"> Logged in as </p>
+          <div className = "bottomText">
+        <p className="text-[#004057] 	"> {user.phoneNumber}</p>
+        </div>
+        </>) 
+        
+      
+        : (
            <>
+           
            <div className="loginButtons py-3">
            <Link to="/login" className="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
              Login

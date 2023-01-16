@@ -64,7 +64,7 @@ export default function Register() {
     <>
     <TopNav/>
         <div className = 'Attributes'>
-        <p> Register </p>
+        <p className='text-[#004057] underline	'> Register </p>
         </div>
         <form onSubmit={onSubmit}>
         <div className="centerContainer">

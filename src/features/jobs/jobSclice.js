@@ -33,7 +33,7 @@ export const getGoals = createAsyncThunk(
     async (_, thunkAPI) => {
       try {
        
-        console.log(jobService.getGoals())
+        //console.log(jobService.getGoals())
         return await jobService.getGoals()
       } catch (error) {
         console.log('lol you are crazy ')
