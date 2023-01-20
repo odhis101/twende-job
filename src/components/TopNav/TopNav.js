@@ -7,7 +7,7 @@ import { useSelector,useDispatch } from "react-redux";
 export default function TopNav() {
  
     const { user } = useSelector((state) => state.auth)
-   // console.log(user)
+   //npm console.log(user)
 
     return(
         
