@@ -1,7 +1,17 @@
 import './FindAJob.scss'
 import Looking from '../../assets/img/looking.png'
 import Img2 from '../../assets/img/img2.jpg'
-import Img3 from '../../assets/img/img4.png'
+import Img3 from '../../assets/img/img4.jpg'
+import Img4 from '../../assets/img/img5.jpg'
+import Img5 from '../../assets/img/img6.jpg'
+import Img6 from '../../assets/img/img7.jpg'
+import Img7 from '../../assets/img/img8.jpg'
+import Img8 from '../../assets/img/img9.jpg'
+import Img9 from '../../assets/img/img10.jpg'
+import Img10 from '../../assets/img/img11.jpg'
+import Img11 from '../../assets/img/img12.jpg'
+import Img12 from '../../assets/img/img13.jpg'
+
 import Jobvacancies from '../../components/Jobvacancies/Jobvacancies';
 import { useSelector, useDispatch  } from 'react-redux';
 
@@ -86,45 +96,43 @@ export default function FindAJob() {
     </form>
 
     <Carousel autoPlay infiniteLoop  showThumbs ={false} 	>
-                <div>
+               
+                                   
                 <div className='banner rounded-2xl flex flex-wrap text-center'>
-    <div className='img'>
-    <img src = {Looking} alt="banner" />
-    </div>
-    <div className='bannerText '>
-        <p className='text-2xl'> KSH.10 TU!</p>
-        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
-        <p className='text-4xl'> SMS JOBS TO 23511</p>
-        <p className='text-3xl'> And get daily jobs vacancies updates</p>
-       
-        </div>
-</div>
+                    <img  className = "object-fill " src={Img2}/>
                 </div>
-                
-                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
-                <div className='img'>
-    <img src = {Looking} alt="banner" />
-    </div>
-    <div className='bannerText '>
-        <p className='text-2xl'> KSH.10 TU!</p>
-        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
-        <p className='text-4xl'> SMS JOBS TO 23511</p>
-        <p className='text-3xl'> And get daily jobs vacancies updates</p>
-       
-        </div>
-                                   </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center bannerText'>
-                <div className='img'>
-    <img src = {Looking} alt="banner" />
-    </div>
-    <div className='bannerText '>
-        <p className='text-2xl'> KSH.10 TU!</p>
-        <p className='text-3xl	'> THE EASIEST WAY TO FIND A JOB </p>
-        <p className='text-4xl'> SMS JOBS TO 23511</p>
-        <p className='text-3xl'> And get daily jobs vacancies updates</p>
-       
-        </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img3}/>
                 </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img4}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img5}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img6}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img7}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img8}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img9}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img10}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img11}/>
+                </div>
+                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                    <img  className = "object-fill " src={Img12}/>
+                </div>
+           
+
               
             </Carousel>
     

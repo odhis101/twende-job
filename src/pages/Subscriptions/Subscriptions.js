@@ -14,8 +14,14 @@ import { getSubscribers } from '../../features/subscriptions/subscriptionSlice'
 import { useNavigate } from 'react-router-dom'
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
+import { toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Subscriptions() {
   const navigate = useNavigate()
+
+
     const { user} = useSelector((state) => state.auth);
     if(user=== null){
       alert('Please login to continue')
@@ -33,6 +39,7 @@ export default function Subscriptions() {
         console.log('there was an error while loading', message)
       }    
       dispatch(getSubscribers({phoneNumber:user.phoneNumber}))
+
   
      
     }, [user, navigate, isError, message, dispatch])  
@@ -71,7 +78,7 @@ export default function Subscriptions() {
             <StyledTableCell align="right">PERIOD</StyledTableCell>
             <StyledTableCell align="right">START DATE</StyledTableCell>
             <StyledTableCell align="right">EXPIRY DATE</StyledTableCell>
-            <StyledTableCell align="right">REF CODE</StyledTableCell>
+           
           </TableRow>
         </TableHead>
         <TableBody>
@@ -96,7 +103,7 @@ goals.subscribers.length > 0 ? (
         <TableCell align="right">{goal.lengthOfSubscription}</TableCell>
         <TableCell align="right">{goal.createdAt.slice(0, 10)}</TableCell>
         <TableCell align="right">{goal.expiry}</TableCell>
-        <TableCell align="right">4</TableCell>
+   
      
         </TableRow>
           ))
@@ -108,6 +115,7 @@ goals.subscribers.length > 0 ? (
         </TableBody>
       </Table>
     </TableContainer>
+
     </div>
 <BottomNav />
         </>

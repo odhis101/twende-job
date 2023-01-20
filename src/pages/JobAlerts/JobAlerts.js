@@ -8,7 +8,12 @@ import { MpesaService} from '../../features/mpesa/mpesaSlices'
 
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
+import { toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function JobAlerts() {
+    const notify = () => toast("Wow so easy!");
+
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
     //console.log('chekcing cool ,',user.phoneNumber)
@@ -28,10 +33,15 @@ export default function JobAlerts() {
             else if (user === null) {
                 alert('Please login to continue')
             }
+            else if(postData.number.startsWith('0')  ){
+                postData.number = postData.number.replace('0', '254');
+                console.log(postData)
+            }
             else {
                 dispatch(MpesaService(postData))
                 //alert("Confirming submission check subscription tab i a few seconds ")
                 console.log(postData)
+                toast.info('Confirming payment check subscription tab in a few seconds for updates  ')
                 //window.location.href = '/'
             }
        
@@ -104,7 +114,9 @@ export default function JobAlerts() {
             </div>
 
             
+            <button onClick={notify}>Notify!</button>
 
+<ToastContainer />
 
             </div>
             <BottomNav/>
