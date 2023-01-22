@@ -5,27 +5,16 @@
     margin-bottom: 15%;
     
     .banner{
-        margin-top: 2%;
+        margin: 2%;
         margin-left: auto;
         margin-right: auto;
-        width: 60%;
+        width: 100%;
+
         
       
         background-color: #FFB246;
-        .img{
-            height: 100%;
-            
-        }
-        .bannerText{
-            text-align: center;
-            margin-right: auto; // this is new 
-            margin-left: auto; 
-            
-            
-            width: auto;
-
-        }
- 
+       
+    
     }
 
     
@@ -38,10 +27,7 @@ margin-right: auto;
 }
 
 @media only screen and (max-width: 1662px) {
-    .banner{
-        width: 80% !important; 
-     
-    }
+    
 }
 @media only screen and (max-width: 1248px) {
     .banner{
@@ -49,6 +35,7 @@ margin-right: auto;
      
     }
 }
+/*
 @media only screen and (max-width: 1122px) {
     .banner{
         width: 75% !important; 
@@ -65,3 +52,4 @@ margin-right: auto;
      
     }
 }
+*/

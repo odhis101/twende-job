@@ -98,37 +98,37 @@ export default function FindAJob() {
     <Carousel autoPlay infiniteLoop  showThumbs ={false} 	>
                
                                    
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img2}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img3}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img4}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img5}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img6}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img7}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img8}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img9}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img10}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img11}/>
                 </div>
-                <div className='banner rounded-2xl flex flex-wrap text-center'>
+                <div className='banner  '>
                     <img  className = "object-fill " src={Img12}/>
                 </div>
            
