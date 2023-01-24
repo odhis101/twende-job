@@ -42,8 +42,6 @@ export default function PostAJob() {
     return (
          <>
          <TopNav/>
-     
-       
      <div className = 'Attributes '>
         <p> HOME | POST A JOB </p>
         </div>
