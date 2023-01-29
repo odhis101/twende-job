@@ -7,13 +7,14 @@ import { useNavigate } from 'react-router-dom'
 import { createGoal} from '../../features/jobs/jobSclice'
 import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from "../../components/TopNav/TopNav";
+import axios from "axios";
 
 export default function PostAJob() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
 
-  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:''});
+  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'', });
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -26,6 +27,16 @@ export default function PostAJob() {
       alert('Please login to post a job')
       navigate('/login')
     }
+    // code for classified jobs 
+    else if (postData.Category === 'Classified'){
+       if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
+        alert('Please fill all fields')
+      }
+      else {
+        // create a axios post 
+        axios.post('http://localhost:5000/jobs/setClassifiedJob', postData)
+      }
+    }
     else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
       alert('Please fill all fields')
     } else {
@@ -35,7 +46,7 @@ export default function PostAJob() {
 
     }
 
-  
+  console.log(postData)
     }
   
 
@@ -86,6 +97,9 @@ export default function PostAJob() {
             onClick ={(e) => setPostData({...postData,category: e.target.value})}>Internships</option>
              <option  value = "Cooks "
             onClick ={(e) => setPostData({...postData,category: e.target.value})}>Cooks </option>
+             <option  value = "Classified"
+            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Classified </option>
+
 
           </select>
             </div>
