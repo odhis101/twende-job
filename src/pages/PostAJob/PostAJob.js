@@ -10,6 +10,7 @@ import TopNav from "../../components/TopNav/TopNav";
 import axios from "axios";
 
 export default function PostAJob() {
+  const API_URL = process.env.REACT_APP_API_URL
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
@@ -34,7 +35,7 @@ export default function PostAJob() {
       }
       else {
         // create a axios post 
-        axios.post('http://localhost:5000/jobs/setClassifiedJob', postData)
+        axios.post(`${API_URL}/jobs/setClassifiedJob`, postData)
       }
     }
     else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {

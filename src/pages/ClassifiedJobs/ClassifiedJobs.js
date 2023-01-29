@@ -8,11 +8,17 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 export default function ClassifiedJobs() {
 // get data with axios 
-
+const API_URL = process.env.REACT_APP_API_URL
 const { user} = useSelector((state) => state.auth);
+const { goals, isLoading, isError, message } = useSelector(
+  (state) => state.subscriber
+)
+const currentDate = new Date().toISOString().slice(0, 10)
  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    axios.get('http://localhost:5000/jobs/getClassifiedJobs')
+    axios.get(`${API_URL}/jobs/getClassifiedJobs`)
+   // localhost axios
+    // axios.get(`http://localhost:5000/jobs/getClassifiedJobs`)
       .then((response) => {
         setData(response.data);
       })
@@ -20,10 +26,31 @@ const { user} = useSelector((state) => state.auth);
         console.log(error);
       });
   }, []);
+  if (goals == null) {
+    console.log('waiting for data')
+  }
+  else if(goals != null){
+    //console.log("we are here")
+    //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
+    if (goals.subscribers.length === 0  ) {
+      alert("You have not subscribed to any plan")
+      window.location.href = '/'
   
-  
+       }
+      else{
+        const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
+        console.log("this is the expiry date", expiryDate)
+        if (currentDate > expiryDate) {
+          alert("Your subscription has expired")
+          window.location.href = '/'
+          // create a dispatch to update the db that the subscription has expired
+        }
 
-console.log(data);
+      }
+  
+  }
+
+//console.log(data);
   return (
     <div>
         
