@@ -82,9 +82,20 @@ export default function BottomNav() {
 
         
           </List>
-         
           <Divider />
-    
+         { user != null ? <List>
+          <ListItemButton
+                 onClick={onLogout} >
+                  <ListItemIcon>
+                  <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"logout"} />
+                </ListItemButton>
+
+        
+          </List>: null}
+         
+          
           
       
         </Box>

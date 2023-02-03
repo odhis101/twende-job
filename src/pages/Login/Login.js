@@ -51,7 +51,7 @@ export default function Login() {
       password,
     }
     if(!phoneNumber || !password){
-      alert('Please fill in all fields')
+      toast.erro('Please fill in all fields')
     }
     // this code doesn't work as intended work on it
  

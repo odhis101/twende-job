@@ -36,11 +36,17 @@ const createGoal = async (goalData, token) => {
         Authorization: `Bearer ${token}`,
       },
     }
+  }
+  /*
+    // get goal from a file 
+    const getManyGoals = async () => {
+      
   
     const response = await axios.delete(API_URL + goalId, config)
   
     return response.data
   }
+  */
   
   const goalService = {
     createGoal,
