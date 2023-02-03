@@ -1,5 +1,5 @@
 .jobofthedayContainer{
-    margin: 2%;
+    margin: 4%;
     height: auto;
     background-color: #E5E5E5;
     border-radius: 2%;
@@ -7,6 +7,6 @@
 }
 @media only screen and (max-width: 600px) {
     .jobofthedayContainer{
-    display: none !important;
+        display: none !important;
     }
   }

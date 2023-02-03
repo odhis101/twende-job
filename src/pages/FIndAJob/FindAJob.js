@@ -74,7 +74,7 @@ export default function FindAJob() {
           <form className="flex items-center">   
         <label for="simple-search" className="sr-only">Search</label>
         <div class="relative w-full">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <div className="flex absolute inset-y-0 mb-2 left-0 items-center pl-3 pointer-events-none">
                 <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
             </div>
             <input 
@@ -86,7 +86,7 @@ export default function FindAJob() {
             //  anytime the user types in the search box
             */
             onChange={(e) => setQ(e.target.value)}
-            className="  text-gray-900 text-sm rounded-lg   block w-full pl-10 p-2.5  dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 " 
+            className="  text-gray-900 text-sm rounded-lg mb-2 block w-full pl-10 p-2.5  dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 " 
             placeholder="Search jobs by entering job title here" required />
         </div>
         <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-[#FFB246] rounded-lg border">
@@ -138,7 +138,7 @@ export default function FindAJob() {
     
 
 
-<p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES</p>
+<p className = "text-cyan-900 px-3.5 mt-2 "> JOB VACANCIES</p>
 {/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
 
 {

@@ -17,9 +17,9 @@ export default function Rightbar() {
         <div className="Rightcontainer">
             <JobsOfTheDay/>
             <Help/>
-            <div className="flex justify-evenly">
-        <p>PAYBILL NUMBER </p>
-       <p> 4067878 </p>
+            <div className="flex justify-evenly mt-5 mb-2">
+              <p>PAYBILL NUMBER </p>
+              <p><strong>4067878</strong></p>
             </div>
             <div className="flex justify-center">
             <Link to = "JobAlerts" class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">

@@ -62,7 +62,7 @@ export default function Cooks() {
         </div>
 </div>
 
-<p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES | Cooks</p>
+<p className = "text-cyan-900 px-3.5 "> JOB VACANCIES | Cooks</p>
 {/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
 
 {

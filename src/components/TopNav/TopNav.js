@@ -12,10 +12,10 @@ export default function TopNav() {
     return(
         
         <>
-        <div class='flex justify-between checkmobile'>
+        <div class='flex justify-between checkmobile mt-2'>
         <img src = {Logo}  class ="logoM " alt = 'logo'></img>
             {user ? ( 
-              <div className = 'mobileLogin py-4 '>
+              <div className = 'mobileLogin py-4 mr-2'>
               
               <p class = "border-b-2 transition-colors duration-300 border-[#FFB246]  ">{user.phoneNumber}</p>   
               </div>

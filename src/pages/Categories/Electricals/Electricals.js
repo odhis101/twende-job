@@ -62,7 +62,7 @@ export default function Drivers() {
         </div>
 </div>
 
-<p className = "text-cyan-900 px-3.5 "> JOB VACCANCIES | Electricals</p>
+<p className = "text-cyan-900 px-3.5 "> JOB VACANCIES | Electricals</p>
 {/*<!-- this code is buggy it wont doesnt wait for the data to be length -> */}
 
 {

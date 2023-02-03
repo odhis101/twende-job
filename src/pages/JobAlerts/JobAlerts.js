@@ -52,8 +52,8 @@ export default function JobAlerts() {
   return (
     <div>
         <TopNav />
-         <div className = 'Attributes '>
-        <p> SUBSCRIBE FOR SMS JOB ALERTS </p>
+         <div className = 'Attributes mt-5'>
+        <p> <strong>SUBSCRIBE FOR SMS JOB ALERTS </strong></p>
         </div>
         <div className="flex">
        
@@ -62,56 +62,56 @@ export default function JobAlerts() {
   <span class="font-medium ">Error alert!</span> Change a few things up and try submitting again.
 </div>
           
-            <p> 1. SELECT PACKAGE</p>
+            <p className="mt-6 mb-3"> 1. SELECT PACKAGE</p>
             <div className= 'flex justify-between flex-wrap'>
                 <div className="Package">
-                    <p className='text-3xl text-center'>KSH.10 TU! </p>
-                    <p className='text-2xl text-center'>DAILY SMS </p>
-                    <p className='text-xl text-center'>Subscribe for one day</p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.10 Tu! </p>
+                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
+                    <p className='p-tall1 mb-1 text-center'>Subscribe for one day</p>
                 </div>
                 <div className="Package">
-                <p className='text-3xl text-center'>KSH.49 TU!! </p>
-                    <p className='text-2xl text-center'>DAILY SMS </p>
-                    <p className='text-xl text-center'>Subscribe for 7 days</p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.49 Tu! </p>
+                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
+                    <p className='p-tall1 mb-1 text-center'>Subscribe for 7 days</p>
                 </div>
                 
                 <div className="Package">
-                <p className='text-3xl text-center'>KSH.199 TU! </p>
-                    <p className='text-2xl text-center'>DAILY SMS </p>
-                    <p className='text-xl text-center'>Subscribe for a month</p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.199 Tu! </p>
+                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
+                    <p className='p-tall1 mb-1 text-center'>Subscribe for a month</p>
                 </div>
                 
                 
             </div>
             <form  onSubmit ={handleSubmit}>
-            <div className= 'flex justify-between flex-wrap mb-6'>
-                <div className="PackageCheckBox">
-                <input type="radio" value = {10}  name="10" req onChange={e=> setPostData({...postData,amount: e.target.value})}  />
-                <label for="scales">PAY KSH.10 NOW</label>  
+                <div className= 'flex justify-between mt-5 flex-wrap mb-5'>
+                    <div className="PackageCheckBox text-center">
+                    <input type="radio" value = {10}  name="10" req onChange={e=> setPostData({...postData,amount: e.target.value})}  />
+                    <label for="scales"><br></br>PAY<br/> <strong>KSH.10</strong> NOW</label>  
+                    </div>
+                    <div className="PackageCheckBox text-center">
+                    <input type="radio" value = {49}  name="50" onChange={e=> setPostData({...postData,amount: e.target.value})} />
+                    <label for="scales"><br></br>PAY<br/> <strong>KSH.49</strong> NOW</label>   
+                    </div>
+                    <div className="PackageCheckBox text-center">
+                    <input type="radio" value = {199}  name="199" onChange={e=> setPostData({...postData,amount: e.target.value})} />
+                    <label for="scales"><br></br>PAY<br/> <strong>KSH.199</strong> NOW</label>    
+                    </div>
+                    
                 </div>
-                <div className="PackageCheckBox">
-                <input type="radio" value = {49}  name="50" onChange={e=> setPostData({...postData,amount: e.target.value})} />
-                <label for="scales">PAY KSH.49 NOW</label>   
+                <div className="JobDescription mt-5">
+                    <p className="mb-2"> 2. ENTER YOUR SAFARICOM PHONE NUMBER</p>
+                    <input 
+                    type='tel'
+                    value = {postData.number}
+                    onChange ={(e) => setPostData({...postData,number: e.target.value})}
+                    class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="254703757369"></input>
                 </div>
-                <div className="PackageCheckBox">
-                <input type="radio" value = {199}  name="199" onChange={e=> setPostData({...postData,amount: e.target.value})} />
-                <label for="scales">PAY KSH.199 NOW</label>    
-                </div>
-                
-            </div>
-            <div className="JobDescription">
-        <p className=""> 2. ENTER. YOUR SAFARICOM PHONE NUMBER</p>
-        <input 
-        type='tel'
-        value = {postData.number} 
-         onChange ={(e) => setPostData({...postData,number: e.target.value})}
-        class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="254703757369"></input>
+                <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
+                    Subscribe
+                </button>
+            </form>
         </div>
-            <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
-             Subscribe
-</button>
-</form>
-            </div>
 
             
             

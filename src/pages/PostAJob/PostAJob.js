@@ -54,19 +54,19 @@ export default function PostAJob() {
     return (
          <>
          <TopNav/>
-     <div className = 'Attributes '>
-        <p> HOME | POST A JOB </p>
+     <div className = 'Attributes mb-4'>
+        <p><strong> HOME | POST A JOB </strong></p>
         </div>
       
         <div className="centerContainer">
         
 
         <form  onSubmit ={handleSubmit}>
-            <div className="flex">
-            <div className="PostCategory">
-            <label for="categories" class="Selectcategory p-2.5"><x> Job</x> Category </label>
+            <div className="flex mt-5">
+            <div className="PostCategory col-6">
+            <label for="categories" class="Selectcategory mx-3.5 mt-2"><x> Job</x> Category </label>
             <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
-              w-full  my-1 p-2.5 dark:border-gray-600 dak:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
+              w-full my-1 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
             <option selected>Category</option>
             <option 
             value = "Construction">
@@ -105,17 +105,17 @@ export default function PostAJob() {
           </select>
             </div>
             
-            <div className="employers-name " >
-            <p className="mx-2.5"> Employers Name</p>
+            <div className="employers-name col-6" >
+            <p className="mx-1.5 mt-1 mb-0.5"> Employers Name</p>
             <input 
             name='Employers_Name'
             id='Employers_Name'
             value = {postData.Employers_Name} 
             onChange ={(e) => setPostData({...postData,Employers_Name: e.target.value})}
-            class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Name"></input>
+            class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Name"></input>
             </div>
             </div>
-            <div className="JobDescription">
+            <div className="JobDescription mt-5">
             <p className="mx-2.5"> Job Post Title</p>
             <input  
              type='text'
@@ -126,7 +126,7 @@ export default function PostAJob() {
            
             class="shadow appearance-none  border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"   placeholder="Maximum 100 characters "></input>
             </div>
-            <div className="JobDescription">
+            <div className="JobDescription mt-5">
             <p className="mx-2.5"> Job Description</p>
             <textarea 
             name='jobDescription'
@@ -136,49 +136,46 @@ export default function PostAJob() {
             class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Max 500 characters "></textarea>
             </div>
             <div className="flex justify-between">
+              <div className="EmployersContact mt-5">
+                <p className="mx-2.5"> Employers Contact</p>
+                <input 
+                name='Employers_contact'
+                id='Employers_contact'
+                value = {postData.Employers_contact} 
+                onChange ={(e) => setPostData({...postData,Employers_contact: e.target.value})}
+                class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Phone Number"
+                
+                ></input>
+              </div>
+              <div className="EmployersContact mt-5">
+                <p className="mx-2.5"> Employer’s  Email</p>
+                <input 
+                name='EMPLOYER_EMAIL'
+                id='EMPLOYER_EMAIL'
+                value = {postData.EMPLOYER_EMAIL} 
+                onChange ={(e) => setPostData({...postData,EMPLOYER_EMAIL: e.target.value})}
+                class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Employer Email Address for applications"></input>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="EmployersContact mt-5">
+              <p className="mx-2.5"> APPLICATIONS DEADLINE DATE</p>
+              <input 
+              name='DeadlineDate'
+              id='DeadlineDate'
+              value = {postData.DeadlineDate} 
+              onChange ={(e) => setPostData({...postData,DeadlineDate: e.target.value})}
+              class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username"  type="date" data-date="" data-date-format="DD MMMM YYYY" placeholder=""></input>
+              </div>
+            </div>
+            <div className="flex">
             <div className="EmployersContact">
-            <p className="mx-2.5"> Employers Contact</p>
-            <input 
-            name='Employers_contact'
-            id='Employers_contact'
-            value = {postData.Employers_contact} 
-            onChange ={(e) => setPostData({...postData,Employers_contact: e.target.value})}
-            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Phone Number"
-            
-            ></input>
-            </div>
-            <div className="EmployersContact">
-            <p className="mx-2.5"> EMPLOYER’S  EMAIL</p>
-            <input 
-             name='EMPLOYER_EMAIL'
-             id='EMPLOYER_EMAIL'
-             value = {postData.EMPLOYER_EMAIL} 
-             onChange ={(e) => setPostData({...postData,EMPLOYER_EMAIL: e.target.value})}
-            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Employer Email Address for applications"></input>
-            </div>
-            </div>
-            <div className="flex justify-between">
-            <div className="EmployersContact">
-            <p className="mx-2.5"> APPLICATIONS DEADLINE DATE</p>
-            <input 
-             name='DeadlineDate'
-             id='DeadlineDate'
-             value = {postData.DeadlineDate} 
-             onChange ={(e) => setPostData({...postData,DeadlineDate: e.target.value})}
-            class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username"  type="date" data-date="" data-date-format="DD MMMM YYYY" placeholder=""></input>
-            </div>
-
-            
-         
-            <div className="EmployersContact">
-            <div className="PostJobBTN">
-              <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
-              POST A JOB
-</button>            
-            </div>
-            </div>
-
-            
+                <div className="PostJobBTN mt-5">
+                  <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
+                    POST A JOB
+                  </button>            
+                </div>
+              </div>
             </div>
             
             

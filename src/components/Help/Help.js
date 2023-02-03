@@ -12,7 +12,7 @@ export default function Help() {
         <div className="jobofthedayContainer">
             <p className ='text-xl text-sky-500 px-3.5'> Need help?</p>
             <p className ="text-cyan-900 px-3.5"> Call us on</p>
-            <p className ="px-3.5 text-2xl"> 0721 123 456</p>
+            <p className ="px-3.5 text-cyan-900 text-2xl"><a href="tel:0721123456"> 0721 123 456</a></p>
             <div className="SocialsContainer">
             <div className="Socials">
             <SocialIcon url="https://www.facebook.com/" />

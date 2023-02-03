@@ -6,7 +6,7 @@ export default function JobofTheDay() {
     return (
         <div className="jobofthedayContainer">
             <p className = "text-cyan-900 px-3.5"> JOBS OF THE DAY</p> 
-            <div className="jobDescription px-3.5">
+            <div className="jobDescription px-2.5">
                 <p className = "text-zinc-400">Electricals</p> 
                 <p>Aramel Electricals</p>
                 <br/>

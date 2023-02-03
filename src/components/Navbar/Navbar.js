@@ -37,7 +37,7 @@ export default function Navbar() {
     
       <div className='navContainer'>
       <div className="flex">
-      <div className="flex space-x-8  border-b buttonContainer">
+      <div className="flex space-x-8  border-b buttonContainer mt-1">
         
         <CustomLink   to="/">Find a job</CustomLink>
         <CustomLink   to="/postAjob">Post a Job</CustomLink>

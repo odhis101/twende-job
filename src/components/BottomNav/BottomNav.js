@@ -89,7 +89,7 @@ export default function BottomNav() {
                   <ListItemIcon>
                   <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText primary={"logout"} />
+                  <ListItemText primary={"Logout"} />
                 </ListItemButton>
 
         
