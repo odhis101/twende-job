@@ -3,15 +3,20 @@ import './TopNav.scss'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import { useState,useEffect} from "react";
 import { useSelector,useDispatch } from "react-redux";
-
+import { slide as Menu } from 'react-burger-menu'
 export default function TopNav() {
  
     const { user } = useSelector((state) => state.auth)
    //npm console.log(user)
 
+  const showSettings = (e) => {
+    e.preventDefault();
+  }
+
     return(
         
         <>
+    
         <div class='flex justify-between checkmobile mt-2'>
         <img src = {Logo}  class ="logoM " alt = 'logo'></img>
             {user ? ( 

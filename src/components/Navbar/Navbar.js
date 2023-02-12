@@ -41,12 +41,14 @@ export default function Navbar() {
         
         <CustomLink   to="/">Find a job</CustomLink>
         <CustomLink   to="/postAjob">Post a Job</CustomLink>
+        <CustomLink   to="/getSkills">Skills</CustomLink>
         <CustomLink   to="/ClassifiedJobs">Classifieds Jobs</CustomLink>
         <CustomLink   to="/Subscriptions">Subscriptions</CustomLink>
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
-        <CustomLink   to="/register">Help?</CustomLink>
+     
               </div>
               <div className="Rightbarlogin" id = 'Rightbarlogin'>
+              
         {user ? (
        <>
         <div className = 'lookingMan'>
@@ -64,6 +66,7 @@ export default function Navbar() {
           <div className = "bottomText">
         <p className="text-[#004057] 	"> {user.phoneNumber}</p>
         </div>
+ 
         </>) 
         
       

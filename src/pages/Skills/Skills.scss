@@ -1,0 +1,22 @@
+.postASkill{
+width: 30%;
+margin-left: auto;
+margin-right: auto;
+    .loginBtn{
+       
+       
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 4px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+ @media only screen and (max-width: 450px) {
+     .postASkill{
+        width: 50% !important;
+     }
+    }

@@ -111,7 +111,7 @@ onChange={(event, newValue) => {
   setValue(newValue);
 }}
 >
-  <BottomNavigationAction component={Link}  to="/"  label="Find a Job" icon={<FindInPageIcon />} />
+
   <BottomNavigationAction component={Link}  to="/postAjob"  label="Post a Job " icon={<WorkIcon />} />
   <BottomNavigationAction label="Job Alert" component={Link}  to="/JobAlerts" icon={<AddAlertIcon />} />
   <BottomNavigationAction onClick={toggleDrawer('right', true)} label="account" icon={<Person3Icon />} />

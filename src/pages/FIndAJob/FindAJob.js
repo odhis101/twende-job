@@ -35,6 +35,7 @@ export default function FindAJob() {
     const { goals, isLoading, isError, message } = useSelector(
         (state) => state.jobs
       )
+  
       const [searchParam] = useState(["capital", "name"]);
       function search(items) {
         return items.filter((item) => {

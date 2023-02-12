@@ -19,7 +19,7 @@ export default function Login() {
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   )
-  const [formData, setFormData] = useState({
+  let [formData, setFormData] = useState({
     phoneNumber: '',
     password: '',
   })
