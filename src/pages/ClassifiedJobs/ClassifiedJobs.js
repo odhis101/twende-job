@@ -17,8 +17,6 @@ const currentDate = new Date().toISOString().slice(0, 10)
  const [data, setData] = React.useState([]);
   React.useEffect(() => {
     axios.get(`${API_URL}/jobs/getClassifiedJobs`)
-   // localhost axios
-    // axios.get(`http://localhost:5000/jobs/getClassifiedJobs`)
       .then((response) => {
         setData(response.data);
       })
@@ -26,18 +24,19 @@ const currentDate = new Date().toISOString().slice(0, 10)
         console.log(error);
       });
   }, []);
-  if (goals == null) {
+  console.log("this is the data", data)
+  if (goals === null) {
     console.log('waiting for data')
   }
   else if(goals != null){
-    //console.log("we are here")
-    //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
+    console.log("this is the goals", goals)
     if (goals.subscribers.length === 0  ) {
       alert("You have not subscribed to any plan")
       window.location.href = '/'
   
        }
       else{
+
         const expiryDate =goals.subscribers[goals.subscribers.length-1].expiry
         console.log("this is the expiry date", expiryDate)
         if (currentDate > expiryDate) {

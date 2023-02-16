@@ -72,6 +72,7 @@ export default function FindAJob() {
       
        <div className="centerContainer">
           <TopNav />
+         
           <form className="flex items-center">   
         <label for="simple-search" className="sr-only">Search</label>
         <div class="relative w-full">
@@ -136,6 +137,27 @@ export default function FindAJob() {
 
               
             </Carousel>
+            <div className="jobofthedayContainerM">
+            <p className = "text-cyan-900 px-3.5"> JOBS OF THE DAY</p> 
+            <div className="jobDescription px-2.5">
+                <p className = "text-zinc-400">Electricals</p> 
+                <p>Aramel Electricals</p>
+                <br/>
+                <p>Applications are invited from qualified persons for the above vacant position.</p>
+                <br/>
+                <p>Salary: KES.45,000 PM</p>
+                <br/>
+                <p>Applications must be submitted by 01.10.2022</p>
+                <br/>
+                <p> Must have valid electrical wiring certification from Kenya Power</p>
+                <br/>
+                <p className="underline text-zinc-400" >View more details</p>
+
+                
+            </div>
+
+
+        </div>
     
 
 

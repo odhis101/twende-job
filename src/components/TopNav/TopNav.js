@@ -18,7 +18,8 @@ export default function TopNav() {
         <>
     
         <div class='flex justify-between checkmobile mt-2'>
-        <img src = {Logo}  class ="logoM " alt = 'logo'></img>
+        <img src = {Logo}   class ="logoM " alt = 'logo'></img>
+        
             {user ? ( 
               <div className = 'mobileLogin py-4 mr-2'>
               
@@ -38,6 +39,7 @@ export default function TopNav() {
               )}
             
          </div>
+     
          
        </>
     )

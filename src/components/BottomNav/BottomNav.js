@@ -73,11 +73,47 @@ export default function BottomNav() {
           <List>
           <ListItemButton
                  component={Link}
+                 to = '/postajob'>
+                  <ListItemIcon>
+                  <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Post A job"} />
+                </ListItemButton>
+
+        
+          </List>
+          <List>
+          <ListItemButton
+                 component={Link}
+                 to = 'ClassifiedJobs'>
+                  <ListItemIcon>
+                  <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Classifed Jobs"} />
+                </ListItemButton>
+
+        
+          </List>
+          <List>
+          <ListItemButton
+                 component={Link}
                  to = '/Subscriptions'>
                   <ListItemIcon>
                   <InboxIcon />
                   </ListItemIcon>
                   <ListItemText primary={"Subscriptions"} />
+                </ListItemButton>
+
+        
+          </List>
+          <List>
+          <ListItemButton
+                 component={Link}
+                 to = '/Subscriptions'>
+                  <ListItemIcon>
+                  <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Subscription Plan"} />
                 </ListItemButton>
 
         
@@ -111,9 +147,9 @@ onChange={(event, newValue) => {
   setValue(newValue);
 }}
 >
+  <BottomNavigationAction component={Link}  to="/"  label="Find a Job " icon={<WorkIcon />} />
+  <BottomNavigationAction label="Skills" component={Link}  to="/getSkills" icon={<AddAlertIcon />} />
 
-  <BottomNavigationAction component={Link}  to="/postAjob"  label="Post a Job " icon={<WorkIcon />} />
-  <BottomNavigationAction label="Job Alert" component={Link}  to="/JobAlerts" icon={<AddAlertIcon />} />
   <BottomNavigationAction onClick={toggleDrawer('right', true)} label="account" icon={<Person3Icon />} />
   <Drawer
             anchor={'right'}

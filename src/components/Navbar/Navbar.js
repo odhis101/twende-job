@@ -13,6 +13,9 @@ import { useSelector,useDispatch } from "react-redux";
 import { logout,reset } from "../../features/auth/authSlice";
 import { AiOutlineUser } from "react-icons/ai";
 import Trial from "../Trial/Trial"
+// import menu icon from react-icons
+import { AiOutlineMenu } from "react-icons/ai";
+
 
 export default function Navbar() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -47,6 +50,11 @@ export default function Navbar() {
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
      
               </div>
+              <div classname = 'burgerContainer' >
+              <AiOutlineMenu  size='40px' color = '#FFB246' />
+              </div>
+
+              {/* this is the part we need to update
               <div className="Rightbarlogin" id = 'Rightbarlogin'>
               
         {user ? (
@@ -68,6 +76,7 @@ export default function Navbar() {
         </div>
  
         </>) 
+  
         
       
         : (
@@ -89,6 +98,7 @@ export default function Navbar() {
         
    
       </div>
+            */}
      
             </div>
       

@@ -1,0 +1,31 @@
+.buttonContainer {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.burgerContainer {
+  margin: 5%;
+  border: 1px solid red;
+}
+
+.bottomText {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.lookingMan {
+  float: left;
+  height: 100%;
+  width: 20%;
+}
+
+.Rightbarlogin {
+  display: flex;
+  width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .navContainer {
+    display: none !important;
+  }
+}
