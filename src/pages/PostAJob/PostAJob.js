@@ -15,7 +15,7 @@ export default function PostAJob() {
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
 
-  const [postData, setPostData] = useState({ Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'', });
+  const [postData, setPostData] = useState({ Location:"",Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'', });
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -155,6 +155,17 @@ export default function PostAJob() {
                 value = {postData.EMPLOYER_EMAIL} 
                 onChange ={(e) => setPostData({...postData,EMPLOYER_EMAIL: e.target.value})}
                 class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Employer Email Address for applications"></input>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="EmployersContact mt-5">
+              <p className="mx-2.5"> Location</p>
+              <input 
+              name='Location'
+              id='Location'
+              value = {postData.Location} 
+              onChange ={(e) => setPostData({...postData,Location: e.target.value})}
+              class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username"  type="text" placeholder="Job County"></input>
               </div>
             </div>
             <div className="flex">

@@ -6,9 +6,40 @@
     justify-content: space-evenly;
 
 }
+.navLinks ul {
+ display: flex;
+ flex-direction: column;
+ position: absolute;
+ width: 10%;
+  top: 80;
+  right: 0;
+  color: white;
+  background-color: #181818;
+  border-top: 2px solid #FFB246 ;
+  opacity:80% ; 
+}
+.navLinks li {
+  //add hoover 
+  list-style: none;
+  padding: 10px 0;
+  text-align: center;
+  
+ 
+
+}
+.navLinks li :hover{
+  background-color: #FFB246;
+  color: #181818;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .burgerContainer{
-  margin: 5%;
-  border: 1px solid red;
+margin-right: 5%;
+  padding:1% ;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 .bottomText{
     width: 80%;

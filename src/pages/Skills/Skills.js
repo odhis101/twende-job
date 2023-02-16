@@ -12,6 +12,7 @@ import {useNavigate} from 'react-router-dom'
 import { useState, useRef } from 'react'
 import {getSkills} from '../../features/skills/skillSlice'
 import { useEffect } from 'react'
+import TopNav from "../../components/TopNav/TopNav";
 export default function PostASkill ()  {
   if(sessionStorage.getItem("showmsg")=='1'){
     toast.success('skill posted successfully')
@@ -41,6 +42,7 @@ export default function PostASkill ()  {
   return (
     
     <div>
+      <TopNav/>
         
     <div className="flex">
     <div className="centerContainer">

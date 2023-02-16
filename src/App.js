@@ -20,6 +20,7 @@ import JobAlerts from "./pages/JobAlerts/JobAlerts";
 import Skills from "./pages/Skills/Skills";
 import Woodwork from "./pages/Categories/Woodwork/Woodwork";
 import PostASkill from "./pages/PostASkill/PostASkill";
+import Details from "./pages/Details/Details";
 
 const App = () => {
   return (
@@ -45,6 +46,8 @@ const App = () => {
           <Route path="/postASkill" element={<PostASkill />} />
           <Route path="/category/:id" element={< Woodwork />} />
           <Route path="*" element={<ErrorPage/>} />
+          <Route path="/Details/:id" element={<Details />} />
+
           <Route path="" element={<ErrorPage/>} />
           <Route element={<ErrorPage/>} />
           

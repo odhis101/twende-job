@@ -20,6 +20,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Subscriptions() {
   const navigate = useNavigate()
+  // highlight the bottom navigation
+ 
 
 
     const { user} = useSelector((state) => state.auth);
@@ -102,7 +104,7 @@ goals.subscribers.length > 0 ? (
         <TableCell align="right">{goal.amount}</TableCell>
         <TableCell align="right">{goal.lengthOfSubscription}</TableCell>
         <TableCell align="right">{goal.createdAt.slice(0, 10)}</TableCell>
-        <TableCell align="right">{goal.expiry}</TableCell>
+        <TableCell align="right" className='bg-red'>{goal.expiry}</TableCell>
    
      
         </TableRow>

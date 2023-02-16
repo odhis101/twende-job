@@ -15,25 +15,49 @@ import { AiOutlineUser } from "react-icons/ai";
 import Trial from "../Trial/Trial"
 // import menu icon from react-icons
 import { AiOutlineMenu } from "react-icons/ai";
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 
 export default function Navbar() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const { user} = useSelector((state) => state.auth);
   const onLogout =() => {
+ 
     dispatch(logout());
     dispatch(reset());
 
   }
 
 
+
   function register() {
     console.log("register");
     <Link to="/register" />
   }
-  
+  function menu() {
+    console.log("menu");
+  }
+  const closeIcon = < AiFillCloseCircle  size='35px'
+  color = '#FFB246'
+  onClick ={() => { setOpen(!open) } }
+    />
+    const openIcon  =  <AiOutlineMenu  size='35px' 
+    color = '#FFB246'
+    onClick ={() => { setOpen(!open) } }
+     />
+     // close icon with outside click 
+      useEffect(() => {
+        const closeMenu = () => {
+          if (open) setOpen(false);
+        };
+        document.addEventListener("click", closeMenu);
+        return () => document.removeEventListener("click", closeMenu);
+      }, [open]);
+
   
   return (
     <>
@@ -50,44 +74,46 @@ export default function Navbar() {
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
      
               </div>
-              <div classname = 'burgerContainer' >
-              <AiOutlineMenu  size='40px' color = '#FFB246' />
-              </div>
-
-              {/* this is the part we need to update
-              <div className="Rightbarlogin" id = 'Rightbarlogin'>
-              
+             
+                
         {user ? (
-       <>
-        <div className = 'lookingMan'>
-        <button className='btn' onClick={onLogout}>
-        < AiOutlineUser  
-        className="icon"
+      
+              <div className = 'burgerContainer' >
+              {open ? closeIcon : openIcon}
+              {open && 
+              <div className = 'navLinks'>
+             <ul>
+             <p className = 'text-center bg-[#FFB246]'>Welcome  </p> 
+              <li>
+              <Link   to="/">Renew A Subscription ?</Link>
+              </li>
+              <li>
+              <Link   to="/postAjob">Post A Skill</Link>
+              </li>
+              <li>
+              <p onClick={onLogout}> logout  </p>
+              </li>
+             </ul>
+
+              </div>
+                
+                
+                }
+          
        
-        size="45px"
-        color="#FFB246"
-       />
-        </button>
-        </div>
-        
-          <p className="text-[#FFB246]  px-3 	"> Logged in as </p>
-          <div className = "bottomText">
-        <p className="text-[#004057] 	"> {user.phoneNumber}</p>
-        </div>
- 
-        </>) 
+              </div>) 
   
         
       
         : (
            <>
            
-           <div className="loginButtons py-3">
+           <div className="loginButton py-3">
            <Link to="/login" className="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
              Login
              </Link>
            </div>
-             <div className="loginButtons  py-3">
+             <div className="loginButton  py-3">
       <Link to="/register" className="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">
              Register
              </Link>
@@ -98,7 +124,7 @@ export default function Navbar() {
         
    
       </div>
-            */}
+            
      
             </div>
       
@@ -106,7 +132,7 @@ export default function Navbar() {
       
     
      
-    </div>
+
     
         
 
