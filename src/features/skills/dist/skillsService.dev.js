@@ -24,7 +24,7 @@ var createSkill = function createSkill(skillData, token) {
             }
           };
           _context.next = 3;
-          return regeneratorRuntime.awrap(_axios["default"].post("http://localhost:5000/skills/postSkill", skillData, config));
+          return regeneratorRuntime.awrap(_axios["default"].post("".concat(API_URL, "/skills/postSkill"), skillData, config));
 
         case 3:
           response = _context.sent;
@@ -45,7 +45,7 @@ var getSkill = function getSkill() {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return regeneratorRuntime.awrap(_axios["default"].get("http://localhost:5000/skills/getSkill"));
+          return regeneratorRuntime.awrap(_axios["default"].get("".concat(API_URL, "/skills/getSkill")));
 
         case 2:
           response = _context2.sent;

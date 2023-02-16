@@ -9,11 +9,11 @@ const createSkill = async (skillData, token) => {
             Authorization: `Bearer ${token}`,
         },
         }
-    const response = await axios.post(`http://localhost:5000/skills/postSkill`, skillData, config)
+    const response = await axios.post(`${API_URL}/skills/postSkill`, skillData, config)
     return response.data
 }
 const getSkill = async () => {
-    const response = await axios.get(`http://localhost:5000/skills/getSkill`)
+    const response = await axios.get(`${API_URL}/skills/getSkill`)
     return response.data
 }
 

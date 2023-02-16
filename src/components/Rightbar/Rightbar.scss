@@ -20,3 +20,8 @@
     display: none !important;
     }
   }
+  @media only screen and (max-width: 1280px) {
+    .Rightcontainer{
+        width: 30%;
+    }
+  }

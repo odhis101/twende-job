@@ -1,0 +1,26 @@
+.Rightcontainer {
+  width: 20%;
+}
+
+.Rightbar {
+  display: flex;
+  width: 30%;
+}
+
+.loginButtons {
+  width: 50%;
+  text-align: center;
+  height: auto;
+  margin-top: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+  .Rightcontainer {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .Rightcontainer {
+    width: 30%;
+  }
+}

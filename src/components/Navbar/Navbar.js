@@ -41,11 +41,13 @@ export default function Navbar() {
   function menu() {
     console.log("menu");
   }
-  const closeIcon = < AiFillCloseCircle  size='35px'
+  const closeIcon = < AiFillCloseCircle  size='32px'
   color = '#FFB246'
   onClick ={() => { setOpen(!open) } }
     />
-    const openIcon  =  <AiOutlineMenu  size='35px' 
+    const openIcon  =  <AiOutlineMenu  
+    size='32px'
+
     color = '#FFB246'
     onClick ={() => { setOpen(!open) } }
      />
