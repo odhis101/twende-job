@@ -123,7 +123,7 @@ export default function Skills ()  {
        <div className="EmployersContact">
            <div className="PostJobBTN mt-5">
              <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
-               POST A JOB
+               POST A SKILL
              </button>            
            </div>
          </div>
