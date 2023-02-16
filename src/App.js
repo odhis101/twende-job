@@ -21,6 +21,7 @@ import Skills from "./pages/Skills/Skills";
 import Woodwork from "./pages/Categories/Woodwork/Woodwork";
 import PostASkill from "./pages/PostASkill/PostASkill";
 import Details from "./pages/Details/Details";
+import TermsOfService  from "./pages/TermsOfService/TermsOfService";
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/category/:id" element={< Woodwork />} />
           <Route path="*" element={<ErrorPage/>} />
           <Route path="/Details/:id" element={<Details />} />
+          <Route path="/TermsOfService" element={<TermsOfService />} />
 
           <Route path="" element={<ErrorPage/>} />
           <Route element={<ErrorPage/>} />

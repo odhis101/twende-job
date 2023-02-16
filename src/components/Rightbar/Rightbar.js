@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Rightbar() {
   const navigate = useNavigate()
 function redirect() {
-  navigate('/')
+  navigate('/TermsOfService')
   }
 
     return (
@@ -26,7 +26,7 @@ function redirect() {
             <Help/>
             <div className="flex justify-evenly mt-5 mb-2">
               <p>Terms Of Service </p>
-              <p onClick={redirect}><strong>Click here</strong></p>
+              <p onClick={redirect} className="cursor-pointer"><strong>Click here</strong></p>
             </div>
             <div className="flex justify-center">
             <Link to = "JobAlerts" class="bg-[#FFB246] hover:bg-orange-400 text-black font-bold py-2 px-6 hover:border-blue-500 rounded-full">

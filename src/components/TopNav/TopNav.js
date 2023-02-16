@@ -1,4 +1,5 @@
-import Logo from '../../assets/img/LogoM.png'
+import Logo from '../../assets/img/LogoM2.png'
+
 import './TopNav.scss'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import { useState,useEffect} from "react";
