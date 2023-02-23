@@ -87,7 +87,7 @@ export default function Navbar() {
              <ul>
              <p className = 'text-center bg-[#FFB246]'>Welcome  </p> 
               <li>
-              <Link   to="/">Renew A Subscription ?</Link>
+              <Link   to="/JobAlerts">Renew A Subscription ?</Link>
               </li>
               <li>
               <Link   to="/postAjob">Post A Skill</Link>

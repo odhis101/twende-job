@@ -82,18 +82,7 @@ export default function BottomNav() {
 
         
           </List>
-          <List>
-          <ListItemButton
-                 component={Link}
-                 to = 'ClassifiedJobs'>
-                  <ListItemIcon>
-                  <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Classifed Jobs"} />
-                </ListItemButton>
 
-        
-          </List>
           <List>
           <ListItemButton
                  component={Link}
@@ -109,7 +98,7 @@ export default function BottomNav() {
           <List>
           <ListItemButton
                  component={Link}
-                 to = '/Subscriptions'>
+                 to = '/JobAlerts'>
                   <ListItemIcon>
                   <InboxIcon />
                   </ListItemIcon>

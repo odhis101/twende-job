@@ -13,6 +13,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function JobAlerts() {
     const notify = () => toast("Wow so easy!");
+    const [selectedOption, setSelectedOption] = useState('');
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+      }
 
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
@@ -86,11 +90,11 @@ export default function JobAlerts() {
             <form  onSubmit ={handleSubmit}>
                 <div className= 'flex justify-between mt-5 flex-wrap mb-5'>
                     <div className="PackageCheckBox text-center">
-                    <input type="radio" value = {10}  name="10" req onChange={e=> setPostData({...postData,amount: e.target.value})}  />
+                    <input type="radio" value = {10}  name="10"  onChange={e=> setPostData({...postData,amount: e.target.value})}  />
                     <label for="scales"><br></br>PAY<br/> <strong>KSH.10</strong> NOW</label>  
                     </div>
                     <div className="PackageCheckBox text-center">
-                    <input type="radio" value = {49}  name="50" onChange={e=> setPostData({...postData,amount: e.target.value})} />
+                    <input type="radio" value = {49}  name="50"  onChange={e=> setPostData({...postData,amount: e.target.value})} />
                     <label for="scales"><br></br>PAY<br/> <strong>KSH.49</strong> NOW</label>   
                     </div>
                     <div className="PackageCheckBox text-center">
