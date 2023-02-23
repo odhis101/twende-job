@@ -101,7 +101,7 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
                  </div>
              <p className="px-2 font-semibold"> {jobs.jobTitle} </p>
                  <p className="px-2 "> Desc: {jobs.jobDescription} </p>
-                 <p className="px-2 "> Desc: {jobs.Location} </p>
+                 <p className="px-2 "> Location: {jobs.Location} </p>
                  <p className="px-2 "> Email: {jobs.EMPLOYER_EMAIL} </p>
                  <p className="px-2 "> Deadline: {jobs.DeadlineDate.slice(0,10)}</p>
          </div>
