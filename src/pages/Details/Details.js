@@ -29,11 +29,6 @@ export default function Details (){
     },[user, navigate,dispatch])
     console.log(jobs)
     // animating the cursor 
-
-   
-
-
-
     //confirming if the user is logged in
     if(user=== null){
       //alert('Please login to continue')
@@ -62,7 +57,7 @@ export default function Details (){
     //console.log(goals.subscribers[goals.subscribers.length-1].SubscriptionDate)
     if (goals.subscribers.length === 0  ) {
       alert("You have not subscribed to any plan")
-      window.location.href = '/'
+      window.location.href = '/JobAlerts'
   
        }
       else{
@@ -70,7 +65,7 @@ export default function Details (){
         console.log("this is the expiry date", expiryDate)
         if (currentDate > expiryDate) {
           alert("Your subscription has expired")
-          window.location.href = '/'
+          window.location.href = '/JobAlerts'
           // create a dispatch to update the db that the subscription has expired
         }
 

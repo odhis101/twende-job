@@ -70,18 +70,7 @@ export default function BottomNav() {
             
           </List>
           <Divider />
-          <List>
-          <ListItemButton
-                 component={Link}
-                 to = '/postajob'>
-                  <ListItemIcon>
-                  <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Post A job"} />
-                </ListItemButton>
-
-        
-          </List>
+    
 
           <List>
           <ListItemButton
@@ -137,6 +126,7 @@ onChange={(event, newValue) => {
 }}
 >
   <BottomNavigationAction component={Link}  to="/"  label="Find a Job " icon={<WorkIcon />} />
+  <BottomNavigationAction component={Link}  to="/postAjob"  label="Post a Job " icon={<WorkIcon />} />
   <BottomNavigationAction label="Skills" component={Link}  to="/getSkills" icon={<AddAlertIcon />} />
 
   <BottomNavigationAction onClick={toggleDrawer('right', true)} label="account" icon={<Person3Icon />} />

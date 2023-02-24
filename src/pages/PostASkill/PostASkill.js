@@ -89,7 +89,7 @@ export default function Skills ()  {
         type='text'
         name='Location'
         id='Location'
-        value = {postData.Names} 
+        value = {postData.Location} 
         onChange ={(e) => setPostData({...postData,Location: e.target.value})}
       
        class="shadow appearance-none  border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"   placeholder="Maximum 100 characters "></input>
