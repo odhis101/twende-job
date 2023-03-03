@@ -16,6 +16,7 @@ export default function Help() {
             <div className="SocialsContainer">
             <div className="Socials">
             <SocialIcon url="https://www.facebook.com/profile.php?id=100086151296719" />
+            <SocialIcon url="https://www.instagram.com/twendejob/?igshid=ZDdkNTZiNTM%3D" />
             </div>
       
 
