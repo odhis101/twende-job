@@ -88,21 +88,21 @@ export default function JobAlerts() {
                 
             </div>
             <form  onSubmit ={handleSubmit}>
-                <div className= 'flex justify-between mt-5 flex-wrap mb-5'>
-                    <div className="PackageCheckBox text-center">
-                    <input type="radio" value = {10}  name="10"  onChange={e=> setPostData({...postData,amount: e.target.value})}  />
-                    <label for="scales"><br></br>PAY<br/> <strong>KSH.10</strong> NOW</label>  
-                    </div>
-                    <div className="PackageCheckBox text-center">
-                    <input type="radio" value = {49}  name="50"  onChange={e=> setPostData({...postData,amount: e.target.value})} />
-                    <label for="scales"><br></br>PAY<br/> <strong>KSH.49</strong> NOW</label>   
-                    </div>
-                    <div className="PackageCheckBox text-center">
-                    <input type="radio" value = {199}  name="199" onChange={e=> setPostData({...postData,amount: e.target.value})} />
-                    <label for="scales"><br></br>PAY<br/> <strong>KSH.199</strong> NOW</label>    
-                    </div>
-                    
-                </div>
+            <div className='flex justify-between mt-5 flex-wrap mb-5'>
+  <div className="PackageCheckBox text-center">
+    <input type="radio" value={10} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.10</strong> NOW</label>
+  </div>
+  <div className="PackageCheckBox text-center">
+    <input type="radio" value={49} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.49</strong> NOW</label>
+  </div>
+  <div className="PackageCheckBox text-center">
+    <input type="radio" value={199} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.199</strong> NOW</label>
+  </div>
+</div>
+
                 <div className="JobDescription mt-5">
                     <p className="mb-2"> 2. ENTER YOUR SAFARICOM PHONE NUMBER</p>
                     <input 
