@@ -10,7 +10,7 @@ import TopNav from '../../components/TopNav/TopNav';
 
 import "./Details.scss"
 export default function Details (){
-
+    window.scrollTo(0, 0)
     const API_URL = process.env.REACT_APP_API_URL
     const { user} = useSelector((state) => state.auth);
     const navigate = useNavigate()
