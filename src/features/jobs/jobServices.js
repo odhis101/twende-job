@@ -19,8 +19,9 @@ const createGoal = async (goalData, token) => {
   
     //console.log(`${API_URL}/jobs/getjobs`)
     const response = await axios.get(`${API_URL}/jobs/getjobs`)
+    //console.log('this is response',response.data)
   
-    return response.data
+    return response.data.reverse()
   }
   const getOneGoal = async (goalId) => {
     //console.log("this is from services", goalId)

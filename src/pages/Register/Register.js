@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
-import { register, reset } from '../../features/auth/authSlice'
+import {  reset } from '../../features/auth/authSlice'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 //import Spinner from '../components/Spinner'
@@ -10,33 +10,29 @@ import TopNav from '../../components/TopNav/TopNav'
 import { Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { login } from '../../features/auth/authSlice';
+
 export default function Register() {
   const notify = () => toast("Wow so easy!");
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
+  const API_URL = process.env.REACT_APP_API_URL
+  
+  const { user, isLoading, isError, isSuccess, message, isVerified} = useSelector(
     (state) => state.auth
   )
+  const [isOTPVerified, setIsOTPVerified] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false); // state to keep track of second form
+  const [isSubmitting, setIsSubmitting] = useState(false); // state to keep track of whether form is submitting
+
+
   const [formData, setFormData] = useState({
     phoneNumber: '',
     password: '',
     password2: '',
   })
   const { phoneNumber, password, password2 } = formData
-  useEffect(() => {
-    if (isError) {
-      notify()
-      toast.error(message)
-    }
 
-    if (isSuccess || user) {
-      
-      navigate('/')
-
-    }
-
-    dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -45,29 +41,111 @@ export default function Register() {
      
     }))
   }
-  const onSubmit = (e) => {
+  useEffect(() => {
+    if (isError) {
+      toast.error('check password or phone number')
+    }
+
+    if (isSuccess || user) {
+      navigate('/')
+    }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+  // we are not using dispatch here because we are not using redux
+  // since we are not using redux the user never saves in state 
+  // we will use redux for logging in once the otp is correct
+
+  const onSubmit =async (e)  => {
+   
     e.preventDefault()
     if (password !== password2) {
       alert('Passwords do not match')
       console.log('Passwords do not match')
     } else {
-      const userData = {
-        phoneNumber,
-        password,
+      // we create a fethc request to the backend to log in the user  
+      
+        fetch(`http://localhost:5000/users/users/`, {
+          method: 'POST',
+          body: JSON.stringify({
+            phoneNumber: phoneNumber,
+            password: password,
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Response:', data);
+          setIsEnabled(true);
+          toast.info(data.message)
+          setIsSubmitting(false);
+        
+        })
+        .catch(error => {
+          console.error(error);
+          toast.error('An error occurred while sending OTP');
+          setIsSubmitting(false);
+        });
       }
-
-      dispatch(register(userData))
-    }
+    
   }
-
+  const handleOTPSubmit = (event) => {
+    let userData = {
+      phoneNumber: phoneNumber,
+      password: password,
+    }
+    event.preventDefault();
+    const otp = event.target.otp.value;
+    console.log(otp)
+    setIsSubmitting(true);
+    fetch("http://localhost:5000/users/verifyOTP", {
+      method: 'POST',
+      body: JSON.stringify({
+      phoneNumber: phoneNumber, // Assuming you have stored the user's phone number somewhere
+      otp: otp
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response:', data);
+      if (data.message === 'OTP verification successful') {
+        setIsOTPVerified(true);
+        toast.success(data.message);
+        try{
+          dispatch(login(userData))
+          console.log('it should be working now')
+          navigate('/')
+        }
+        catch(err){
+          console.log(err)
+        }
+      } else {
+        setIsOTPVerified(false);
+        toast.error(data.message);
+      }
+    })
+    .catch(error => {
+      //console.error(error);
+      toast.error('An error occurred while verifying OTP');
+    
+    });
+  }
+  useEffect(() => {
+    console.log(isEnabled)
+  }, [isEnabled]);
   return (
     <>
     <TopNav/>
         <div className = 'Attributes'>
         <p className='text-[#004057] underline	'> Register </p>
         </div>
-        <form onSubmit={onSubmit}>
         <div className="centerContainer">
+        <form onSubmit={onSubmit}>
         <div className="JobDescription">
             <p className="mx-2.5"> PHONE NUMBER</p>
             <input  onChange={onChange} value={phoneNumber} name ='phoneNumber' id = 'phoneNumber' class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  placeholder="254703757369"></input>
@@ -88,17 +166,31 @@ export default function Register() {
              Register
 </button>
             
-<div className='flex space-between'>   
-        <p> Already a member?</p>
-        <Link to="/login"  >
-        <div className = "underline mx-1.5 "> Login Here</div>
-        </Link>
-        </div>       
 
-
-</div>
 </form>
+   {/* second form */}
+   <form onSubmit={handleOTPSubmit} key={isEnabled ? 'enabled' : 'disabled'} className={isEnabled ? '' : 'opacity-50 pointer-events-none'}>
+        <div className="JobDescription">
+          <p className="">OTP</p>
+          <input
+            name="otp"
+            id="otp"
+            className="shadow appearance-none border rounded-sm w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="Enter OTP sent to your phone"
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-[#FFB246] rounded-md hover:bg-orange-400 w-full my-5 rounded text-black py-3 hover:border-blue-500 rounded"
+          disabled={!isEnabled} // disable the button when the second form is disabled
+        >
+          Verify
+        </button>
+      </form>
+      </div>
 
+<ToastContainer />
 <BottomNav/>
          </>
   )

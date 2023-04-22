@@ -25,6 +25,9 @@ export default function Navbar() {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const { user} = useSelector((state) => state.auth);
+  const{isVerified} = useSelector((state) => state.auth);
+console.log('user',user)
+console.log('isVerified',isVerified)
   const onLogout =() => {
  
     dispatch(logout());

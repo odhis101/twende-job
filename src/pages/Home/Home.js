@@ -10,6 +10,8 @@ import { useSelector,useDispatch } from "react-redux";
 
 const Home = props => {
   const { user} = useSelector((state) => state.auth);
+  const{isVerified} = useSelector((state) => state.auth);
+
   const { match, history } = props;
   
   if(user){console.log('users is here user',user)}

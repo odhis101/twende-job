@@ -22,6 +22,7 @@ import Woodwork from "./pages/Categories/Woodwork/Woodwork";
 import PostASkill from "./pages/PostASkill/PostASkill";
 import Details from "./pages/Details/Details";
 import TermsOfService  from "./pages/TermsOfService/TermsOfService";
+import Forgotpass from "./pages/ForgotPass/Forgotpass";
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="*" element={<ErrorPage/>} />
           <Route path="/Details/:id" element={<Details />} />
           <Route path="/TermsOfService" element={<TermsOfService />} />
+          <Route path="/forgotPassword" element={<Forgotpass />} />
 
           <Route path="" element={<ErrorPage/>} />
           <Route element={<ErrorPage/>} />

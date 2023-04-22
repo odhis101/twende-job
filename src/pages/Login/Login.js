@@ -100,6 +100,11 @@ export default function Login() {
         <div className = "underline  mx-1.5 ">Register Here</div>
         </Link>
         </div>
+        <div className='flex space-between underline'>   
+        <Link to="/forgotPassword"  >
+        Forgot Password 
+        </Link>
+        </div>
         <div>
         
         <ToastContainer />

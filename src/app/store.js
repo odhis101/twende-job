@@ -6,6 +6,7 @@ import subscriberReducer from '../features/subscriptions/subscriptionSlice'
 import updateUserReducer from '../features/updateUser/updateUserSlice'
 import skillReducer from '../features/skills/skillSlice'
 
+
 export const store = configureStore({
 
   reducer: {
@@ -16,6 +17,8 @@ export const store = configureStore({
     auth: authReducer,
     update: updateUserReducer,
     skills: skillReducer,
+   
+
 
 
   },

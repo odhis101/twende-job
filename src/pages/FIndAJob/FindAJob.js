@@ -65,7 +65,7 @@ export default function FindAJob() {
       }, [user, navigate, isError, message, dispatch])
      
    
-
+console.log(goals)
         return (
         
 

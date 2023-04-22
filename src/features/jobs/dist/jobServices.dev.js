@@ -48,7 +48,7 @@ var getGoals = function getGoals() {
 
         case 2:
           response = _context2.sent;
-          return _context2.abrupt("return", response.data);
+          return _context2.abrupt("return", response.data.reverse());
 
         case 4:
         case "end":

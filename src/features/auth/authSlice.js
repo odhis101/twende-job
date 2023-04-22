@@ -10,6 +10,7 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: '',
+  
 }
 
 // Register user
@@ -59,6 +60,20 @@ export const updateUser = createAsyncThunk('auth/update', async (user, thunkAPI)
   }
 })
 
+// Verify user
+export const verify = createAsyncThunk('auth/verify', async (otp, thunkAPI) => {
+  try {
+    const response = await authService.verify(otp)
+    return response.data
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString()
+    return thunkAPI.rejectWithValue(message)
+  }
+})
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -68,10 +83,15 @@ export const authSlice = createSlice({
       state.isSuccess = false
       state.isError = false
       state.message = ''
+      state.isVerified = false
+      state.verifyError = ''
     },
   },
   extraReducers: (builder) => {
     builder
+    .addCase('auth/verifyOTP', (state) => {
+      state.isVerified = true;
+    })
       .addCase(register.pending, (state) => {
         state.isLoading = true
       })
@@ -99,7 +119,6 @@ export const authSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-
       .addCase(login.pending, (state) => {
         state.isLoading = true
       })
@@ -116,6 +135,19 @@ export const authSlice = createSlice({
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = null
+      })
+      .addCase(verify.pending, (state) => {
+        state.isLoading = true
+        state.isVerified = false
+        state.verifyError = ''
+      })
+      .addCase(verify.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isVerified = true
+      })
+      .addCase(verify.rejected, (state, action) => {
+        state.isLoading = false
+        state.verifyError = action.payload
       })
   },
 })
