@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { login } from '../../features/auth/authSlice';
+const API_URL = process.env.REACT_APP_API_URL
 
 export default function Register() {
   const notify = () => toast("Wow so easy!");
@@ -65,7 +66,7 @@ export default function Register() {
     } else {
       // we create a fethc request to the backend to log in the user  
       
-        fetch(`http://localhost:5000/users/users/`, {
+        fetch(`${API_URL}/users/users/`, {
           method: 'POST',
           body: JSON.stringify({
             phoneNumber: phoneNumber,
@@ -100,7 +101,7 @@ export default function Register() {
     const otp = event.target.otp.value;
     console.log(otp)
     setIsSubmitting(true);
-    fetch("http://localhost:5000/users/verifyOTP", {
+    fetch(`${API_URL}/users/verifyOTP`, {
       method: 'POST',
       body: JSON.stringify({
       phoneNumber: phoneNumber, // Assuming you have stored the user's phone number somewhere

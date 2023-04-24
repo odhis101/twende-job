@@ -24,7 +24,7 @@ export default function ForgotPassword() {
     event.preventDefault();
     const otp = event.target.otp.value;
     setIsSubmitting(true);
-    fetch(`http://localhost:5000/messages/verifyOTP`, {
+    fetch(`${API_URL}/messages/verifyOTP`, {
       method: 'POST',
       body: JSON.stringify({
       phoneNumber: phoneNumber, // Assuming you have stored the user's phone number somewhere
@@ -67,7 +67,7 @@ export default function ForgotPassword() {
     let userData ={phoneNumber,newPassword}
   
     try {
-      const response = await fetch(`http://localhost:5000/users/updatePassword`, {
+      const response = await fetch(`${API_URL}/users/updatePassword`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export default function ForgotPassword() {
     event.preventDefault();
     setIsSubmitting(true);
 
-    fetch(`http://localhost:5000/messages/sendOtp`, {
+    fetch(`${API_URL}/messages/sendOtp`, {
       method: 'POST',
       body: JSON.stringify({
         phoneNumber: phoneNumber
