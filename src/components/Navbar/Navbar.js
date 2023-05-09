@@ -77,6 +77,7 @@ console.log('isVerified',isVerified)
         <CustomLink   to="/ClassifiedJobs">Classifieds Jobs</CustomLink>
         <CustomLink   to="/Subscriptions">Subscriptions</CustomLink>
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
+        <CustomLink   to="/aboutUs">About Us</CustomLink>
      
               </div>
              
@@ -96,6 +97,9 @@ console.log('isVerified',isVerified)
               <Link   to="/postAjob">Post A Skill</Link>
               </li>
               <li>
+              <Link   to="/aboutUs">About Us</Link>
+              </li>
+              <li>
               <p onClick={onLogout}> logout  </p>
               </li>
              </ul>
@@ -113,7 +117,7 @@ console.log('isVerified',isVerified)
         : (
            <>
            
-           <div className="loginButton py-3">
+           <div className="loginButton py-3 ">
            <Link to="/login" className="bg-black mr-4 hover:bg-gray-700 text-white font-bold py-2 px-9 hover:border-blue-500 rounded-full">
              Login
              </Link>

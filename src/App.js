@@ -23,6 +23,7 @@ import PostASkill from "./pages/PostASkill/PostASkill";
 import Details from "./pages/Details/Details";
 import TermsOfService  from "./pages/TermsOfService/TermsOfService";
 import Forgotpass from "./pages/ForgotPass/Forgotpass";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/Details/:id" element={<Details />} />
           <Route path="/TermsOfService" element={<TermsOfService />} />
           <Route path="/forgotPassword" element={<Forgotpass />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
 
           <Route path="" element={<ErrorPage/>} />
           <Route element={<ErrorPage/>} />
