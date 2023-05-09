@@ -3,7 +3,10 @@ import logo from '../../assets/img/Logo.png'
 
 function AboutUs() {
   return (
-    <div className="bg-white py-10">
+    <>
+
+      
+    <div className="bg-white py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">About Us</h1>
@@ -40,6 +43,7 @@ function AboutUs() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

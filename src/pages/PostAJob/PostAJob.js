@@ -133,7 +133,9 @@ export default function PostAJob() {
             id='jobDescription'
             value = {postData.jobDescription} 
             onChange ={(e) => setPostData({...postData,jobDescription: e.target.value})}
+            rows={8} // set the number of rows to 5
             class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Max 500 characters "></textarea>
+           
             </div>
             <div className="flex justify-between">
               <div className="EmployersContact mt-5">
