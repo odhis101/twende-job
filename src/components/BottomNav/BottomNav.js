@@ -21,6 +21,12 @@ import WorkIcon from '@mui/icons-material/Work';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import AddAlertIcon from '@mui/icons-material/AddAlert';
 import { useSelector, useDispatch } from 'react-redux'
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import DescriptionIcon from '@mui/icons-material/Description';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+
+
+import InfoIcon from '@mui/icons-material/Info';
 import { logout,reset } from "../../features/auth/authSlice";
 export default function BottomNav() {
   const { user} = useSelector((state) => state.auth);
@@ -73,29 +79,40 @@ export default function BottomNav() {
     
 
           <List>
-          <ListItemButton
-                 component={Link}
-                 to = '/Subscriptions'>
-                  <ListItemIcon>
-                  <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Subscriptions"} />
-                </ListItemButton>
+  <ListItemButton component={Link} to='/Subscriptions'>
+    <ListItemIcon>
+      <LocalOfferIcon />
+    </ListItemIcon>
+    <ListItemText primary={"Subscriptions"} />
+  </ListItemButton>
+</List>
 
-        
-          </List>
-          <List>
-          <ListItemButton
-                 component={Link}
-                 to = '/JobAlerts'>
-                  <ListItemIcon>
-                  <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Subscription Plan"} />
-                </ListItemButton>
+<List>
+  <ListItemButton component={Link} to='/JobAlerts'>
+    <ListItemIcon>
+      <DescriptionIcon />
+    </ListItemIcon>
+    <ListItemText primary={"Subscription Plan"} />
+  </ListItemButton>
+</List>
 
-        
-          </List>
+<List>
+  <ListItemButton component={Link} to='/TermsOfService'>
+    <ListItemIcon>
+    <AssignmentIcon />
+    </ListItemIcon>
+    <ListItemText primary={"Terms Of Service"} />
+  </ListItemButton>
+</List>
+
+<List>
+  <ListItemButton component={Link} to='/aboutUs'>
+    <ListItemIcon>
+      <InfoIcon />
+    </ListItemIcon>
+    <ListItemText primary={"about us"} />
+  </ListItemButton>
+</List>
           <Divider />
          { user != null ? <List>
           <ListItemButton

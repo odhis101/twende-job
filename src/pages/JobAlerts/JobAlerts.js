@@ -11,6 +11,8 @@ import TopNav from '../../components/TopNav/TopNav';
 import { toast } from 'react-toastify'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
+
 export default function JobAlerts() {
     const notify = () => toast("Wow so easy!");
     const [selectedOption, setSelectedOption] = useState('');
@@ -115,6 +117,10 @@ export default function JobAlerts() {
                     Subscribe
                 </button>
             </form>
+            <div style={{ marginTop: '10px' }}>
+        <Link to="/termsOfService" style={{ textDecoration: 'underline', color: '#000', borderBottomColor: '#FFB246' }}>Terms of Service</Link>
+      </div>
+
         </div>
 
             

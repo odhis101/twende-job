@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from '../../assets/img/Logo.png'
+import TopNav from '../../components/TopNav/TopNav';
+import BottomNav from '../../components/BottomNav/BottomNav';
 
 function AboutUs() {
   return (
     <>
-
-      
+<TopNav/>
+<div className = 'Attributes mb-4'>
+        <p><strong> HOME | About Us </strong></p>
+        </div>
     <div className="bg-white py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -42,6 +46,7 @@ function AboutUs() {
           </p>
         </div>
       </div>
+      <BottomNav/>
     </div>
     </>
   );
