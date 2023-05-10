@@ -6,9 +6,7 @@ import Logo from '../../assets/img/Logo.png'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 export default function Sidebar() {
-    const hello = () => {
-    console.log('hello')
-    }
+
     return (
        
         <div className="container">
