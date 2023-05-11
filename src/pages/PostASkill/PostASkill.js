@@ -79,9 +79,10 @@ export default function Skills ()  {
        <textarea 
        name='skillDescription'
        id='skillDescription'
+       rows={8}
        value = {postData.skillDescription} 
        onChange ={(e) => setPostData({...postData,skillDescription: e.target.value})}
-       class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Max 500 characters "></textarea>
+       class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Max 500 characters "></textarea>
        </div>
        <div className="JobDescription mt-5">
        <p className="mx-2.5"> Location</p>
@@ -102,7 +103,7 @@ export default function Skills ()  {
            id='phoneNumber'
            value = {postData.phoneNumber} 
            onChange ={(e) => setPostData({...postData,phoneNumber: e.target.value})}
-           class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Phone Number"
+           class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter Phone Number"
            
            ></input>
          </div>
@@ -114,7 +115,7 @@ export default function Skills ()  {
            id='Email'
            value = {postData.Email} 
            onChange ={(e) => setPostData({...postData,Email: e.target.value})}
-           class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Employer Email Address for applications"></input>
+           class=" JobInputDescription shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Email Address for applications"></input>
          </div>
        </div>
        <div className="flex">

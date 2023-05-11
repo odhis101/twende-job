@@ -68,41 +68,28 @@ export default function PostAJob() {
             <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
               w-full my-1 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
             <option selected>Category</option>
-            <option 
-            value = "Construction">
-              Construction</option>
-            <option  value = "Cooks">Cooks</option>
-            
-            <option  value = "Drivers"
-            onChange ={(e) => setPostData({...postData,category: e.target.value})}>Drivers</option>
-            
-            <option  value = "Woodwork"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Woodwork</option>
+            <option value="Construction">Construction</option>
+            <option value="Cooks">Cooks</option>
+            <option value="Drivers">Drivers</option>
+            <option value="Woodwork">Woodwork</option>
+            <option value="Electricals">Electricals</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Nannies">Nannies</option>
+            <option value="Professional services">Professional services</option>
+            <option value="Outside catering">Outside catering</option>
+            <option value="Pets Services">Pets Services</option>
+            <option value="Farming">Farming</option>
+            <option value="Internships">Internships</option>
+            <option value="Cooks">Cooks</option>
+            <option value="Classified">Classified</option>
+            <option value="Professionals local">Professionals local</option>
+            <option value="Professionals abroad">Professionals abroad</option>
+            <option value="Casual jobs">Casual jobs</option>
+            <option value="Internships">Internships</option>
+            <option value="Casual long term">Casual long term</option>
+            <option value="Freelance jobs">Freelance jobs</option>
+</select>
 
-            <option  value = "Electricals "
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Electricals </option>
-            <option  value = "Cleaning"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Cleaning</option>
-            <option  value = "Nannies "
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Nannies </option>
-            <option  value = "Professional services"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Professional services</option>
-            
-            <option  value = "Outside catering "
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Outside catering </option>
-             <option  value = "Pets Services"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Pets Services</option>
-             <option  value = "Farming"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Farming</option>
-             <option  value = "Internships"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Internships</option>
-             <option  value = "Cooks "
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Cooks </option>
-             <option  value = "Classified"
-            onClick ={(e) => setPostData({...postData,category: e.target.value})}>Classified </option>
-
-
-          </select>
             </div>
             
             <div className="employers-name col-6" >
