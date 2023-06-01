@@ -16,6 +16,10 @@ export default function JobsOfTheDay (){
     const { user} = useSelector((state) => state.auth);
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    if(user=== null){
+        alert('Please login to continue')
+        window.location.href = '/login'
+    }
 
 
     const [jobsOfTheDay, setJobsOfTheDay] = useState([]);

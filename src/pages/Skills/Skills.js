@@ -25,6 +25,10 @@ export default function PostASkill ()  {
     const [value, setValue] = useState('')
     const ref = useRef(null);
     const { user } = useSelector((state) => state.auth)
+    if(user=== null){
+      window.location.href = '/login'
+      //alert('Please login to continue')
+  }
     const { skills, isLoading, isError, message } = useSelector(
         (state) => state.skills
       )

@@ -20,6 +20,10 @@ const { user} = useSelector((state) => state.auth);
 const { goals, isLoading, isError, message } = useSelector(
   (state) => state.subscriber
 )
+if(user=== null){
+  alert('Please login to continue')
+  window.location.href = '/login'
+}
 useEffect(() => {
   if (isError) {
     console.log('there was an error while loading', message)
