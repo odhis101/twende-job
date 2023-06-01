@@ -11,12 +11,48 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getSubscribers } from '../../features/subscriptions/subscriptionSlice'
 
 export default function Skills ()  {
   const [postData, setPostData] = useState({ Names :'', skillDescription: '',phoneNumber: '' , Location: '',skillName: ''});
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
+  const { goals, isLoading, isError, message } = useSelector((state) => state.subscriber);
+  const currentDate = new Date().toISOString().slice(0, 10);
+  let expiryDate = ""
+  
+  useEffect(() => {
+    if (isError) {
+      console.log('There was an error while loading', message);
+    }
+    dispatch(getSubscribers({ phoneNumber: user.phoneNumber }));
+  }, [user, navigate, isError, message, dispatch]);
+  
+  if (goals === undefined || goals.subscribers === undefined) {
+    console.log('Waiting for data');
+  } else {
+    if (goals.subscribers.length === 0) {
+      alert('You have not subscribed to any plan');
+      window.location.href = '/JobAlerts';
+    } else {
+      expiryDate = goals.subscribers[goals.subscribers.length - 1].expiry;
+      console.log('This is the expiry date', expiryDate);
+  
+      if (currentDate > expiryDate) {
+        alert('Your subscription has expired');
+        window.location.href = '/';
+        // create a dispatch to update the db that the subscription has expired
+      }
+    }
+  }
+  
+
+
+
+
+
+
 
   useEffect(() => {
     console.log(`postData => `, postData);
@@ -25,6 +61,12 @@ export default function Skills ()  {
 
   const handleSubmit=(e) => {
     e.preventDefault();
+
+    if (currentDate > expiryDate) {
+        alert('Your subscription has expired');
+        window.location.href = '/';
+        // create a dispatch to update the db that the subscription has expired
+      }
     if( user === null){
       toast.error('please login to post a skill')
       navigate('/login')

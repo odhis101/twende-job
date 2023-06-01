@@ -19,6 +19,12 @@ export default function JobAlerts() {
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
       }
+      const [isChecked, setIsChecked] = useState(false);
+
+// Handle checkbox change
+const handleCheckboxChange = (event) => {
+  setIsChecked(event.target.checked);
+};
 
     const { user} = useSelector((state) => state.auth);
     //console.log(user)
@@ -32,7 +38,12 @@ export default function JobAlerts() {
     //console.log(typeof(postData.number))
 
     const handleSubmit=(e) => {
-        e.preventDefault();
+
+      e.preventDefault();
+      if (!isChecked) {
+        toast.error('Please accept the terms of service');
+        return;
+      }
             if (postData.number === '' || postData.amount === '') {
                 alert('Please fill all fields')
             } 
@@ -77,13 +88,13 @@ export default function JobAlerts() {
                 </div>
                 <div className="Package">
                     <p className='p-tall3 mb-1 text-center'>Ksh.49 Tu! </p>
-                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
+                    <p className='p-tall2 mb-1 text-center'>Weekly SMS </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for 7 days</p>
                 </div>
                 
                 <div className="Package">
                     <p className='p-tall3 mb-1 text-center'>Ksh.199 Tu! </p>
-                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
+                    <p className='p-tall2 mb-1 text-center'>Monthly SMS </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for a month</p>
                 </div>
                 
@@ -111,15 +122,25 @@ export default function JobAlerts() {
                     type='tel'
                     value = {postData.number}
                     onChange ={(e) => setPostData({...postData,number: e.target.value})}
-                    class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="254703757369"></input>
+                    class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username"  placeholder="254703757369"></input>
                 </div>
-                <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
+                <button type="submit" 
+                class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded"
+                >
                     Subscribe
                 </button>
             </form>
             <div style={{ marginTop: '10px' }}>
-        <Link to="/termsOfService" style={{ textDecoration: 'underline', color: '#000', borderBottomColor: '#FFB246' }}>Terms of Service</Link>
-      </div>
+  <label className="terms-link">
+    <input
+      type="checkbox"
+      className="checkbox"
+      checked={isChecked}
+      onChange={handleCheckboxChange}
+    />
+    <span className="terms-text"> Terms of Service</span>
+  </label>
+</div>
 
         </div>
 

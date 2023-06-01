@@ -24,6 +24,7 @@ import Details from "./pages/Details/Details";
 import TermsOfService  from "./pages/TermsOfService/TermsOfService";
 import Forgotpass from "./pages/ForgotPass/Forgotpass";
 import AboutUs from "./pages/aboutUs/AboutUs";
+import JobsOfTheDay from "./pages/JobsOfTheDay/JobsOfTheDay";
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/TermsOfService" element={<TermsOfService />} />
           <Route path="/forgotPassword" element={<Forgotpass />} />
           <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/JobsOfTheDay" element={<JobsOfTheDay />} />
 
           <Route path="" element={<ErrorPage/>} />
           <Route element={<ErrorPage/>} />

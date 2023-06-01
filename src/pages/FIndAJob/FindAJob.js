@@ -149,7 +149,7 @@ console.log(goals)
                 <br/>
                 <p>Applications must be submitted by 01.10.2022</p>
                 <br/>
-                <p> Must have valid electrical wiring certification from Kenya Power</p>
+                <p> Must have valid electrical wiring certification from Kenya Pssssower</p>
                 <br/>
                 <p className="underline text-zinc-400" >View more details</p>
 
