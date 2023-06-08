@@ -22,7 +22,7 @@ function redirect() {
     return (
         
         <div className="Rightcontainer">
-            <JobsOfTheDay/>
+            <JobsOfTheDay container ='jobofthedayContainer'/>
             <Help/>
             <div className="flex justify-evenly mt-5 mb-2">
               <p>Terms Of Service </p>

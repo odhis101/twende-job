@@ -5,7 +5,8 @@ import axios from 'axios';
 import { useState,useEffect} from "react";
 
 
-export default function JobofTheDay() {
+export default function JobofTheDay(props) {
+  const container = props.container;
     const [jobsOfTheDay, setJobsOfTheDay] = useState([]);
     const API_URL = process.env.REACT_APP_API_URL
 
@@ -39,7 +40,7 @@ export default function JobofTheDay() {
     }
     
     return (
-        <div className="jobofthedayContainer">
+        <div className={container}>
             <p className = "text-cyan-900 px-3.5"> JOBS OF THE DAY</p> 
             <div className="jobDescription px-2.5">
                 <p className = "text-zinc-400">{category}</p> 

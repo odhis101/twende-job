@@ -25,6 +25,7 @@ import BottomNav from '../../components/BottomNav/BottomNav';
 import TopNav from '../../components/TopNav/TopNav';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import JobofTheDay from '../../components/JobofTheDay/JobOfTheDay'
 export default function FindAJob() {
 
     const dispatch = useDispatch()
@@ -137,27 +138,9 @@ console.log(goals)
 
               
             </Carousel>
-            <div className="jobofthedayContainerM">
-            <p className = "text-cyan-900 px-3.5"> JOBS OF THE DAY</p> 
-            <div className="jobDescription px-2.5">
-                <p className = "text-zinc-400">Electricals</p> 
-                <p>Aramel Electricals</p>
-                <br/>
-                <p>Applications are invited from qualified persons for the above vacant position.</p>
-                <br/>
-                <p>Salary: KES.45,000 PM</p>
-                <br/>
-                <p>Applications must be submitted by 01.10.2022</p>
-                <br/>
-                <p> Must have valid electrical wiring certification from Kenya Pssssower</p>
-                <br/>
-                <p className="underline text-zinc-400" >View more details</p>
-
-                
-            </div>
-
-
-        </div>
+           {/*jobofthedayContainerM */}
+           <JobofTheDay container = 'jobofthedayContainerM'/>
+           
     
 
 
