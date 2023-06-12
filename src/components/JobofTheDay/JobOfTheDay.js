@@ -46,7 +46,7 @@ export default function JobofTheDay(props) {
                 <p className = "text-zinc-400">{category}</p> 
                 <p>{jobTitle}</p>
                 <br/>
-                <p>Applications are invited from qualified persons for the above vacant position.</p>
+                <p>Applications are invited from  qualified persons for the above vacant position.</p>
                 <br/>
                 <p>Salary: {Salary}</p>
                 <br/>
