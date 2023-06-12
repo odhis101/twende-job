@@ -54,7 +54,7 @@ export default function JobofTheDay(props) {
                 <br/>
                 <p> {Requirment}</p>
                 <br/>
-                <p className="px-2 text-[#717171] underline-offset-1	">  <Link to= {`/jobsOfTheDay`}  > <p class="button underline-offset-1 ">View Details</p></Link></p>
+                <p className="px-2 text-[#717171] underline-offset-1">  <Link to= {`/jobsOfTheDay`}  > <p class="button underline-offset-1 ">View Details</p></Link></p>
                 
             </div>
 
