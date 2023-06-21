@@ -9,7 +9,9 @@ export default function JobofTheDay(props) {
   const container = props.container;
     const [jobsOfTheDay, setJobsOfTheDay] = useState([]);
     const API_URL = process.env.REACT_APP_API_URL
-
+    const [expanded, setExpanded] = useState(false);
+    const content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue eget diam facilisis tincidunt. Donec eu justo felis. Sed commodo aliquam urna non volutpat. Vestibulum semper eleifend lacus, sit amet tristique quam efficitur sed.";
+    const maxWords = 20;
 
     useEffect(() => {
       axios.get(`${API_URL}/jobs/getJobsOfTheDay`)
@@ -36,8 +38,21 @@ export default function JobofTheDay(props) {
       Requirment = jobsOfTheDay[0].Requirment;
       DeadlineDate = jobsOfTheDay[0].DeadlineDate;
       // convert DeadlineDate
-         DeadlineDate = new Date(DeadlineDate).toISOString().slice(0, 10)
+      DeadlineDate = new Date(DeadlineDate).toISOString().slice(0, 10)
     }
+    const handleClick = () => {
+      setExpanded(!expanded);
+    };
+  
+    const displayContent = () => {
+      if (expanded || Requirment.split(' ').length <= maxWords) {
+        return Requirment;
+      } else {
+        const words = Requirment.split(' ').slice(0, maxWords).join(' ');
+        return words + '...';
+      }
+    };
+  
     
     return (
         <div className={container}>
@@ -52,7 +67,14 @@ export default function JobofTheDay(props) {
                 <br/>
                 <p>Applications must be submitted by {DeadlineDate}</p>
                 <br/>
-                <p> {Requirment}</p>
+                <p>{displayContent()}</p>
+                    {Requirment.split(' ').length > maxWords && (
+                      <button 
+                      className="underline"
+                      onClick={handleClick}>
+                        {expanded ? 'Show Less' : 'Show More'}
+                      </button>
+                    )}
                 <br/>
                 <p className="px-2 text-[#717171] underline-offset-1">  <Link to= {`/jobsOfTheDay`}  > <p class="button underline-offset-1 ">View Details</p></Link></p>
                 
