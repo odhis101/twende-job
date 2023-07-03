@@ -19,6 +19,10 @@ export default function Details (){
     const { jobs, iSLoading, IsError, Message } = useSelector(
       (state) => state.jobs
     )
+    const handleEnquireClick = () => {
+      alert('we will contact you soon with more details')
+      window.location.href = '/'; // Redirect to the main page
+    };
     useEffect(() => {
 
       if (isError) {
@@ -101,8 +105,14 @@ goals === undefined || jobs === undefined ? <div className = " spinner " role="s
                  <p className="px-2 "> Deadline: {jobs.DeadlineDate.slice(0,10)}</p>
          </div>
               </div>
-         
          </div>
+         <div class="flex justify-center items-center">
+  <button 
+  onClick={handleEnquireClick}
+  class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">
+    Enquire
+  </button>
+</div>
 
 
 
