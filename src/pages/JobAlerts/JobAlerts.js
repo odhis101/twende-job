@@ -87,7 +87,7 @@ const handleCheckboxChange = (event) => {
                     <p className='p-tall1 mb-1 text-center'>Subscribe for one day</p>
                 </div>
                 <div className="Package">
-                    <p className='p-tall3 mb-1 text-center'>Ksh.49 Tu! </p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.85 Tu! </p>
                     <p className='p-tall2 mb-1 text-center'>Weekly SMS </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for 7 days</p>
                 </div>
@@ -107,8 +107,8 @@ const handleCheckboxChange = (event) => {
     <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.10</strong> NOW</label>
   </div>
   <div className="PackageCheckBox text-center">
-    <input type="radio" value={49} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
-    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.49</strong> NOW</label>
+    <input type="radio" value={85} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.85</strong> NOW</label>
   </div>
   <div className="PackageCheckBox text-center">
     <input type="radio" value={199} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
