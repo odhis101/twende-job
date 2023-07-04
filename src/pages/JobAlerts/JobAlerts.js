@@ -80,20 +80,16 @@ const handleCheckboxChange = (event) => {
 </div>
           
             <p className="mt-6 mb-3"> 1. SELECT PACKAGE</p>
-            <div className= 'flex justify-between flex-wrap'>
-                <div className="Package">
-                    <p className='p-tall3 mb-1 text-center'>Ksh.10 Tu! </p>
-                    <p className='p-tall2 mb-1 text-center'>Daily SMS </p>
-                    <p className='p-tall1 mb-1 text-center'>Subscribe for one day</p>
-                </div>
+            <div className= 'flex justify-center flex-wrap'>
+
                 <div className="Package">
                     <p className='p-tall3 mb-1 text-center'>Ksh.85 Tu! </p>
-                    <p className='p-tall2 mb-1 text-center'>Weekly SMS </p>
+                    <p className='p-tall2 mb-1 text-center'> Juliswa pack KAZI notifications </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for 7 days</p>
                 </div>
                 
                 <div className="Package">
-                    <p className='p-tall3 mb-1 text-center'>Ksh.199 Tu! </p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.250 Tu! </p>
                     <p className='p-tall2 mb-1 text-center'>Monthly SMS </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for a month</p>
                 </div>
@@ -101,18 +97,15 @@ const handleCheckboxChange = (event) => {
                 
             </div>
             <form  onSubmit ={handleSubmit}>
-            <div className='flex justify-between mt-5 flex-wrap mb-5'>
-  <div className="PackageCheckBox text-center">
-    <input type="radio" value={10} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
-    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.10</strong> NOW</label>
-  </div>
+            <div className='flex justify-center mt-5 flex-wrap mb-5'>
+
   <div className="PackageCheckBox text-center">
     <input type="radio" value={85} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
     <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.85</strong> NOW</label>
   </div>
   <div className="PackageCheckBox text-center">
-    <input type="radio" value={199} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
-    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.199</strong> NOW</label>
+    <input type="radio" value={250} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.250</strong> NOW</label>
   </div>
 </div>
 

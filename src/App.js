@@ -32,7 +32,7 @@ const App = () => {
   <div className="flex">   
            
         <Sidebar  />
-        <div className = 'nav' >
+        <div className = 'nav ' >
         
         <Navbar />
         <div className = 'flex' >
