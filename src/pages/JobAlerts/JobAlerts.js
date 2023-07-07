@@ -101,7 +101,7 @@ const handleCheckboxChange = (event) => {
 
   <div className="PackageCheckBox text-center">
     <input type="radio" value={100} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
-    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.85</strong> NOW</label>
+    <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.100</strong> NOW</label>
   </div>
   <div className="PackageCheckBox text-center">
     <input type="radio" value={250} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
