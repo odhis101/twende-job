@@ -83,7 +83,7 @@ const handleCheckboxChange = (event) => {
             <div className= 'flex justify-center flex-wrap'>
 
                 <div className="Package">
-                    <p className='p-tall3 mb-1 text-center'>Ksh.85 Tu! </p>
+                    <p className='p-tall3 mb-1 text-center'>Ksh.100 Tu! </p>
                     <p className='p-tall2 mb-1 text-center'> Juliswa pack KAZI notifications </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for 7 days</p>
                 </div>
@@ -100,7 +100,7 @@ const handleCheckboxChange = (event) => {
             <div className='flex justify-center mt-5 flex-wrap mb-5'>
 
   <div className="PackageCheckBox text-center">
-    <input type="radio" value={85} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
+    <input type="radio" value={100} name="package" onChange={e => setPostData({ ...postData, amount: e.target.value })} />
     <label htmlFor="scales"><br></br>PAY<br /> <strong>KSH.85</strong> NOW</label>
   </div>
   <div className="PackageCheckBox text-center">
