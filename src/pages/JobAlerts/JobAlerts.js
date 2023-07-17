@@ -90,7 +90,7 @@ const handleCheckboxChange = (event) => {
                 
                 <div className="Package">
                     <p className='p-tall3 mb-1 text-center'>Ksh.250 Tu! </p>
-                    <p className='p-tall2 mb-1 text-center'>Monthly SMS </p>
+                    <p className='p-tall2 mb-1 text-center'>Juliswa pack KAZI notifications </p>
                     <p className='p-tall1 mb-1 text-center'>Subscribe for a month</p>
                 </div>
                 
