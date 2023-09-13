@@ -14,6 +14,9 @@ export default function PostAJob() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { user} = useSelector((state) => state.auth);
+  const [isOthersCategory, setIsOthersCategory] = useState(false);
+  const [othersData, setOthersData] = useState("");
+
 
   const [postData, setPostData] = useState({ Location:"",Employers_Name :'', jobDescription: '', EMPLOYER_EMAIL:'',Employers_contact: '', jobTitle: '', DeadlineDate: '' ,Category:'', });
   const [text, setText] = useState('')
@@ -21,6 +24,16 @@ export default function PostAJob() {
   useEffect(() => {
     console.log(`postData => `, postData);
   }, [postData])
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    if (selectedCategory === "Others") {
+      setIsOthersCategory(true);
+    } else {
+      setIsOthersCategory(false);
+    }
+    setPostData({ ...postData, Category: selectedCategory });
+  };
+  
 
   const handleSubmit=(e) => {
     e.preventDefault();
@@ -40,12 +53,14 @@ export default function PostAJob() {
     }
     else if (postData.Employers_Name === '' || postData.jobDescription === '' || postData.EMPLOYER_EMAIL === '' || postData.Employers_contact === '' || postData.jobTitle === '' || postData.DeadlineDate === '' || postData.Category === '') {
       alert('Please fill all fields')
-    } else {
+    } 
+    if (postData.Category === "Others") {
+      postData.Category = othersData;
+    }
       dispatch(createGoal(postData))
       alert('Job Posted Successfully')
       navigate('/')
 
-    }
 
   console.log(postData)
     }
@@ -65,8 +80,12 @@ export default function PostAJob() {
             <div className="flex mt-5">
             <div className="PostCategory col-6">
             <label for="categories" class="Selectcategory mx-3.5 mt-2"><x> Job</x> Category </label>
-            <select id="categories" name='category' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
-              w-full my-1 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black" onChange ={(e) => setPostData({...postData,Category: e.target.value})}>
+            <select id="categories" 
+            name='category' 
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block
+              w-full my-1 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black" 
+              onChange={handleCategoryChange}
+              >
             <option selected>Category</option>
             <option value="Construction">Construction</option>
             <option value="Cooks">Cooks</option>
@@ -88,6 +107,8 @@ export default function PostAJob() {
             <option value="Internships">Internships</option>
             <option value="Casual long term">Casual long term</option>
             <option value="Freelance jobs">Freelance jobs</option>
+            <option value="Others">Others</option>
+
 </select>
 
             </div>
@@ -101,7 +122,24 @@ export default function PostAJob() {
             onChange ={(e) => setPostData({...postData,Employers_Name: e.target.value})}
             class="shadow appearance-none border rounded-sm  w-full my-1 py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Name"></input>
             </div>
+            
             </div>
+            {isOthersCategory && (
+  <div className="OthersCategory mt-5">
+    <p className="mx-2.5">Job Category Name</p>
+    <input
+      name="othersData"
+      id="othersData"
+      value={othersData}
+      onChange={(e) => setOthersData(e.target.value)}
+      class="JobInputDescription shadow appearance-none border rounded-sm w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      id="username"
+      type="text"
+      placeholder="Enter Additional Data"
+    />
+  </div>
+)}
+
             <div className="JobDescription mt-5">
             <p className="mx-2.5"> Job Post Title</p>
             <input  
@@ -124,6 +162,7 @@ export default function PostAJob() {
             class=" JobInputDescription  shadow appearance-none border rounded-sm  w-full my-1 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Max 500 characters "></textarea>
            
             </div>
+
             <div className="flex justify-between">
               <div className="EmployersContact mt-5">
                 <p className="mx-2.5"> Employers Contact</p>
