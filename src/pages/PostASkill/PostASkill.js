@@ -41,7 +41,7 @@ export default function Skills ()  {
   
       if (currentDate > expiryDate) {
         alert('Your subscription has expired');
-        window.location.href = '/';
+        window.location.href = '/JobAlerts';
         // create a dispatch to update the db that the subscription has expired
       }
     }
@@ -64,7 +64,7 @@ export default function Skills ()  {
 
     if (currentDate > expiryDate) {
         alert('Your subscription has expired');
-        window.location.href = '/';
+        window.location.href = '/JobAlerts';
         // create a dispatch to update the db that the subscription has expired
       }
     if( user === null){

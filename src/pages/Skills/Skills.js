@@ -85,7 +85,7 @@ skills === undefined ? <div className = " spinner " role="status ">
     ))
   ) : (
     <div className="noSkills">
-      <p> No Skills Posted Yet</p>
+      <p> This is a premium feature</p>
       
 
       </div>
