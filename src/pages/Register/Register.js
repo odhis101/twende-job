@@ -18,6 +18,9 @@ export default function Register() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const API_URL = process.env.REACT_APP_API_URL
+  const [isSendAgainVisible, setIsSendAgainVisible] = useState(false);
+  const [countdown, setCountdown] = useState(0); // Initialize with the desired countdown time in seconds
+
   
   const { user, isLoading, isError, isSuccess, message, isVerified} = useSelector(
     (state) => state.auth
@@ -56,6 +59,55 @@ export default function Register() {
   // we are not using dispatch here because we are not using redux
   // since we are not using redux the user never saves in state 
   // we will use redux for logging in once the otp is correct
+  const startCooldown = () => {
+    setCountdown(10); // Reset the countdown timer to the initial value
+  
+    const countdownInterval = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown === 0) {
+          clearInterval(countdownInterval); // Stop the countdown when it reaches 0
+          setIsSendAgainVisible(true); // Show the button after the cooldown
+          return prevCountdown;
+        }
+        return prevCountdown - 1;
+      });
+    }, 1000); // Update the countdown every 1 second (1000 milliseconds)
+  };
+  
+  
+  const handleSendOTPAgain = () => {
+    console.log("hit this route")
+    setIsSubmitting(true);
+  
+    // Send a request to the server to send a new OTP
+    fetch(`${API_URL}/users/send-otp-again`, {
+      method: 'POST',
+      body: JSON.stringify({
+        phoneNumber: phoneNumber,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Response:', data);
+        if (data.message === 'New OTP sent successfully') {
+          setIsOTPVerified(false); // Reset OTP verification status
+          toast.success(data.message);
+          startCooldown(); // Start the countdown when OTP is sent successfully
+        } else {
+          toast.error(data.message);
+        }
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error('An error occurred while sending the new OTP');
+        setIsSubmitting(false);
+      });
+  };
+  
 
   const onSubmit =async (e)  => {
    
@@ -166,6 +218,8 @@ export default function Register() {
             <button type="submit" class="bg-[#FFB246] hover:bg-orange-400 w-full my-5 text-black  py-3  hover:border-blue-500 rounded">
              Register
 </button>
+
+
             
 
 </form>
@@ -188,6 +242,17 @@ export default function Register() {
         >
           Verify
         </button>
+        {isEnabled && (
+  <button
+    type="button"
+    className="bg-[#FFB246] rounded-md hover:bg-orange-400 w-full my-2 rounded text-black py-3 hover:border-blue-500 rounded"
+    disabled={!isEnabled || countdown > 0} // Disable the button while counting down
+    onClick={handleSendOTPAgain}
+  >
+    {countdown > 0 ? `Send OTP Again (${countdown}s)` : 'Send OTP Again'}
+  </button>
+)}
+
       </form>
       </div>
 
