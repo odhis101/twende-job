@@ -130,7 +130,7 @@ goals === undefined || jobsOfTheDay === undefined ? <div className = " spinner "
             <div className="JobCentercontainer rounded-md shadow-inherit cursor-pointer">
              <div className="JobCentercontainer__header">
              <p  className="text-[#717171] px-2">{category}</p>
-             <p className="text-[#717171] px-2"> Posted on: 2010-12-24   </p>
+             <p className="text-[#717171] px-2"> Start Date: 2010-12-24   </p>
                  </div>
              <p className="px-2 font-semibold"> {jobTitle} </p>
                 
