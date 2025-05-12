@@ -77,6 +77,7 @@ console.log('isVerified',isVerified)
         <CustomLink   to="/ClassifiedJobs">Classifieds Jobs</CustomLink>
         <CustomLink   to="/Subscriptions">Subscriptions</CustomLink>
         <CustomLink   to="/JobAlerts">Get SMS Job Alerts!</CustomLink>
+        <CustomLink to="/courses">Courses</CustomLink>
         <CustomLink   to="/aboutUs">About Us</CustomLink>
      
               </div>

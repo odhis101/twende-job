@@ -19,6 +19,8 @@ var _updateUserSlice = _interopRequireDefault(require("../features/updateUser/up
 
 var _skillSlice = _interopRequireDefault(require("../features/skills/skillSlice"));
 
+var _courseSlice = _interopRequireDefault(require("../features/courses/courseSlice"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var store = (0, _toolkit.configureStore)({
@@ -28,7 +30,8 @@ var store = (0, _toolkit.configureStore)({
     subscriber: _subscriptionSlice["default"],
     auth: _authSlice["default"],
     update: _updateUserSlice["default"],
-    skills: _skillSlice["default"]
+    skills: _skillSlice["default"],
+    courses: _courseSlice["default"]
   }
 });
 exports.store = store;

@@ -1,0 +1,12 @@
+.courseCategories {
+    .categoryCard {
+        background-color: white;
+        transition: transform 0.2s;
+    }
+    .categoryCard:hover {
+        transform: translateY(-5px);
+    }
+    .categoryIcon {
+        font-size: 2.5rem;
+    }
+}

@@ -1,5 +1,3 @@
-
-
 import { useEffect, useRef, useState } from "react";
 import Home from "./pages/Home/Home";
 import {getPosts } from "./actions/posts";
@@ -21,57 +19,58 @@ import Skills from "./pages/Skills/Skills";
 import Woodwork from "./pages/Categories/Woodwork/Woodwork";
 import PostASkill from "./pages/PostASkill/PostASkill";
 import Details from "./pages/Details/Details";
-import TermsOfService  from "./pages/TermsOfService/TermsOfService";
+import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import Forgotpass from "./pages/ForgotPass/Forgotpass";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import JobsOfTheDay from "./pages/JobsOfTheDay/JobsOfTheDay";
+import Courses from "./pages/Courses/Courses";
+import CourseDetail from "./pages/Courses/CourseDetail";
+import CourseViewer from "./pages/Courses/CourseViewer";
+import CourseCategory from "./pages/Courses/CourseCategory"; 
+import DirectPDFViewer from "./pages/Courses/DirectPDFViewer";
 
 const App = () => {
   return (
-    <> 
-  <div className="flex">   
-           
-        <Sidebar  />
-        <div className = 'nav ' >
-        
-        <Navbar />
-        <div className = 'flex' >
-        <div className = 'mainContent' >
-        <Routes>
-          <Route path="/" element={<FindAJob />} />
-          <Route path="/login"element={<Login />}  />
-          <Route path="/postAjob" element={<PostAJob />} />
-          <Route path="/ClassifiedJobs" element={<ClassifiedJobs />} />
-          <Route path="/JobAlerts" element={<JobAlerts />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/getSkills" element={<Skills />} />
-          <Route path="/Subscriptions" element={<Subscriptions />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/postASkill" element={<PostASkill />} />
-          <Route path="/category/:id" element={< Woodwork />} />
-          <Route path="*" element={<ErrorPage/>} />
-          <Route path="/Details/:id" element={<Details />} />
-          <Route path="/TermsOfService" element={<TermsOfService />} />
-          <Route path="/forgotPassword" element={<Forgotpass />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/JobsOfTheDay" element={<JobsOfTheDay />} />
+    <>
+      <div className="flex">
+        <Sidebar />
+        <div className='nav'>
+          <Navbar />
+          <div className='flex'>
+            <div className='mainContent'>
+              <Routes>
+                <Route path="/" element={<FindAJob />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/postAjob" element={<PostAJob />} />
+                <Route path="/ClassifiedJobs" element={<ClassifiedJobs />} />
+                <Route path="/JobAlerts" element={<JobAlerts />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/getSkills" element={<Skills />} />
+                <Route path="/Subscriptions" element={<Subscriptions />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/postASkill" element={<PostASkill />} />
+                <Route path="/category/:id" element={<Woodwork />} />
+                <Route path="*" element={<ErrorPage />} />
+                <Route path="/Details/:id" element={<Details />} />
+                <Route path="/TermsOfService" element={<TermsOfService />} />
+                <Route path="/forgotPassword" element={<Forgotpass />} />
+                <Route path="/aboutUs" element={<AboutUs />} />
+                <Route path="/JobsOfTheDay" element={<JobsOfTheDay />} />
+                <Route path="/courses" element={<Courses />} />
+                <Route path="/courses/category/:categoryName" element={<CourseCategory />} />
+                <Route path="/courses/:courseId" element={<CourseDetail />} />
+                <Route path="/courses/:courseId/view" element={<DirectPDFViewer />} />
 
-          <Route path="" element={<ErrorPage/>} />
-          <Route element={<ErrorPage/>} />
-          
-          
-        </Routes>
+                <Route path="" element={<ErrorPage />} />
+                <Route element={<ErrorPage />} />
+              </Routes>
+            </div>
+            <Rightbar />
+          </div>
         </div>
-        <Rightbar/>
-        </div>
-        </div>
-        </div>
-        
-        
-      
-    
+      </div>
     </>
-);
+  );
 }
 
 export default App;

@@ -5,6 +5,7 @@ import MpesaReducer from '../features/mpesa/mpesaSlices'
 import subscriberReducer from '../features/subscriptions/subscriptionSlice'
 import updateUserReducer from '../features/updateUser/updateUserSlice'
 import skillReducer from '../features/skills/skillSlice'
+import courseReducer from '../features/courses/courseSlice'
 
 
 export const store = configureStore({
@@ -17,7 +18,8 @@ export const store = configureStore({
     auth: authReducer,
     update: updateUserReducer,
     skills: skillReducer,
-   
+    courses: courseReducer,
+
 
 
 

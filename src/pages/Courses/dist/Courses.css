@@ -1,0 +1,49 @@
+/* src/pages/Courses/Courses.scss */
+.coursesList {
+  margin-bottom: 80px;
+}
+
+.courseCard {
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.courseCard:hover {
+  transform: translateY(-5px);
+}
+
+.searchBar {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coursesHero {
+  background: linear-gradient(to right, #f7f7f7, #f0f0f0);
+  border-left: 4px solid #FFB246;
+}
+
+.categoryCard {
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+}
+
+.categoryNav {
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.categoryNav::-webkit-scrollbar {
+  height: 6px;
+}
+.categoryNav::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.categoryNav::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+}

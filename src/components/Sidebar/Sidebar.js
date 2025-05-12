@@ -18,6 +18,9 @@ export default function Sidebar() {
             <Link to="/"  ><p class="button">All </p></Link>
             </li>
             <li>
+            <Link to="/courses"><p class="button">Courses</p></Link>
+            </li>
+            <li>
             <Link to="/category/Driver" > <p class="button">Drivers </p></Link>
             </li>
             <li>

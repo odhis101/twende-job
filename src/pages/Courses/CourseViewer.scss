@@ -1,0 +1,40 @@
+/* src/pages/Courses/CourseViewer.scss */
+
+.courseViewer {
+    margin-bottom: 80px;
+    background-color: white;
+}
+
+.pdfContainer {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.pdf-document {
+    max-width: 100%;
+}
+
+.pdf-page {
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pdfNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+    .pdfNavigation {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .pdfContainer {
+        min-height: 300px;
+    }
+}
